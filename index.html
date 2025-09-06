@@ -1,57 +1,31 @@
 <!DOCTYPE html>
-<html lang="{block:English}en{/block:English}{block:Spanish}es-ES{/block:Spanish}">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
 
-  <title>{Title} {block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage} {block:PermalinkPage}{block:PostSummary} - {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+  <title>Domingo Cruz Portfolio</title>
 
-  <link rel="shortcut icon" href="{Favicon}">
+  <link rel="shortcut icon" href="./Assets/DC-Logo.png">
 
-  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+  <link rel="stylesheet" href="./CSS/style.css" type='text/css'>
 
-  <link rel="stylesheet" 
-  href="https://static.tumblr.com/awxo2bf/6gMswtw8v/domingocstheme.css" type='text/css'>
-
-  {block:Description}
-  <meta name="description" content="{MetaDescription}">
-  {block:Description}
-
-  {block:Hidden}
-  <meta name="image:About portrait" content="">
-  <meta name="image:Blog logo" content="">
-  <meta name="image:Instagram logo" content="">
-  <meta name="image:Youtube logo" content="">
-  <meta name="image:LinkedIn logo" content="">
-  <meta name="image:Link image" content="">
-  <meta name="image:BG img" content="">
-  <meta name="text:Custom Google Fonts NAME title" content="Montserrat">
-  <meta name="text:Custom Google Fonts NAME body" content="Josefin Sans">
-  <meta name="text:Custom Google Fonts NAME other" content="Roboto">
-  <meta name="text:bio description" content="">
-  <meta name="text:Contact info" content="">
-  <meta name="color:Blog background color" content="#191919" />
-  <meta name="color:Accent color 1" content="#dadada">
-  <meta name="color:Accent color 2" content="#00b4ff">
-  <meta name="color:Accent color 3" content="#ff465a">
-  <meta name="color:Accent color 4" content="#00ff5a">
-  <meta name="color:Accent color 5" content="#262626">
-  <meta name="color:Accent color 6" content="#323232">
-  <meta name="color:Linked text color" content="#aae2fa">
-  <meta name="color:Visited link color" content="#daa8d7">
-  {/block:Hidden}
+  <meta name="description"
+    content="Panamanian artist with a passion for art, design, animation, media literacy, philosophy, web development, among others. This is a page to showcase my work.">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
-  <link rel="alternate" type="application/rss+xml" href="{RSS}">
   <meta http-equiv="X-UA-Compatible" content="IE=9">
   <meta http-equiv="Cache-control" content="private">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- MY CUSTOM SCRIPTS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     jQuery(function ($) {
 
@@ -120,21 +94,21 @@
 
       //Arrows passing to prev or next slide
       $('.pinleft').on("click", function () {
-          i--
-          if (i < 0) { i = $(".sldcrd").length - 1; }
-          $(".sldcrd").removeClass('activecard');
-          $('.sldbtn').removeClass('slct');
-          $('.pinned-content').find(".sldcrd").eq(i).addClass('activecard');
-          $('.sldbtn').eq(i).addClass('slct');
+        i--
+        if (i < 0) { i = $(".sldcrd").length - 1; }
+        $(".sldcrd").removeClass('activecard');
+        $('.sldbtn').removeClass('slct');
+        $('.pinned-content').find(".sldcrd").eq(i).addClass('activecard');
+        $('.sldbtn').eq(i).addClass('slct');
       });
 
       $('.pinright').on("click", function () {
-          i++
-          if (i > $(".sldcrd").length - 1) { i = 0; }
-          $(".sldcrd").removeClass('activecard');
-          $('.sldbtn').removeClass('slct');
-          $('.pinned-content').find(".sldcrd").eq(i).addClass('activecard');
-          $('.sldbtn').eq(i).addClass('slct');
+        i++
+        if (i > $(".sldcrd").length - 1) { i = 0; }
+        $(".sldcrd").removeClass('activecard');
+        $('.sldbtn').removeClass('slct');
+        $('.pinned-content').find(".sldcrd").eq(i).addClass('activecard');
+        $('.sldbtn').eq(i).addClass('slct');
       });
 
       //buttons calling respective slide
@@ -166,10 +140,10 @@
         $('.menu-container').toggleClass("mobile-menu-open");
       });
       $('.fa-xmark').on("click", function () {
-          $('#contact-info').removeClass("active");
-          $('.contact').removeClass("active");
-          $('#about-me').removeClass("active");
-          $('.about').removeClass("active");
+        $('#contact-info').removeClass("active");
+        $('.contact').removeClass("active");
+        $('#about-me').removeClass("active");
+        $('.about').removeClass("active");
       });
 
       //****
@@ -193,10 +167,10 @@
       //****
 
       // Set Language on Load
-      var langVl = {langu: document.documentElement.lang};
-      $(document).ready(function() {
+      var langVl = { langu: document.documentElement.lang };
+      $(document).ready(function () {
         console.log(langVl.langu);
-        if (langVl.langu == "es-ES"){
+        if (langVl.langu == "es-ES") {
           $('.langtext').css("display", "none");
           $('.estext').css("display", "flex");
         }
@@ -215,8 +189,8 @@
         langu: "es-ES"
       }, setLanguage);
 
-      function setLanguage( event ) {
-        if (event.data.langu == "es-ES"){
+      function setLanguage(event) {
+        if (event.data.langu == "es-ES") {
           $('.langtext').css("display", "none");
           $('.estext').css("display", "flex");
         }
@@ -231,44 +205,47 @@
   </script>
 
   <!-- Google Font Links -->
-  <link href='https://fonts.googleapis.com/css?family={text:Custom Google Fonts NAME title}:400,400italic,700,700italic,600,500' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family={text:Custom Google Fonts NAME body}:400,400italic,700,700italic,600,500' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family={text:Custom Google Fonts NAME other}:400,400italic,700,700italic,600,500' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,400italic,700,700italic,600,500' rel='stylesheet'
+    type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Josefin Sans:400,400italic,700,700italic,600,500' rel='stylesheet'
+    type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic,600,500' rel='stylesheet'
+    type='text/css'>
 
   <!-- Customizable CSS Options - quick settings -->
   <style>
     body {
-      background-image: url('{image:BG img}');
+      background-image: url('./Assets/BG-pladblack.jpg');
     }
 
     h1 {
-      font-family: '{text:Custom Google Fonts NAME title}', serif;
+      font-family: 'Montserrat', serif;
     }
 
     h2 {
-      font-family: '{text:Custom Google Fonts NAME title}', serif;
+      font-family: 'Montserrat', serif;
     }
 
     h3 {
-      font-family: '{text:Custom Google Fonts NAME title}', serif;
+      font-family: 'Montserrat', serif;
     }
 
     p {
-      font-family: '{text:Custom Google Fonts NAME body}', serif;
+      font-family: 'Josefin Sans', serif;
     }
 
     .menu-button {
-      font-family: '{text:Custom Google Fonts NAME title}', serif;
+      font-family: 'Montserrat', serif;
     }
 
     a {
-      color: {color:Linked text color};
+      color: #aae2fa;
       font-weight: 700;
       text-decoration: underline;
     }
 
     a:hover {
-      color: {color:Visited link color};
+      color: #daa8d7;
       cursor: pointer;
     }
 
@@ -309,832 +286,1151 @@
     .langtext {
       display: none;
     }
+/*
+    #under-construction {
+      display: none !important;
+    }
 
-    {CustomCSS}
+    #langsw {
+      display: none !important;
+    }
+*/
+    .content-container.npf-post:hover {
+      width: 100% !important;
+      height: 100% !important;
+      overflow: hidden;
+      transform: scale(1.05) !important;
+    }
+
+    .pinned-column.pinned-text>a {
+      text-decoration: none;
+      color: #a8ccda;
+    }
+
+    .single-content-container.npf-post>article>p:nth-child(1) {
+      display: none;
+    }
+
+    body>.iframe-controls-container.iframe-controls-container--unified.iframe-controls-container--overlay.iframe-controls-container--domingocruzart.iframe-controls-container--no-search.iframe-controls-container--stroked-buttons.iframe-controls-container--compact {
+      display: none;
+    }
+
+    .tmblr-iframe--desktop-loggedin-controls.iframe-controls--desktop,
+    .tmblr-iframe,
+    .tmblr-iframe--desktop-loggedin-controls,
+    .iframe-controls--desktop {
+      display: none;
+    }
+
+    .single-content-container.video>article>figure.tmblr-full {
+      height: fit-content;
+      max-height: 90vh;
+    }
+
+    .single-content-container.video>article>figure.tmblr-full>video {
+      height: 100%;
+      max-height: 90vh;
+    }
   </style>
 
   <!-- Customizable CSS Options -->
   <style>
     /*General Rules*/
-    .pinned-column.pinned-text > a {
-      color: {color:Linked text color};
+    .pinned-column.pinned-text>a {
+      color: #aae2fa;
     }
+
+    ;
+
     /*Scrollbar*/
     ::-webkit-scrollbar-track {
-      background: {color:Blog background color};
+      background: #191919;
     }
+
     ::-webkit-scrollbar-thumb {
       background: #666;
     }
+
     ::-webkit-scrollbar-thumb:hover {
       background: #777;
     }
+
     /*Header*/
     .header {
-      background: {color:Blog background color};
-      color: {color:Accent color 1};
+      background: #191919;
+      color: #dadada;
     }
+
     .header .website-description {
-      color: {color:Accent color 1};
+      color: #dadada;
     }
+
     /*Menu*/
     .menu-container {
-      background-color: {color:Accent color 6};
+      background-color: #323232;
     }
+
     .menu-button {
-      background-color: {color:Blog background color};
-      color: {color:Accent color 1};
+      background-color: #191919;
+      color: #dadada;
     }
-    .menu-button:hover, .menu-button.about.active, .menu-button.content.active {
-      background-color: {color:Accent color 1};
-      color: {color:Blog background color};
+
+    .menu-button:hover,
+    .menu-button.about.active,
+    .menu-button.content.active {
+      background-color: #dadada;
+      color: #191919;
     }
+
     /*About me Section*/
-    #about-me.active, #contact-info.active {
-      box-shadow: 0vw 0vw 100vw 10vw {color:Blog background color};
+    #about-me.active,
+    #contact-info.active {
+      box-shadow: 0vw 0vw 100vw 10vw #191919;
     }
-    #about-me .info-container, #contact-info .info-container {
-      background-color: {color:Blog background color};
+
+    #about-me .info-container,
+    #contact-info .info-container {
+      background-color: #191919;
     }
-    #about-me .info-container .info-col .profile-pic img, #contact-info .info-container .info-col .profile-pic img {
-      border-color: {color:Accent color 1};
+
+    #about-me .info-container .info-col .profile-pic img,
+    #contact-info .info-container .info-col .profile-pic img {
+      border-color: #dadada;
     }
-    #about-me .info-container .info-col .social-icons img:hover, #contact-info .info-container .info-col .social-icons img:hover {
-      filter: drop-shadow(0 0 0.5vw {color:Accent color 1});
+
+    #about-me .info-container .info-col .social-icons img:hover,
+    #contact-info .info-container .info-col .social-icons img:hover {
+      filter: drop-shadow(0 0 0.5vw #dadada);
     }
-    #about-me .info-container .info-col .info-txt, #contact-info .info-container .info-col .info-txt {
-      color: {color:Accent color 1};
+
+    #about-me .info-container .info-col .info-txt,
+    #contact-info .info-container .info-col .info-txt {
+      color: #dadada;
     }
+
     .divider {
-      background-color: {color:Accent color 6};
-      color: {color:Accent color 1};
+      background-color: #323232;
+      color: #dadada;
     }
+
     /*pinned content slider*/
     #pinned-section {
-      background-color: {color:Blog background color};
+      background-color: #191919;
     }
+
     .pinned-content .pinned.activecard {
-      background-color: {color:Accent color 6};
-      border-color: {color:Accent color 1};
+      background-color: #323232;
+      border-color: #dadada;
     }
+
     .pinned-content .pinned.art {
-      border-color: {color:Accent color 2};
+      border-color: #00b4ff;
     }
+
     .pinned-content .pinned.arte {
-      border-color: {color:Accent color 2};
+      border-color: #00b4ff;
     }
+
     .pinned-content .pinned.art .tagLabel {
-      background-color: {color:Accent color 2};
+      background-color: #00b4ff;
     }
+
     .pinned-content .pinned.arte .tagLabel {
-      background-color: {color:Accent color 2};
+      background-color: #00b4ff;
     }
+
     .pinned-content .pinned.design {
-      border-color: {color:Accent color 4};
+      border-color: #00ff5a;
     }
+
     .pinned-content .pinned.design .tagLabel {
-      background-color: {color:Accent color 4};
+      background-color: #00ff5a;
     }
+
     .pinned-content .pinned.diseno {
-      border-color: {color:Accent color 4};
+      border-color: #00ff5a;
     }
+
     .pinned-content .pinned.diseno .tagLabel {
-      background-color: {color:Accent color 4};
+      background-color: #00ff5a;
     }
+
     .pinned-content .pinned.link {
-      border-color: {color:Accent color 2};
+      border-color: #00b4ff;
     }
+
     .pinned-content .pinned.link .tagLabel {
-      background-color: {color:Accent color 2};
+      background-color: #00b4ff;
     }
+
     .pinned-content .pinned.video {
-      border-color: {color:Accent color 3};
+      border-color: #ff465a;
     }
+
     .pinned-content .pinned.video .tagLabel {
-      background-color: {color:Accent color 3};
+      background-color: #ff465a;
     }
+
     .pinned-content .pinned.videos {
-      border-color: {color:Accent color 3};
+      border-color: #ff465a;
     }
+
     .pinned-content .pinned.videos .tagLabel {
-      background-color: {color:Accent color 3};
+      background-color: #ff465a;
     }
+
     .pinned-content .pinned.audio {
-      border-color: {color:Accent color 4};
+      border-color: #00ff5a;
     }
+
     .pinned-content .pinned.audio .tagLabel {
-      background-color: {color:Accent color 4};
+      background-color: #00ff5a;
     }
+
     .pinned-content .pinned.other {
-      border-color: {color:Accent color 4};
+      border-color: #00ff5a;
     }
+
     .pinned-content .pinned.other .tagLabel {
-      background-color: {color:Accent color 4};
+      background-color: #00ff5a;
     }
+
     .pinned-content .pinned .tagLabel {
-      color: {color:Blog background color};
+      color: #191919;
     }
+
     .pinned-content-container .pinned-column {
-      color: {color:Accent color 1};
+      color: #dadada;
     }
+
     .pinned-content-container .pinned-column.pinned-img img {
-      background-color: {color:Blog background color};
+      background-color: #191919;
     }
+
     .pinned-content-container .pinned-column.pinned-vid video {
-      background-color: {color:Blog background color};
+      background-color: #191919;
     }
+
     .pinned-content-container .pinned-column.pinned-vid iframe {
-      background-color: {color:Blog background color};
+      background-color: #191919;
     }
+
     .pinned-content-container .pinned-column.pinned-text {
-      box-shadow: inset 0vw -2vw 1vw 1vw {color:Accent color 6};
+      box-shadow: inset 0vw -2vw 1vw 1vw #323232;
     }
+
     .pinned-content-container .pinned-column.pinned-question {
-      box-shadow: inset 0vw -2vw 1vw 1vw {color:Accent color 6};
+      box-shadow: inset 0vw -2vw 1vw 1vw #323232;
     }
+
     .pinned-content-container .pinned-column.pinned-link {
-      box-shadow: inset 0vw -2vw 1vw 1vw {color:Accent color 6};
+      box-shadow: inset 0vw -2vw 1vw 1vw #323232;
     }
+
     .pinned-content-container .pinned-column.pinned-link .link {
-      background-color: {color:Accent color 2};
-      border-color: {color:Accent color 2};
+      background-color: #00b4ff;
+      border-color: #00b4ff;
     }
+
     .pinned-content-container .pinned-column.pinned-chat {
-      box-shadow: inset 0vw -2vw 1vw 1vw {color:Accent color 6};
+      box-shadow: inset 0vw -2vw 1vw 1vw #323232;
     }
+
     .pinned-content-container .pinned-column.pinned-chat :nth-child(odd) {
-      background-color: {color:Accent color 6};
+      background-color: #323232;
     }
+
     .pinned-content-container .pinned-column.pinned-chat :nth-child(even) {
       background-color: #444;
     }
+
     .pinned-content-container .pinned-column.pinned-quote {
-      box-shadow: inset 0vw -2vw 1vw 1vw {color:Accent color 6};
+      box-shadow: inset 0vw -2vw 1vw 1vw #323232;
     }
+
     .pinned-content-container .pinned-column .img-mult img {
-      background-color: {color:Blog background color};
+      background-color: #191919;
     }
+
     /*pinned content slider bullets*/
     .pin-slider-bullets span {
-      background-color: {color:Accent color 1};
+      background-color: #dadada;
     }
+
     .pin-slider-bullets span.slct {
       background-color: #777;
     }
+
     .pin-slider-bullets span.slct.video {
-      background-color: {color:Accent color 3};
+      background-color: #ff465a;
     }
+
     .pin-slider-bullets span.slct.videos {
-      background-color: {color:Accent color 3};
+      background-color: #ff465a;
     }
+
     .pin-slider-bullets span.slct.art {
-      background-color: {color:Accent color 2};
+      background-color: #00b4ff;
     }
+
     .pin-slider-bullets span.slct.arte {
-      background-color: {color:Accent color 2};
+      background-color: #00b4ff;
     }
+
     .pin-slider-bullets span.slct.design {
-      background-color: {color:Accent color 4};
+      background-color: #00ff5a;
     }
+
     .pin-slider-bullets span.slct.diseno {
-      background-color: {color:Accent color 4};
+      background-color: #00ff5a;
     }
+
     .pin-slider-bullets span.slct.link {
-      background-color: {color:Accent color 2};
+      background-color: #00b4ff;
     }
+
     .pin-slider-bullets span.slct.other {
-      background-color: {color:Accent color 4};
+      background-color: #00ff5a;
     }
+
     .pin-slider-bullets span.slct.audio {
-      background-color: {color:Accent color 4};
+      background-color: #00ff5a;
     }
+
     .pin-slider-bullets span.video:hover {
-      background-color: {color:Accent color 3};
+      background-color: #ff465a;
     }
+
     .pin-slider-bullets span.videos:hover {
-      background-color: {color:Accent color 3};
+      background-color: #ff465a;
     }
+
     .pin-slider-bullets span.art:hover {
-      background-color: {color:Accent color 2};
+      background-color: #00b4ff;
     }
+
     .pin-slider-bullets span.arte:hover {
-      background-color: {color:Accent color 2};
+      background-color: #00b4ff;
     }
+
     .pin-slider-bullets span.design:hover {
-      background-color: {color:Accent color 4};
+      background-color: #00ff5a;
     }
+
     .pin-slider-bullets span.diseno:hover {
-      background-color: {color:Accent color 4};
+      background-color: #00ff5a;
     }
+
     .pin-slider-bullets span.link:hover {
-      background-color: {color:Accent color 2};
+      background-color: #00b4ff;
     }
+
     .pin-slider-bullets span.other:hover {
-      background-color: {color:Accent color 4};
+      background-color: #00ff5a;
     }
+
     .pin-slider-bullets span.audio:hover {
-      background-color: {color:Accent color 4};
+      background-color: #00ff5a;
     }
+
     /*Other Content Grid*/
     .other-content {
-      background-color: {color:Blog background color};
+      background-color: #191919;
     }
-    .other-content > :nth-child(odd) {
-      background-color: {color:Accent color 6};
-      box-shadow: inset 0vw -2vw 1vw 1vw {color:Accent color 6};
+
+    .other-content> :nth-child(odd) {
+      background-color: #323232;
+      box-shadow: inset 0vw -2vw 1vw 1vw #323232;
     }
-    .other-content > :nth-child(even) {
-      background-color: {color:Accent color 5};
-      box-shadow: inset 0vw -2vw 1vw 1vw {color:Accent color 5};
+
+    .other-content> :nth-child(even) {
+      background-color: #262626;
+      box-shadow: inset 0vw -2vw 1vw 1vw #262626;
     }
+
     .other-content .content-container {
-      border-color: {color:Accent color 1};
+      border-color: #dadada;
     }
+
     .other-content .content-container:hover {
-      border-color: {color:Accent color 1};
+      border-color: #dadada;
     }
+
     .other-content .content-container:visited {
-      border-color: {color:Visited link color};
+      border-color: #daa8d7;
     }
+
     .other-content .art:hover {
-      border-color: {color:Accent color 2};
+      border-color: #00b4ff;
     }
+
     .other-content .arte:hover {
-      border-color: {color:Accent color 2};
+      border-color: #00b4ff;
     }
+
     .other-content .design:hover {
-      border-color: {color:Accent color 4};
+      border-color: #00ff5a;
     }
+
     .other-content .diseno:hover {
-      border-color: {color:Accent color 4};
+      border-color: #00ff5a;
     }
+
     .other-content .video:hover {
-      border-color: {color:Accent color 3};
+      border-color: #ff465a;
     }
+
     .other-content .videos:hover {
-      border-color: {color:Accent color 3};
+      border-color: #ff465a;
     }
-    .other-content .audio:hover, .other-content .other:hover {
-      border-color: {color:Accent color 4};
+
+    .other-content .audio:hover,
+    .other-content .other:hover {
+      border-color: #00ff5a;
     }
+
     /*General Container*/
     .content-container {
-      color: {color:Accent color 1};
+      color: #dadada;
     }
+
     .content-container:hover .post-overlay {
-      background-image: linear-gradient(transparent 65%, {color:Blog background color});
+      background-image: linear-gradient(transparent 65%, #191919);
     }
+
     .content-container .post-overlay {
-      background-image: linear-gradient(transparent 65%, {color:Blog background color});
+      background-image: linear-gradient(transparent 65%, #191919);
     }
+
     .content-container.audio .post-audio::-webkit-scrollbar-thumb {
-      background: {color:Accent color 4};
+      background: #00ff5a;
     }
+
     .content-container.audio .post-audio audio::-webkit-media-controls-panel {
-      background-color: {color:Accent color 1};
+      background-color: #dadada;
     }
+
     .content-container.text::-webkit-scrollbar-thumb {
-      background: {color:Accent color 1};
+      background: #dadada;
     }
+
     .content-container.quote h2::-webkit-scrollbar-thumb {
-      background: {color:Accent color 1};
+      background: #dadada;
     }
+
     .content-container.link::-webkit-scrollbar-thumb {
-      background: {color:Accent color 1};
+      background: #dadada;
     }
+
     .content-container.chat::-webkit-scrollbar-thumb {
-      background: {color:Accent color 1};
+      background: #dadada;
     }
-    .content-container.chat > :nth-child(even) {
+
+    .content-container.chat> :nth-child(even) {
       background-color: #444;
     }
+
     .content-container.question::-webkit-scrollbar-thumb {
-      background: {color:Accent color 1};
+      background: #dadada;
     }
+
     /*Single Post Rules*/
     .singlepost {
-      background: {color:Blog background color};
-      color: {color:Accent color 1};
+      background: #191919;
+      color: #dadada;
     }
-    .singlepost > .single-content-container {
-      border-color: {color:Accent color 1};
+
+    .singlepost>.single-content-container {
+      border-color: #dadada;
     }
-    .singlepost > .single-content-container.art {
-      border-color: {color:Accent color 2};
+
+    .singlepost>.single-content-container.art {
+      border-color: #00b4ff;
     }
-    .singlepost > .single-content-container.arte {
-      border-color: {color:Accent color 2};
+
+    .singlepost>.single-content-container.arte {
+      border-color: #00b4ff;
     }
-    .singlepost > .single-content-container.video {
-      border-color: {color:Accent color 3};
+
+    .singlepost>.single-content-container.video {
+      border-color: #ff465a;
     }
-    .singlepost > .single-content-container.videos {
-      border-color: {color:Accent color 3};
+
+    .singlepost>.single-content-container.videos {
+      border-color: #ff465a;
     }
-    .singlepost > .single-content-container.audio {
-      border-color: {color:Accent color 4};
+
+    .singlepost>.single-content-container.audio {
+      border-color: #00ff5a;
     }
-    .singlepost > .single-content-container.chat > article :nth-child(even) {
-      background-color: {color:Accent color 6};
+
+    .singlepost>.single-content-container.chat>article :nth-child(even) {
+      background-color: #323232;
     }
+
     /*Pagination*/
     .transition {
-      background-image: linear-gradient(to bottom, {color:Blog background color}, {color:Accent color 6});
+      background-image: linear-gradient(to bottom, #191919, #323232);
     }
+
     .pagination {
-      background: {color:Accent color 6};
+      background: #323232;
     }
+
     .pagination .menu-button {
-      border-color: {color:Accent color 1};
+      border-color: #dadada;
     }
+
     .pagination .menu-button.current_page {
-      background-color: {color:Accent color 2};
+      background-color: #00b4ff;
     }
+
     .pagination .menu-button:hover {
-      background-color: {color:Accent color 2};
+      background-color: #00b4ff;
       color: #fff;
     }
+
     .pages {
-      color: {color:Accent color 1};
-      background: {color:Accent color 6};
+      color: #dadada;
+      background: #323232;
     }
+
     .pages p {
-      color: {color:Accent color 1};
+      color: #dadada;
     }
+
     /*Footer Stuff*/
     .footer {
-      background: {color:Accent color 6};
+      background: #323232;
     }
+
     .footer .copyright {
-      color: {color:Accent color 1};
+      color: #dadada;
     }
 
     @media only screen and (max-width: 1920px) {
+
       /*About me Section*/
-      #about-me.active, #contact-info.active {
-        box-shadow: 0vw 0vw 1920px 192px {color:Blog background color};
+      #about-me.active,
+      #contact-info.active {
+        box-shadow: 0vw 0vw 1920px 192px #191919;
       }
-      #about-me .info-container .info-col .profile-pic img, #contact-info .info-container .info-col .profile-pic img {
-        border-color: {color:Accent color 1};
+
+      #about-me .info-container .info-col .profile-pic img,
+      #contact-info .info-container .info-col .profile-pic img {
+        border-color: #dadada;
       }
-      #about-me .info-container .info-col .social-icons img:hover, #contact-info .info-container .info-col .social-icons img:hover {
-        filter: drop-shadow(0 0 10px {color:Accent color 1});
+
+      #about-me .info-container .info-col .social-icons img:hover,
+      #contact-info .info-container .info-col .social-icons img:hover {
+        filter: drop-shadow(0 0 10px #dadada);
       }
+
       /*pinned content slider*/
       .pinned-content .pinned.activecard {
-        border-color: {color:Accent color 1};
+        border-color: #dadada;
       }
+
       .pinned-content .pinned.art {
-        border-color: {color:Accent color 2};
+        border-color: #00b4ff;
       }
+
       .pinned-content .pinned.arte {
-        border-color: {color:Accent color 2};
+        border-color: #00b4ff;
       }
+
       .pinned-content .pinned.design {
-        border-color: {color:Accent color 4};
+        border-color: #00ff5a;
       }
+
       .pinned-content .pinned.diseno {
-        border-color: {color:Accent color 4};
+        border-color: #00ff5a;
       }
+
       .pinned-content .pinned.link {
-        border-color: {color:Accent color 2};
+        border-color: #00b4ff;
       }
+
       .pinned-content .pinned.video {
-        border-color: {color:Accent color 3};
+        border-color: #ff465a;
       }
+
       .pinned-content .pinned.videos {
-        border-color: {color:Accent color 3};
+        border-color: #ff465a;
       }
+
       .pinned-content .pinned.audio {
-        border-color: {color:Accent color 4};
+        border-color: #00ff5a;
       }
+
       .pinned-content .pinned.other {
-        border-color: {color:Accent color 4};
+        border-color: #00ff5a;
       }
+
       .pinned-content-container .pinned-column.pinned-text {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+        box-shadow: inset 0vw -32px 16px 16px #323232;
       }
+
       .pinned-content-container .pinned-column.pinned-question {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+        box-shadow: inset 0vw -32px 16px 16px #323232;
       }
+
       .pinned-content-container .pinned-column.pinned-link {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+        box-shadow: inset 0vw -32px 16px 16px #323232;
       }
+
       .pinned-content-container .pinned-column.pinned-chat {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+        box-shadow: inset 0vw -32px 16px 16px #323232;
       }
+
       .pinned-content-container .pinned-column.pinned-quote {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+        box-shadow: inset 0vw -32px 16px 16px #323232;
       }
+
       /*Other Content Grid*/
-      .other-content > :nth-child(odd) {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      .other-content> :nth-child(odd) {
+        box-shadow: inset 0vw -32px 16px 16px #323232;
       }
-      .other-content > :nth-child(even) {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 5};
+
+      .other-content> :nth-child(even) {
+        box-shadow: inset 0vw -32px 16px 16px #262626;
       }
+
       .other-content .content-container {
-        border-color: {color:Accent color 1};
+        border-color: #dadada;
       }
+
       .other-content .art:hover {
-        border-color: {color:Accent color 2};
+        border-color: #00b4ff;
       }
+
       .other-content .arte:hover {
-        border-color: {color:Accent color 2};
+        border-color: #00b4ff;
       }
+
       .other-content .design:hover {
-        border-color: {color:Accent color 4};
+        border-color: #00ff5a;
       }
+
       .other-content .diseno:hover {
-        border-color: {color:Accent color 4};
+        border-color: #00ff5a;
       }
+
       .other-content .video:hover {
-        border-color: {color:Accent color 3};
+        border-color: #ff465a;
       }
+
       .other-content .videos:hover {
-        border-color: {color:Accent color 3};
+        border-color: #ff465a;
       }
-      .other-content .audio:hover, .other-content .other:hover {
-        border-color: {color:Accent color 4};
+
+      .other-content .audio:hover,
+      .other-content .other:hover {
+        border-color: #00ff5a;
       }
+
       /*Single Post Rules*/
-      .singlepost > .single-content-container {
-        border-color: {color:Accent color 1};
+      .singlepost>.single-content-container {
+        border-color: #dadada;
       }
-      .singlepost > .single-content-container.art {
-        border-color: {color:Accent color 2};
+
+      .singlepost>.single-content-container.art {
+        border-color: #00b4ff;
       }
-      .singlepost > .single-content-container.arte {
-        border-color: {color:Accent color 2};
+
+      .singlepost>.single-content-container.arte {
+        border-color: #00b4ff;
       }
-      .singlepost > .single-content-container.video {
-        border-color: {color:Accent color 3};
+
+      .singlepost>.single-content-container.video {
+        border-color: #ff465a;
       }
-      .singlepost > .single-content-container.videos {
-        border-color: {color:Accent color 3};
+
+      .singlepost>.single-content-container.videos {
+        border-color: #ff465a;
       }
-      .singlepost > .single-content-container.audio {
-        border-color: {color:Accent color 4};
+
+      .singlepost>.single-content-container.audio {
+        border-color: #00ff5a;
       }
-      .singlepost > .single-content-container.chat > article :nth-child(even) {
-        background-color: {color:Accent color 6};
+
+      .singlepost>.single-content-container.chat>article :nth-child(even) {
+        background-color: #323232;
       }
+
       /*Pagination*/
       .pagination .menu-button {
-        border-color: {color:Accent color 1};
+        border-color: #dadada;
       }
     }
+
     @media only screen and (max-width: 1280px) {
+
       /*About me Section*/
-      #about-me.active, #contact-info.active {
-        box-shadow: 0vw 0vw 1280px 192px {color:Blog background color};
+      #about-me.active,
+      #contact-info.active {
+        box-shadow: 0vw 0vw 1280px 192px #191919;
       }
-      #about-me .info-container .info-col .profile-pic img, #contact-info .info-container .info-col .profile-pic img {
-        border-color: {color:Accent color 1};
+
+      #about-me .info-container .info-col .profile-pic img,
+      #contact-info .info-container .info-col .profile-pic img {
+        border-color: #dadada;
       }
-      #about-me .info-container .info-col .social-icons img:hover, #contact-info .info-container .info-col .social-icons img:hover {
-        filter: drop-shadow(0 0 10px {color:Accent color 1});
+
+      #about-me .info-container .info-col .social-icons img:hover,
+      #contact-info .info-container .info-col .social-icons img:hover {
+        filter: drop-shadow(0 0 10px #dadada);
       }
+
       /*pinned content slider*/
       .pinned-content::-webkit-scrollbar-thumb {
-        background: {color:Accent color 2};
+        background: #00b4ff;
       }
+
       .pinned-content .pinned {
-        border-color: {color:Accent color 1};
-        background-color: {color:Accent color 6};
+        border-color: #dadada;
+        background-color: #323232;
       }
+
       .pinned-content .pinned.activecard {
-        border-color: {color:Accent color 1};
+        border-color: #dadada;
       }
+
       .pinned-content .pinned.art {
-        border-color: {color:Accent color 2};
+        border-color: #00b4ff;
       }
+
       .pinned-content .pinned.arte {
-        border-color: {color:Accent color 2};
+        border-color: #00b4ff;
       }
+
       .pinned-content .pinned.design {
-        border-color: {color:Accent color 4};
+        border-color: #00ff5a;
       }
+
       .pinned-content .pinned.diseno {
-        border-color: {color:Accent color 4};
+        border-color: #00ff5a;
       }
+
       .pinned-content .pinned.link {
-        border-color: {color:Accent color 2};
+        border-color: #00b4ff;
       }
+
       .pinned-content .pinned.video {
-        border-color: {color:Accent color 3};
+        border-color: #ff465a;
       }
+
       .pinned-content .pinned.videos {
-        border-color: {color:Accent color 3};
+        border-color: #ff465a;
       }
+
       .pinned-content .pinned.audio {
-        border-color: {color:Accent color 4};
+        border-color: #00ff5a;
       }
+
       .pinned-content .pinned.other {
-        border-color: {color:Accent color 4};
+        border-color: #00ff5a;
       }
+
       .pinned-content-container .pinned-column.pinned-text {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+        box-shadow: inset 0vw -32px 16px 16px #323232;
       }
+
       .pinned-content-container .pinned-column.pinned-question {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+        box-shadow: inset 0vw -32px 16px 16px #323232;
       }
+
       .pinned-content-container .pinned-column.pinned-link {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+        box-shadow: inset 0vw -32px 16px 16px #323232;
       }
+
       .pinned-content-container .pinned-column.pinned-chat {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+        box-shadow: inset 0vw -32px 16px 16px #323232;
       }
+
       .pinned-content-container .pinned-column.pinned-quote {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+        box-shadow: inset 0vw -32px 16px 16px #323232;
       }
+
       /*pinned content slider bullets*/
       .pin-slider-bullets span.video {
-        background-color: {color:Accent color 3};
+        background-color: #ff465a;
       }
+
       .pin-slider-bullets span.videos {
-        background-color: {color:Accent color 3};
+        background-color: #ff465a;
       }
+
       .pin-slider-bullets span.art {
-        background-color: {color:Accent color 2};
+        background-color: #00b4ff;
       }
+
       .pin-slider-bullets span.arte {
-        background-color: {color:Accent color 2};
+        background-color: #00b4ff;
       }
+
       .pin-slider-bullets span.design {
-        background-color: {color:Accent color 4};
+        background-color: #00ff5a;
       }
+
       .pin-slider-bullets span.diseno {
-        background-color: {color:Accent color 4};
+        background-color: #00ff5a;
       }
+
       .pin-slider-bullets span.link {
-        background-color: {color:Accent color 2};
+        background-color: #00b4ff;
       }
+
       .pin-slider-bullets span.other {
-        background-color: {color:Accent color 4};
+        background-color: #00ff5a;
       }
+
       .pin-slider-bullets span.audio {
-        background-color: {color:Accent color 4};
+        background-color: #00ff5a;
       }
+
       /*Other Content Grid*/
-      .other-content > :nth-child(odd) {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      .other-content> :nth-child(odd) {
+        box-shadow: inset 0vw -32px 16px 16px #323232;
       }
-      .other-content > :nth-child(even) {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 5};
+
+      .other-content> :nth-child(even) {
+        box-shadow: inset 0vw -32px 16px 16px #262626;
       }
+
       .other-content .content-container {
-        border-color: {color:Accent color 1};
+        border-color: #dadada;
       }
+
       .other-content .content-container:hover {
-        border-color: {color:Accent color 1};
+        border-color: #dadada;
       }
+
       .other-content .art:hover {
-        border-color: {color:Accent color 2};
+        border-color: #00b4ff;
       }
+
       .other-content .arte:hover {
-        border-color: {color:Accent color 2};
+        border-color: #00b4ff;
       }
+
       .other-content .design:hover {
-        border-color: {color:Accent color 4};
+        border-color: #00ff5a;
       }
+
       .other-content .diseno:hover {
-        border-color: {color:Accent color 4};
+        border-color: #00ff5a;
       }
+
       .other-content .video:hover {
-        border-color: {color:Accent color 3};
+        border-color: #ff465a;
       }
+
       .other-content .videos:hover {
-        border-color: {color:Accent color 3};
+        border-color: #ff465a;
       }
-      .other-content .audio:hover, .other-content .other:hover {
-        border-color: {color:Accent color 4};
+
+      .other-content .audio:hover,
+      .other-content .other:hover {
+        border-color: #00ff5a;
       }
+
       /*General Container*/
-      .singlepost > .single-content-container {
-        border-color: {color:Accent color 1};
+      .singlepost>.single-content-container {
+        border-color: #dadada;
       }
-      .singlepost > .single-content-container.art {
-        border-color: {color:Accent color 2};
+
+      .singlepost>.single-content-container.art {
+        border-color: #00b4ff;
       }
-      .singlepost > .single-content-container.arte {
-        border-color: {color:Accent color 2};
+
+      .singlepost>.single-content-container.arte {
+        border-color: #00b4ff;
       }
-      .singlepost > .single-content-container.video {
-        border-color: {color:Accent color 3};
+
+      .singlepost>.single-content-container.video {
+        border-color: #ff465a;
       }
-      .singlepost > .single-content-container.videos {
-        border-color: {color:Accent color 3};
+
+      .singlepost>.single-content-container.videos {
+        border-color: #ff465a;
       }
-      .singlepost > .single-content-container.audio {
-        border-color: {color:Accent color 4};
+
+      .singlepost>.single-content-container.audio {
+        border-color: #00ff5a;
       }
-      .singlepost > .single-content-container.chat > article :nth-child(even) {
-        background-color: {color:Accent color 6};
+
+      .singlepost>.single-content-container.chat>article :nth-child(even) {
+        background-color: #323232;
       }
+
       .pagination .menu-button {
-        border-color: {color:Accent color 1};
+        border-color: #dadada;
       }
     }
+
     @media only screen and (max-width: 769px) {
       body {
-        box-shadow: 0 0 10px 6px {color:Accent color 1};
+        box-shadow: 0 0 10px 6px #dadada;
       }
+
       /*Menu*/
       .mobile-menu {
-        background-color: {color:Blog background color};
-        border-color: {color:Accent color 1};
+        background-color: #191919;
+        border-color: #dadada;
       }
-      .mobile-menu > i {
-        color: {color:Accent color 1};
+
+      .mobile-menu>i {
+        color: #dadada;
       }
+
       .menu-container {
         background-image: linear-gradient(to left, rgba(25, 25, 25, 0.5) 75%, transparent);
         background-color: transparent;
       }
-      .menu-button:hover, .menu-button.about.active, .menu-button.content.active {
-        background-image: linear-gradient(to left, {color:Accent color 1} 80%, transparent);
-        color: {color:Blog background color};
+
+      .menu-button:hover,
+      .menu-button.about.active,
+      .menu-button.content.active {
+        background-image: linear-gradient(to left, #dadada 80%, transparent);
+        color: #191919;
       }
+
       /*About me Section*/
-      #about-me.active, #contact-info.active {
-        box-shadow: 0vw 0vw 1280px 192px {color:Blog background color};
+      #about-me.active,
+      #contact-info.active {
+        box-shadow: 0vw 0vw 1280px 192px #191919;
       }
-      #about-me .info-container .info-col .profile-pic img, #contact-info .info-container .info-col .profile-pic img {
-        border-color: {color:Accent color 1};
+
+      #about-me .info-container .info-col .profile-pic img,
+      #contact-info .info-container .info-col .profile-pic img {
+        border-color: #dadada;
       }
-      #about-me .info-container .info-col .social-icons img:hover, #contact-info .info-container .info-col .social-icons img:hover {
-        filter: drop-shadow(0 0 10px {color:Accent color 1});
+
+      #about-me .info-container .info-col .social-icons img:hover,
+      #contact-info .info-container .info-col .social-icons img:hover {
+        filter: drop-shadow(0 0 10px #dadada);
       }
+
       .pinned-content::-webkit-scrollbar-thumb {
-        background: {color:Accent color 2};
+        background: #00b4ff;
       }
+
       .pinned-content .pinned {
-        background-color: {color:Accent color 6};
-        border-color: {color:Accent color 1};
+        background-color: #323232;
+        border-color: #dadada;
       }
+
       .pinned-content .pinned.activecard {
-        border-color: {color:Accent color 1};
+        border-color: #dadada;
       }
+
       .pinned-content .pinned.art {
-        border-color: {color:Accent color 2};
+        border-color: #00b4ff;
       }
+
       .pinned-content .pinned.arte {
-        border-color: {color:Accent color 2};
+        border-color: #00b4ff;
       }
+
       .pinned-content .pinned.design {
-        border-color: {color:Accent color 4};
+        border-color: #00ff5a;
       }
+
       .pinned-content .pinned.diseno {
-        border-color: {color:Accent color 4};
+        border-color: #00ff5a;
       }
+
       .pinned-content .pinned.link {
-        border-color: {color:Accent color 2};
+        border-color: #00b4ff;
       }
+
       .pinned-content .pinned.video {
-        border-color: {color:Accent color 3};
+        border-color: #ff465a;
       }
+
       .pinned-content .pinned.videos {
-        border-color: {color:Accent color 3};
+        border-color: #ff465a;
       }
+
       .pinned-content .pinned.audio {
-        border-color: {color:Accent color 4};
+        border-color: #00ff5a;
       }
+
       .pinned-content .pinned.other {
-        border-color: {color:Accent color 4};
+        border-color: #00ff5a;
       }
+
       .pinned-content-container .pinned-column.pinned-text {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+        box-shadow: inset 0vw -32px 16px 16px #323232;
       }
+
       .pinned-content-container .pinned-column.pinned-question {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+        box-shadow: inset 0vw -32px 16px 16px #323232;
       }
+
       .pinned-content-container .pinned-column.pinned-link {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+        box-shadow: inset 0vw -32px 16px 16px #323232;
       }
+
       .pinned-content-container .pinned-column.pinned-chat {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+        box-shadow: inset 0vw -32px 16px 16px #323232;
       }
+
       .pinned-content-container .pinned-column.pinned-quote {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+        box-shadow: inset 0vw -32px 16px 16px #323232;
       }
+
       .pin-slider-bullets span.video {
-        background-color: {color:Accent color 3};
+        background-color: #ff465a;
       }
+
       .pin-slider-bullets span.videos {
-        background-color: {color:Accent color 3};
+        background-color: #ff465a;
       }
+
       .pin-slider-bullets span.art {
-        background-color: {color:Accent color 2};
+        background-color: #00b4ff;
       }
+
       .pin-slider-bullets span.arte {
-        background-color: {color:Accent color 2};
+        background-color: #00b4ff;
       }
+
       .pin-slider-bullets span.design {
-        background-color: {color:Accent color 4};
+        background-color: #00ff5a;
       }
+
       .pin-slider-bullets span.diseno {
-        background-color: {color:Accent color 4};
+        background-color: #00ff5a;
       }
+
       .pin-slider-bullets span.link {
-        background-color: {color:Accent color 2};
+        background-color: #00b4ff;
       }
+
       .pin-slider-bullets span.other {
-        background-color: {color:Accent color 4};
+        background-color: #00ff5a;
       }
+
       .pin-slider-bullets span.audio {
-        background-color: {color:Accent color 4};
+        background-color: #00ff5a;
       }
+
       /*Other Content Grid*/
-      .other-content > :nth-child(odd) {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      .other-content> :nth-child(odd) {
+        box-shadow: inset 0vw -32px 16px 16px #323232;
       }
-      .other-content > :nth-child(even) {
-        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 5};
+
+      .other-content> :nth-child(even) {
+        box-shadow: inset 0vw -32px 16px 16px #262626;
       }
+
       .other-content .content-container {
-        border-color: {color:Accent color 1};
+        border-color: #dadada;
       }
+
       .other-content .art {
-        border-color: {color:Accent color 2};
+        border-color: #00b4ff;
       }
+
       .other-content .arte {
-        border-color: {color:Accent color 2};
+        border-color: #00b4ff;
       }
+
       .other-content .design {
-        border-color: {color:Accent color 4};
+        border-color: #00ff5a;
       }
+
       .other-content .diseno {
-        border-color: {color:Accent color 4};
+        border-color: #00ff5a;
       }
+
       .other-content .video {
-        border-color: {color:Accent color 3};
+        border-color: #ff465a;
       }
+
       .other-content .videos {
-        border-color: {color:Accent color 3};
+        border-color: #ff465a;
       }
-      .other-content .audio, .other-content .other {
-        border-color: {color:Accent color 4};
+
+      .other-content .audio,
+      .other-content .other {
+        border-color: #00ff5a;
       }
+
       /*Single Post Rules*/
-      .singlepost > .single-content-container {
-        border-color: {color:Accent color 1};
+      .singlepost>.single-content-container {
+        border-color: #dadada;
       }
-      .singlepost > .single-content-container.art {
-        border-color: {color:Accent color 2};
+
+      .singlepost>.single-content-container.art {
+        border-color: #00b4ff;
       }
-      .singlepost > .single-content-container.arte {
-        border-color: {color:Accent color 2};
+
+      .singlepost>.single-content-container.arte {
+        border-color: #00b4ff;
       }
-      .singlepost > .single-content-container.video {
-        border-color: {color:Accent color 3};
+
+      .singlepost>.single-content-container.video {
+        border-color: #ff465a;
       }
-      .singlepost > .single-content-container.videos {
-        border-color: {color:Accent color 3};
+
+      .singlepost>.single-content-container.videos {
+        border-color: #ff465a;
       }
-      .singlepost > .single-content-container.audio {
-        border-color: {color:Accent color 4};
+
+      .singlepost>.single-content-container.audio {
+        border-color: #00ff5a;
       }
-      .singlepost > .single-content-container.chat > article :nth-child(even) {
-        background-color: {color:Accent color 6};
+
+      .singlepost>.single-content-container.chat>article :nth-child(even) {
+        background-color: #323232;
       }
+
       /*Pagination*/
       .pagination .menu-button {
-        border-color: {color:Accent color 1};
+        border-color: #dadada;
       }
-      .pagination .menu-button.prev, .pagination .menu-button.next {
-        background-color: {color:Blog background color} !important;
+
+      .pagination .menu-button.prev,
+      .pagination .menu-button.next {
+        background-color: #191919 !important;
       }
-      .pagination .menu-button.prev:hover, .pagination .menu-button.next:hover {
-        background-color: {color:Accent color 2} !important;
+
+      .pagination .menu-button.prev:hover,
+      .pagination .menu-button.next:hover {
+        background-color: #00b4ff !important;
       }
-      .pagination .menu-button .menu-button:hover, .pagination .menu-button .menu-button.about.active, .pagination .menu-button .menu-button.content.active {
-        background-color: {color:Accent color 2} !important;
-        border-color: {color:Accent color 1} !important;
-        color: {color:Blog background color};
+
+      .pagination .menu-button .menu-button:hover,
+      .pagination .menu-button .menu-button.about.active,
+      .pagination .menu-button .menu-button.content.active {
+        background-color: #00b4ff !important;
+        border-color: #dadada !important;
+        color: #191919;
       }
     }
   </style>
 
-  {text:Custom HTML code in document head section}
-
 </head>
 
-<body class="{select:Tumblr buttons} {block:IfCountTags}count-tags{/block:IfCountTags}">
+<body class="">
 
   <!-- Language Switcher -->
   <div id="langsw">
-    <p class="enbtn">EN</p><p class="esbtn">ES</p>
+    <p class="enbtn">EN</p>
+    <p class="esbtn">ES</p>
   </div>
 
   <!-- Error Splashscreen -->
   <div id="under-construction">
     <div class="stahp"></div>
-    <img src="{image:Blog logo}" alt="Website Logo">
-      <h2 class="langtext entext">This website is currently undergoing maintenance.</br>
-        Please check back later</h2>
-      <h2 class="langtext estext">Se le está dando mantenimiento a esta página ahora mismo.</br>
-        Por favor intenta acceder nuevamente más tarde</h2>
+    <img src="./Assets/DC-Logo.png" alt="Website Logo">
+    <h2 class="langtext entext">This website is currently undergoing maintenance.</br>
+      Please check back later</h2>
+    <h2 class="langtext estext">Se le está dando mantenimiento a esta página ahora mismo.</br>
+      Por favor intenta acceder nuevamente más tarde</h2>
   </div>
 
   <!-- Header -->
@@ -1142,89 +1438,95 @@
     <div class="header">
       <div class="logo">
         <a href="{BlogURL}" target="_self">
-          <img src="{image:Blog logo}" alt="Website Logo">
+          <img src="./Assets/DC-Logo.png" alt="Website Logo">
         </a>
       </div>
       <div class="header-info">
         <div class="website-header">
-          <h1>{Title}</h1>
+          <h1>Domingo Cruz</h1>
         </div>
         <div class="website-description">
           <h2 class="langtext entext">
-              Artist, Animator, Graphic Designer, Web Developer, and more.
+            Artist, Animator, Graphic Designer, Web Developer, and more.
           </h2>
           <h2 class="langtext estext">
-              Artista, Animador, Diseñador, Desarrollador Web, y mas.
+            Artista, Animador, Diseñador, Desarrollador Web, y mas.
           </h2>
         </div>
       </div>
     </div>
   </header>
 
-    <!-- Menu -->
-  {block:HomePage}
+  <!-- Menu -->
+
   <nav>
     <div class="mobile-menu">
       <i class="fa-solid fa-bars mobile-menu-open"></i>
       <i class="fa-solid fa-chevron-right"></i>
     </div>
     <div class="menu-container">
-      <a class="menu-button" href="{BlogURL}" target="_self"><div class="langtext entext">Home</div><div class="langtext estext">Inicio</div></a>
-      <a class="menu-button about"><div class="langtext entext">About me</div><div class="langtext estext">Sobre mí</div></a>
+      <a class="menu-button" href="{BlogURL}" target="_self">
+        <div class="langtext entext">Home</div>
+        <div class="langtext estext">Inicio</div>
+      </a>
+      <a class="menu-button about">
+        <div class="langtext entext">About me</div>
+        <div class="langtext estext">Sobre mí</div>
+      </a>
 
       <!--English -->
-      <a class="menu-button art langtext entext" >Art</a>
-      <a class="menu-button design langtext entext" >Design</a>
-      <a class="menu-button video langtext entext" >Video</a>
+      <a class="menu-button art langtext entext">Art</a>
+      <a class="menu-button design langtext entext">Design</a>
+      <a class="menu-button video langtext entext">Video</a>
       <!--English -->
 
       <!--Spanish -->
-      <a class="menu-button art langtext estext" >Arte</a>
-      <a class="menu-button design langtext estext" >Diseño</a>
-      <a class="menu-button video langtext estext" >Videos</a>
+      <a class="menu-button art langtext estext">Arte</a>
+      <a class="menu-button design langtext estext">Diseño</a>
+      <a class="menu-button video langtext estext">Videos</a>
       <!--Spanish -->
 
-      {block:HasPages}
-      {block:Pages}
       <a class="menu-button" href="{URL}" target="_self">{Label}</a>
-      {/block:Pages}
-      {/block:HasPages}
-      <a class="menu-button contact"><div class="langtext entext">Contact</div><div class="langtext estext">Contacto</div></a>
+      <a class="menu-button contact">
+        <div class="langtext entext">Contact</div>
+        <div class="langtext estext">Contacto</div>
+      </a>
     </div>
   </nav>
-  {/block:HomePage}
-  {block:TagPage}
   <nav>
     <div class="mobile-menu">
       <i class="fa-solid fa-bars mobile-menu-open"></i>
       <i class="fa-solid fa-chevron-right"></i>
     </div>
     <div class="menu-container">
-      <a class="menu-button" href="{BlogURL}" target="_self"><div class="langtext entext">Home</div><div class="langtext estext">Inicio</div></a>
-      <a class="menu-button about"><div class="langtext entext">About me</div><div class="langtext estext">Sobre mí</div></a>
+      <a class="menu-button" href="{BlogURL}" target="_self">
+        <div class="langtext entext">Home</div>
+        <div class="langtext estext">Inicio</div>
+      </a>
+      <a class="menu-button about">
+        <div class="langtext entext">About me</div>
+        <div class="langtext estext">Sobre mí</div>
+      </a>
 
       <!--English -->
-      <a class="menu-button art langtext entext" >Art</a>
-      <a class="menu-button design langtext entext" >Design</a>
-      <a class="menu-button video langtext entext" >Video</a>
+      <a class="menu-button art langtext entext">Art</a>
+      <a class="menu-button design langtext entext">Design</a>
+      <a class="menu-button video langtext entext">Video</a>
       <!--English -->
 
       <!--Spanish -->
-      <a class="menu-button art langtext estext" >Arte</a>
-      <a class="menu-button design langtext estext" >Diseño</a>
-      <a class="menu-button video langtext estext" >Videos</a>
+      <a class="menu-button art langtext estext">Arte</a>
+      <a class="menu-button design langtext estext">Diseño</a>
+      <a class="menu-button video langtext estext">Videos</a>
       <!--Spanish -->
 
-      {block:HasPages}
-      {block:Pages}
       <a class="menu-button" href="{URL}" target="_self">{Label}</a>
-      {/block:Pages}
-      {/block:HasPages}
-      <a class="menu-button contact"><div class="langtext entext">Contact</div><div class="langtext estext">Contacto</div></a>
+      <a class="menu-button contact">
+        <div class="langtext entext">Contact</div>
+        <div class="langtext estext">Contacto</div>
+      </a>
     </div>
   </nav>
-  {/block:TagPage}
-  {block:PermalinkPage}
   <nav>
     <div class="mobile-menu">
       <i class="fa-solid fa-bars mobile-menu-open"></i>
@@ -1235,19 +1537,11 @@
       <a class="menu-button about">{lang:About me}</a>
 
 
-      {block:HasPages}
-      {block:Pages}
       <a class="menu-button" href="{URL}" target="_self">{Label}</a>
-      {/block:Pages}
-      {/block:HasPages}
       <a class="menu-button contact">
-        {block:English}Contact{/block:English}
-        {block:Spanish}Contacto{/block:Spanish}
-        {block:German}Kontakt{/block:German}
       </a>
     </div>
   </nav>
-  {/block:PermalinkPage}
 
   <!-- About me -->
   <section id="about-me" class="toggles">
@@ -1259,32 +1553,42 @@
     <div class="info-container">
       <div class="info-col">
         <div class="profile-pic">
-          <img src="{image:About portrait}">
+          <img src="./Assets/Portfolio-Picture.jpeg">
         </div>
         <div class="social-icons">
           <a href="https://www.linkedin.com/in/domingo-cruz-76908919a/" target="_blank">
-            <img src="{image:LinkedIn logo}" alt="LinkedIn Icon">
+            <img src="./Assets/In.png" alt="LinkedIn Icon">
           </a>
           <a href="https://www.instagram.com/domingocsart/" target="_blank">
-            <img src="{image:Instagram logo}" alt="Instagram Icon">
+            <img src="./Assets/insta.png" alt="Instagram Icon">
           </a>
           <a href="https://www.youtube.com/channel/UCkju010_NKh3rJeCyDPaGAQ" target="_blank">
-            <img src="{image:Youtube logo}" alt="Youtube Icon">
+            <img src="./Assets/yt.png" alt="Youtube Icon">
           </a>
         </div>
       </div>
 
       <div class="info-col">
         <div class="info-txt langtext entext">
-          <p>Panamanian professional with a passion for art, design, animation, web development, media literacy, philosophy, among many other things.</p>
-          <p>I aim to bring my own voice and innovative style to the work I do, while offering a new and efficient solution to each project; adapting to their individual needs and looking to improve and evolve as a professional within the company I work in.</p>
-          <p>I studied mechanical engineering in Germany, where I lived for 7 years, before moving back to Panama where I went back to college to study Graphic Design</p>
-          <p>This is a page to showcase my work.</p>           
+          <p>Panamanian professional with a passion for art, design, animation, web development, media literacy,
+            philosophy, among many other things.</p>
+          <p>I aim to bring my own voice and innovative style to the work I do, while offering a new and efficient
+            solution to each project; adapting to their individual needs and looking to improve and evolve as a
+            professional within the company I work in.</p>
+          <p>I studied mechanical engineering in Germany, where I lived for 7 years, before moving back to Panama where
+            I went back to college to study Graphic Design</p>
+          <p>This is a page to showcase my work.</p>
         </div>
         <div class="info-txt langtext estext">
-          <p>Soy un profesional panameño con pasión por el arte digital, diseño gráfico, el diseño de páginas web, la animación, producción de audio y video, entre otros.</p>
-          <p>Busco llevar mi voz y mi estilo innovador a cada proyecto del que formo parte, y a su vez ofrecer una solución nueva y eficiente, adaptándome a las necesidades individuales de cada situación y buscando mejorar y evolucionar de manera profesional dentro de mi industria.</p>
-          <p>Mi trayectoria me permite ofrecer una perspectiva única, ya que antes de iniciar mis estudios en la rama del diseño completé una carrera en Ingeniería Mecánica en Alemania y estoy finamente atento a las tendencias y cambios del arte y mercadeo por medio de las redes sociales, buscando información que compila y analiza estas tendencias y desarrollando mis propias interpretaciones y voz crítica.</p>
+          <p>Soy un profesional panameño con pasión por el arte digital, diseño gráfico, el diseño de páginas web, la
+            animación, producción de audio y video, entre otros.</p>
+          <p>Busco llevar mi voz y mi estilo innovador a cada proyecto del que formo parte, y a su vez ofrecer una
+            solución nueva y eficiente, adaptándome a las necesidades individuales de cada situación y buscando mejorar
+            y evolucionar de manera profesional dentro de mi industria.</p>
+          <p>Mi trayectoria me permite ofrecer una perspectiva única, ya que antes de iniciar mis estudios en la rama
+            del diseño completé una carrera en Ingeniería Mecánica en Alemania y estoy finamente atento a las tendencias
+            y cambios del arte y mercadeo por medio de las redes sociales, buscando información que compila y analiza
+            estas tendencias y desarrollando mis propias interpretaciones y voz crítica.</p>
           <p>En esta página deseo demostrar mi trabajo.</p>
         </div>
       </div>
@@ -1301,17 +1605,17 @@
     <div class="info-container">
       <div class="info-col">
         <div class="profile-pic">
-          <img src="{image:About portrait}">
+          <img src="./Assets/Portfolio-Picture.jpeg">
         </div>
         <div class="social-icons">
-            <a href="https://www.linkedin.com/in/domingo-cruz-76908919a/" target="_blank">
-            <img src="{image:LinkedIn logo}" alt="LinkedIn Icon">
+          <a href="https://www.linkedin.com/in/domingo-cruz-76908919a/" target="_blank">
+            <img src="./Assets/In.png" alt="LinkedIn Icon">
           </a>
           <a href="https://www.instagram.com/domingocsart/" target="_blank">
-            <img src="{image:Instagram logo}" alt="Instagram Icon">
+            <img src="./Assets/insta.png" alt="Instagram Icon">
           </a>
           <a href="https://www.youtube.com/channel/UCkju010_NKh3rJeCyDPaGAQ" target="_blank">
-            <img src="{image:Youtube logo}" alt="Youtube Icon">
+            <img src="./Assets/yt.png" alt="Youtube Icon">
           </a>
         </div>
       </div>
@@ -1323,7 +1627,8 @@
           <p>I speak English, Spanish and German, so feel free to use whichever you are most comfortable with!</p>
         </div>
         <div class="info-txt langtext estext">
-          <p>Puedes comunicarte conmigo ya sea a mi correo electrónico o por cualquiera de mis cuentas de redes sociales.</p>
+          <p>Puedes comunicarte conmigo ya sea a mi correo electrónico o por cualquiera de mis cuentas de redes
+            sociales.</p>
           <p>Email: domingocruz05@gmail.com</p>
           <p>Hablo español, inglés, y aleman, asique puedes usar el idioma con el que te sientas más comodo.</p>
         </div>
@@ -1332,7 +1637,6 @@
   </section>
 
 
-  {block:HomePage}
   <!-- HOMEPAGE CODE -->
 
   <!-- Pinned Section -->
@@ -1361,17 +1665,12 @@
 
   <section id="all-section">
     <div id="allposts" class="other-content">
-      {block:Posts}
-
-      {block:Photo}
       <a href="{RelativePermalink}" target="_self" class="content-container {TagsAsClasses}">
         <div class="post-overlay"></div>
         {block:Title}<h3>{Title}</h3>{/block:Title}
         <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
       </a>
-      {/block:Photo}
 
-      {block:Panorama}
       <a href="{RelativePermalink}" target="_self" class="content-container {TagsAsClasses}">
         <div class="post-overlay"></div>
         {block:Title}<h3>{Title}</h3>{/block:Title}
@@ -1457,273 +1756,6 @@
   <!-- HOMEPAGE CODE END -->
   {/block:HomePage}
 
-  {block:PermalinkPage}
-  <!-- SINGLE POST PAGE CODE -->
-
-  {block:PostTitle}
-  <section class="pagename">
-    <div class="divider">
-      <h2>
-        {PostTitle}<br>
-        {PostSummary}
-      </h2>
-    </div>
-  </section>
-  {/block:PostTitle}
-
-  {block:Posts}
-  <section id="PermalinkPage">
-    <div class="singlepost">
-
-      {block:Text}
-      <main class="single-content-container npf-post {TagsAsClasses}">
-        <article>
-          <p>{Body}</p>
-        </article>
-      </main>
-      {/block:Text}
-
-      {block:Photo}
-      <main class="single-content-container {TagsAsClasses}">
-        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
-        <article>
-          {block:Caption}
-          <p>{Caption}</p>
-          {/block:Caption}
-        </article>
-      </main>
-      {/block:Photo}
-
-      {block:Panorama}
-      <main class="single-content-container {TagsAsClasses}">
-        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
-        <article>
-          {block:Caption}
-          <p>{Caption}</p>
-          {/block:Caption}
-        </article>
-      </main>
-      {/block:Panorama}
-
-      {block:Photoset}
-      <main class="single-content-container {TagsAsClasses}">
-        <div class="pinned-content">
-          {block:Photos}
-          <img class="pinned" src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
-          {/block:Photos}
-        </div>
-        <div class="pin-slider-bullets"></div>
-        <article>
-          {block:Caption}
-          <p>{Caption}</p>
-          {/block:Caption}
-        </article>
-      </main>
-      {/block:Photoset}
-
-      {block:Video}
-      <main class="single-content-container {TagsAsClasses} video">
-        {VideoEmbed-700}
-        <article>
-          {block:Caption}
-          <p>{Caption}</p>
-          {/block:Caption}
-        </article>
-      </main>
-      {/block:Video}
-
-      {block:Audio}
-      <main class="single-content-container {TagsAsClasses} audio">
-        <audio controls>
-          <source src="{RawAudioURL} {block:ExternalAudio}{ExternalAudioURL}{/block:ExternalAudio}">
-        </audio>
-        {block:Caption}
-        <p>{Caption}</p>
-        {/block:Caption}
-      </main>
-      {/block:Audio}
-
-      {block:Answer}
-      <main class="single-content-container {TagsAsClasses} question">
-        <h2>{Question}</h2>
-        <div class="question-asker">
-          <img src="{AskerPortraitURL-128}" alt="Icon of {Asker}">
-          <h3>{Asker} asks</h3>
-        </div>
-        <article>
-          <p>{Answer}</p>
-        </article>
-      </main>
-      {/block:Answer}
-
-      {block:Quote}
-      <main class="single-content-container {TagsAsClasses} quote">
-        <article>
-          <h2>{Quote}</h2>
-          {block:Source}
-          <h3>{Source}</h3>
-          {/block:Source}
-        </article>
-      </main>
-      {/block:Quote}
-
-      {block:Link}
-      <main class="single-content-container {TagsAsClasses} link">
-        <div class="link-info">
-          <a href="{URL}" target="_blank" class="{TagsAsClasses}">
-            <img src="{Thumbnail-HighRes}" alt="Link to {Name}">
-          </a>
-          <a href="{URL}" target="_blank" class="{TagsAsClasses}">
-            <h2>{Host}: {Name}</h2>
-            {block:Author}<h3>{Author}</h3>{/block:Author}
-            {block:Excerpt}<p>{Excerpt}</p>{/block:Excerpt}
-          </a>
-        </div>
-        <article>
-          {block:Description}
-          <p>{Description}</p>
-          {/block:Description}
-        </article>
-      </main>
-      {/block:Link}
-
-      {block:Chat}
-      <main class="single-content-container {TagsAsClasses} chat">
-        <article>
-          {block:Lines}
-          <p>{UserNumber} - {Name}: {Line}</p>
-          {/block:Lines}
-        </article>
-      </main>
-      {/block:Chat}
-
-    </div>
-  </section>
-
-  {block:Date}
-  <section id="PostDate">
-    <div class="divider">
-      <h3>
-        {lang:Posted on DayOfWeek DayOfMonth Month Year}
-      </h3>
-    </div>
-  </section>
-  {/block:Date}
-
-  {/block:Posts}
-
-  <!-- SINGLE POST PAGE CODE END -->
-  {/block:PermalinkPage}
-
-  {block:TagPage}
-  <!-- TAG PAGE CODE -->
-
-  <section class="pagename">
-    <div class="divider">
-      <h3>{Tag}</h3>
-    </div>
-  </section>
-
-  <section id="TagPage">
-    <div id="allposts" class="other-content">
-      {block:Posts}
-
-      {block:Photo}
-      <a href="{RelativePermalink}" target="_self" class="content-container {TagsAsClasses}">
-        <div class="post-overlay"></div>
-        {block:Title}<h3>{Title}</h3>{/block:Title}
-        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
-      </a>
-      {/block:Photo}
-
-      {block:Panorama}
-      <a href="{RelativePermalink}" target="_self" class="content-container {TagsAsClasses}">
-        <div class="post-overlay"></div>
-        {block:Title}<h3>{Title}</h3>{/block:Title}
-        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
-      </a>
-      {/block:Panorama}
-
-      {block:Photoset}
-      <a href="{RelativePermalink}" target="_self" class="content-container design">
-        <div class="post-overlay"></div>
-        {block:Title}<h3>{Title}</h3>{/block:Title}
-        <div class="img-mult">
-          {block:Photos}
-          <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
-          {/block:Photos}
-        </div>
-      </a>
-      {/block:Photoset}
-
-      {block:Video}
-      <a href="{RelativePermalink}" target="_self" class="content-container video {TagsAsClasses}">
-        <div class="post-overlay"></div>
-        {block:Title}<h3>{Title}</h3>{/block:Title}
-        {VideoEmbed-700}
-        <!-- <video src="" autoplay muted controls></video> -->
-      </a>
-      {/block:Video}
-
-      {block:Audio}
-      <a class="content-container audio {TagsAsClasses}">
-        <div class="post-audio">
-          {block:Title}<h3 href="{RelativePermalink}" target="_self">{Title}</h3>{/block:Title}
-          <audio controls>
-            <source src="{RawAudioURL} {block:ExternalAudio}{ExternalAudioURL}{/block:ExternalAudio}">
-          </audio>
-          {block:Caption}
-          <p>{Caption}</p>
-          {/block:Caption}
-        </div>
-      </a>
-      {/block:Audio}
-
-      {block:Quote}
-      <a class="content-container quote {TagsAsClasses}">
-        <div class="post-overlay"></div>
-        {block:Source}<h3 href="{RelativePermalink}" target="_self">{Source}</h3>{/block:Source}
-        <h2>{Quote}</h2>
-      </a>
-      {/block:Quote}
-
-      {block:Link}
-      <a href="{RelativePermalink}" target="_blank" class="content-container link {TagsAsClasses}">
-        <h3>{Name}</h3>
-        <i class="fa-solid fa-up-right-from-square"></i>
-        {block:Description}
-        <p>{Description}</p>
-        {/block:Description}
-      </a>
-      {/block:Link}
-
-      {block:Chat}
-      <a href="{RelativePermalink}" target="_blank" class="content-container chat {TagsAsClasses}">
-        {block:Title}<h3>{Title}</h3> {/block:Title}
-        {block:Lines}
-        <p>{Name}: {Line}</p>
-        {/block:Lines}
-      </a>
-      {/block:Chat}
-
-      {block:Answer}
-      <a href="{RelativePermalink}" target="_self" class="content-container question {TagsAsClasses}">
-        <h3>{Question}</h3>
-        <div class="question-asker">
-          <img src="{AskerPortraitURL-128}" alt="Icon of {Asker}">
-          <p>{Asker} asks</p>
-        </div>
-        <p>{Answer}</p>
-      </a>
-      {/block:Answer}
-
-      {/block:Posts}
-    </div>
-  </section>
-
-  <!-- TAG PAGE CODE END -->
-  {/block:TagPage}
-
   <!-- Pagination -->
   <section id="pages">
     <div class="transition">
@@ -1747,18 +1779,18 @@
     <div class="footer-icons">
       <div class="logo">
         <a href="{BlogURL}" target="_self">
-          <img src="{image:Blog logo}" alt="Website Logo">
+          <img src="./Assets/DC-Logo.png" alt="Website Logo">
         </a>
       </div>
       <div class="social-icons">
         <a href="https://www.linkedin.com/in/domingo-cruz-76908919a/" target="_blank">
-            <img src="{image:LinkedIn logo}" alt="LinkedIn Icon">
-          </a>
+          <img src="./Assets/In.png" alt="LinkedIn Icon">
+        </a>
         <a href="https://www.instagram.com/domingocsart/" target="_blank">
-          <img src="{image:Instagram logo}" alt="Instagram Icon">
+          <img src="./Assets/insta.png" alt="Instagram Icon">
         </a>
         <a href="https://www.youtube.com/channel/UCkju010_NKh3rJeCyDPaGAQ" target="_blank">
-          <img src="{image:Youtube logo}" alt="Youtube Icon">
+          <img src="./Assets/yt.png" alt="Youtube Icon">
         </a>
       </div>
     </div>
@@ -1779,33 +1811,33 @@
 
     const postsAPIes = 'https://api.tumblr.com/v2/blog/domingocruzart.tumblr.com/posts?tag=es&api_key=9dQTZQJQZCRMwV9qLVxS15SL6PiXSXP94Fcw3UhZbNQcoyVHkR&npf=true&limit=15'
 
-    if (document.documentElement.lang === "es-ES"){
-    postsAPI = postsAPIes
+    if (document.documentElement.lang === "es-ES") {
+      postsAPI = postsAPIes
     }
     else {
-    postsAPI = postsAPIen
+      postsAPI = postsAPIen
     }
 
-    if ( window.location.href !== "https://www.domingocs.art/" ){
+    if (window.location.href !== "https://www.domingocs.art/") {
       var p = window.location.href
       var q = p.substr(p.length - 1)
       var o = q - 1
-      var t = 15*o
+      var t = 15 * o
       postsAPI = postsAPI + "&offset=" + t.toString();
     }
 
     let postsJSON = $.getJSON(postsAPI, function getPostsJSONFile(data) {
-    getPostsData = JSON.stringify(data)
-    postsData = JSON.parse(getPostsData)
-    postsResponse = postsData.response
+      getPostsData = JSON.stringify(data)
+      postsData = JSON.parse(getPostsData)
+      postsResponse = postsData.response
 
-    psta = postsResponse.total_posts
-    pstaDiv = psta/15
-    }) 
-    .done(getAllPosts)
-    .fail(failedPostRetrieval)
-    .always(cleanAllPosts)
-    .always(setPagination);
+      psta = postsResponse.total_posts
+      pstaDiv = psta / 15
+    })
+      .done(getAllPosts)
+      .fail(failedPostRetrieval)
+      .always(cleanAllPosts)
+      .always(setPagination);
 
     // Populate posts
     function getAllPosts() {
@@ -1816,157 +1848,157 @@
 
       // create images
       function createImage(media) {
-      let image = document.createElement('img')
-      image.src = media.url
-      image.setAttribute('srcset', media.url)
-      return image
+        let image = document.createElement('img')
+        image.src = media.url
+        image.setAttribute('srcset', media.url)
+        return image
       }
 
       // create audio posts 
       function createAudio(content) {
-      let audioWrapper = document.createElement('div')
-      audioWrapper.classList.add('audio-wrapper')
-      let audioPost = document.createElement('div')
-      audioPost.classList.add('audio-container')
-      audioWrapper.innerHTML = content.embed_html
-      return audioWrapper
+        let audioWrapper = document.createElement('div')
+        audioWrapper.classList.add('audio-wrapper')
+        let audioPost = document.createElement('div')
+        audioPost.classList.add('audio-container')
+        audioWrapper.innerHTML = content.embed_html
+        return audioWrapper
       }
 
       // create polls
       function createPoll(content, permalink) {
-      let id = permalink.substring(permalink.lastIndexOf("/") + 1);
-      let poll = document.createElement('div')
-      poll.classList.add('poll')
-      poll.append(content.question)
-      content.answers.map((answers) => {
+        let id = permalink.substring(permalink.lastIndexOf("/") + 1);
+        let poll = document.createElement('div')
+        poll.classList.add('poll')
+        poll.append(content.question)
+        content.answers.map((answers) => {
           let answer = document.createElement('a')
           answer.classList.add('poll-option')
           answer.target = "_blank"
           answer.href = `https://tumblr.com/${user}/${id}`
           answer.innerHTML = answers.answer_text
           poll.append(answer)
-      })
-      return poll
+        })
+        return poll
       }
 
       // create links
       function createLink(content) {
-      let link = document.createElement('a')
-      link.classList.add('post-link')
-      link.href = content.url
+        let link = document.createElement('a')
+        link.classList.add('post-link')
+        link.href = content.url
 
-      let posterImage = document.createElement('i')
-      posterImage.classList.add('fa-solid', 'fa-up-right-from-square')
-      link.append(posterImage)
-      if (content.description) {
+        let posterImage = document.createElement('i')
+        posterImage.classList.add('fa-solid', 'fa-up-right-from-square')
+        link.append(posterImage)
+        if (content.description) {
           let description = document.createElement('p')
           description.textContent = content.description
           link.append(description)
-      }
-      return link
+        }
+        return link
       }
 
       // formats text blocks   
       function createText(content) {
-      let str = content.text.replaceAll('<', '&lt;')
-      let texts = str.replaceAll('>', '&gt;')
-      if (content.text === '') return ''
-      let output = ""
-      // if there is formatted content
-      if (content.formatting) {
+        let str = content.text.replaceAll('<', '&lt;')
+        let texts = str.replaceAll('>', '&gt;')
+        if (content.text === '') return ''
+        let output = ""
+        // if there is formatted content
+        if (content.formatting) {
           let characters = Array.from(texts.split(''))
           for (const [i, text] of characters.entries()) {
-          const char = texts[i]
-          // look for end of format
-          const endFormatTypes = content.formatting.filter((f) => f.end === i);
-          // for each type, create a closing tag
-          for (const f of endFormatTypes) {
+            const char = texts[i]
+            // look for end of format
+            const endFormatTypes = content.formatting.filter((f) => f.end === i);
+            // for each type, create a closing tag
+            for (const f of endFormatTypes) {
               if (f.type === "link") {
-              output += "</a>"
+                output += "</a>"
               }
               if (f.type === "color") {
-              output += "</span>"
+                output += "</span>"
               }
               if (f.type === "bold") {
-              output += "</b>"
+                output += "</b>"
               }
               if (f.type === "small") {
-              output += "</span>"
+                output += "</span>"
               }
               if (f.type === "mention") {
-              output += "</a>"
+                output += "</a>"
               }
               if (f.type === "italic") {
-              output += "</i>"
+                output += "</i>"
               }
-          }
-          // look for start of format
-          const startFormatTypes = content.formatting.filter((f) => f.start === i);
-          // for each type, create an opening tag 
-          for (const f of startFormatTypes) {
+            }
+            // look for start of format
+            const startFormatTypes = content.formatting.filter((f) => f.start === i);
+            // for each type, create an opening tag 
+            for (const f of startFormatTypes) {
               if (f.type === "link") {
-              output += `<a href="${f.url}">`
+                output += `<a href="${f.url}">`
               }
               if (f.type === "color") {
-              output += `<span style="color:${f.hex}">`
+                output += `<span style="color:${f.hex}">`
               }
               if (f.type === "bold") {
-              output += `<b>`
+                output += `<b>`
               }
               if (f.type === "small") {
-              output += `<span style="font-size:.8rem">`
+                output += `<span style="font-size:.8rem">`
               }
               if (f.type === "mention") {
-              output += `<a className="mention" href="${f.blog.url}">`;
+                output += `<a className="mention" href="${f.blog.url}">`;
               }
               if (f.type === "italic") {
-              output += `<i>`
+                output += `<i>`
               }
+            }
+            output += char
           }
-          output += char
-          }
-      }
-      // if no formatting, just output the text 
-      else {
+        }
+        // if no formatting, just output the text 
+        else {
           output += texts
-      }
-      // might scrap this part
-      if (content.subtype === "unordered-list-item") {
+        }
+        // might scrap this part
+        if (content.subtype === "unordered-list-item") {
           let li = document.createElement('li')
           li.classList.add(content.subtype)
           li.innerHTML = output
           return li
-      }
-      // create an element to put the formatted text in, and then return it  
-      else {
+        }
+        // create an element to put the formatted text in, and then return it  
+        else {
           let p = document.createElement('p')
           p.innerHTML = output
           return p
-      }
+        }
       }
 
       // create content inside of each row  
       function createRow(content, permalink) {
-      // sort through content types      
-      switch (content.type) {
+        // sort through content types      
+        switch (content.type) {
           case 'text':
-          return createText(content)
-          break;
+            return createText(content)
+            break;
 
           case 'image':
-          return createImage(content.media[3])
-          break;
+            return createImage(content.media[3])
+            break;
 
           case 'audio':
-          return createAudio(content)
-          break;
+            return createAudio(content)
+            break;
 
           case 'link':
-          return createLink(content)
-          break;
+            return createLink(content)
+            break;
 
           case 'video':
-          if (content.provider === 'tumblr') {
+            if (content.provider === 'tumblr') {
               let video = document.createElement('video');
               video.src = content.url;
               video.muted = true;
@@ -1976,7 +2008,7 @@
               video.autoplay = true;
               return video
 
-          } else {
+            } else {
               let video = document.createElement('iframe')
               video.classList.add('video-iframe')
               video.src = content.embed_iframe?.url ?? content.media.url
@@ -1984,51 +2016,51 @@
               let videoHeight = content.embed_iframe?.height ?? content.media.height
               video.style.aspectRatio = `${videoWidth} / ${videoHeight}`
               return video
-          }
-          break;
+            }
+            break;
 
           case 'poll':
-          return createPoll(content, permalink)
-          break;
+            return createPoll(content, permalink)
+            break;
 
           // in case there are new post types/types that were missed
           default:
-          return `this ${content.type} npf block is not supported yet`
-      }
+            return `this ${content.type} npf block is not supported yet`
+        }
       }
 
       // create each row  
       function createRows(id, content, layout, permalink, trail = null) {
-      let rows = document.createElement('div')
-      rows.classList.add('content')
-      // if there are indexes with asks 
-      let asks = []
-      content.map((block) => {
+        let rows = document.createElement('div')
+        rows.classList.add('content')
+        // if there are indexes with asks 
+        let asks = []
+        content.map((block) => {
           rows.append(createRow(block, permalink))
-      })
-      return rows.innerHTML
+        })
+        return rows.innerHTML
       }
 
       // loop through each post in the array
       for (const regPost of regPosts) {
-      let npf = regPost.content
-      let permalink = regPost.post_url
-      let articleId = regPost.id
-      let articleTags = regPost.tags
-      articleTags = JSON.stringify(articleTags)
-      articleTags = articleTags.replaceAll(',', ' ')
-      articleTags = articleTags.replaceAll('"', '')
-      articleTags = articleTags.replaceAll('[', '')
-      articleTags = articleTags.replaceAll(']', '')
-      let article = document.createElement('a')
+        let npf = regPost.content
+        let permalink = regPost.post_url
+        let articleId = regPost.id
+        let articleTags = regPost.tags
+        articleTags = JSON.stringify(articleTags)
+        articleTags = articleTags.replaceAll(',', ' ')
+        articleTags = articleTags.replaceAll('"', '')
+        articleTags = articleTags.replaceAll('[', '')
+        articleTags = articleTags.replaceAll(']', '')
+        let article = document.createElement('a')
 
-      article.id = articleId
-      article.className = articleTags
-      article.classList.add('content-container')
-      article.href = permalink
+        article.id = articleId
+        article.className = articleTags
+        article.classList.add('content-container')
+        article.href = permalink
 
-      // if it is an original post  
-      if (npf.length > 0) {
+        // if it is an original post  
+        if (npf.length > 0) {
           let title = document.createElement('h3')
           let titleContent = regPost.summary
           title.append(titleContent)
@@ -2042,66 +2074,66 @@
           article.prepend(title)
           article.prepend(overlay)
 
-      }
-      container.append(article)
+        }
+        container.append(article)
 
-      console.log("Posts retrieved")
+        console.log("Posts retrieved")
       }
 
     }
-    
+
     // Error Screen if retrieval failed 
     function failedPostRetrieval() {
-        console.log("error retrieving posts");
-        $('#under-construction').css("display", "flex");
+      console.log("error retrieving posts");
+      $('#under-construction').css("display", "flex");
     }
-    
+
     // Setup posts 
     function cleanAllPosts() {
       //reformat media content for multi images
       $('a.content-container.multimg').each(function () {
-          if ($(this).children('img').length > 1) {
+        if ($(this).children('img').length > 1) {
           $(this).append('<div class="img-mult"></div>');
           $(this).children('.img-mult').append($(this).children('img'));
           $(this).children('.img-mult').children().eq(0).addClass('activeimg');
           $('.img-mult').each(function () {
-          var j = 0;
-          var m = 2000;
-          var className = this;
-          autoplay2 = setInterval(function () {
+            var j = 0;
+            var m = 2000;
+            var className = this;
+            autoplay2 = setInterval(function () {
               if (j > $(className).children().length - 1) { j = 0; }
               $(className).children().removeClass('activeimg');
               $(className).children().eq(j).addClass('activeimg');
               j++;
-          }, m);
+            }, m);
           });
-          }
-          if ($(this).children('.content-rows').length > 1) {
+        }
+        if ($(this).children('.content-rows').length > 1) {
           $(this).append('<div class="img-mult"></div>');
           $(this).children('.img-mult').append($(this).children('.content-rows').find('img'));
           $(this).children('.img-mult').children().eq(0).addClass('activeimg');
           $('.img-mult').each(function () {
-          var j = 0;
-          var m = 2000;
-          var className = this;
-          autoplay2 = setInterval(function () {
+            var j = 0;
+            var m = 2000;
+            var className = this;
+            autoplay2 = setInterval(function () {
               if (j > $(className).children().length - 1) { j = 0; }
               $(className).children().removeClass('activeimg');
               $(className).children().eq(j).addClass('activeimg');
               j++;
-          }, m);
+            }, m);
           });
-          }
+        }
       });
       console.log("Post retrieval complete");
     }
 
     //create pagination
-    function setPagination(){
+    function setPagination() {
       let paga = parseInt(pstaDiv) + 1
-      for (let g = 0 ; g < paga; g++){
+      for (let g = 0; g < paga; g++) {
         $('a.menu-button.next').before($('<a class="menu-button jump_page"></a>'));
-        let gg = g+1
+        let gg = g + 1
         $('a.menu-button.jump_page').eq(g).text(gg)
       }
 
@@ -2124,22 +2156,22 @@
       $('.jump_page').remove();
       $('#pinned-section').css("display", "block");
       $('.pinned-section').css("display", "flex");
-        postsAPI = postsAPIen;
-        if ( window.location.href !== "https://www.domingocs.art/" ){
-          var p = window.location.href
-          var q = p.substr(p.length - 1)
-          var o = q - 1
-          var t = 15*o
-          postsAPI = postsAPI + "&offset=" + t.toString();
-        }
-        let postsJSON = $.getJSON(postsAPI, function getPostsJSONFile(data) {
-          getPostsData = JSON.stringify(data)
-          postsData = JSON.parse(getPostsData)
-          postsResponse = postsData.response
+      postsAPI = postsAPIen;
+      if (window.location.href !== "https://www.domingocs.art/") {
+        var p = window.location.href
+        var q = p.substr(p.length - 1)
+        var o = q - 1
+        var t = 15 * o
+        postsAPI = postsAPI + "&offset=" + t.toString();
+      }
+      let postsJSON = $.getJSON(postsAPI, function getPostsJSONFile(data) {
+        getPostsData = JSON.stringify(data)
+        postsData = JSON.parse(getPostsData)
+        postsResponse = postsData.response
 
-          psta = postsResponse.total_posts
-          pstaDiv = psta/15
-        }) 
+        psta = postsResponse.total_posts
+        pstaDiv = psta / 15
+      })
         .done(getAllPosts)
         .fail(failedPostRetrieval)
         .always(cleanAllPosts)
@@ -2151,22 +2183,22 @@
       $('.jump_page').remove();
       $('#pinned-section').css("display", "block");
       $('.pinned-section').css("display", "flex");
-        postsAPI = postsAPIes;
-        if ( window.location.href !== "https://www.domingocs.art/" ){
-          var p = window.location.href
-          var q = p.substr(p.length - 1)
-          var o = q - 1
-          var t = 15*o
-          postsAPI = postsAPI + "&offset=" + t.toString();
-        }
-        let postsJSON = $.getJSON(postsAPI, function getPostsJSONFile(data) {
-          getPostsData = JSON.stringify(data)
-          postsData = JSON.parse(getPostsData)
-          postsResponse = postsData.response
+      postsAPI = postsAPIes;
+      if (window.location.href !== "https://www.domingocs.art/") {
+        var p = window.location.href
+        var q = p.substr(p.length - 1)
+        var o = q - 1
+        var t = 15 * o
+        postsAPI = postsAPI + "&offset=" + t.toString();
+      }
+      let postsJSON = $.getJSON(postsAPI, function getPostsJSONFile(data) {
+        getPostsData = JSON.stringify(data)
+        postsData = JSON.parse(getPostsData)
+        postsResponse = postsData.response
 
-          psta = postsResponse.total_posts
-          pstaDiv = psta/15
-        }) 
+        psta = postsResponse.total_posts
+        pstaDiv = psta / 15
+      })
         .done(getAllPosts)
         .fail(failedPostRetrieval)
         .always(cleanAllPosts)
@@ -2175,221 +2207,221 @@
 
 
     // REPOPULATE WHEN USING PAGINATION
-      //Jump Pages
-      $('.pagination').on("click", '.jump_page' , function () {
-        $("#allposts").children().remove();
-        //add current page class
-        $('.current_page').addClass('jump_page');
-        $('.current_page').removeClass('current_page');
-        $(this).removeClass('jump_page');
-        $(this).addClass('current_page');
-        //set offset
-        var p = $('.current_page').text();
-        var q = parseInt(p)
-        var o = q - 1
-        var t = 15*o
-        postsAPI = postsAPI + "&offset=" + t.toString();
-        
-        //call new posts
-        let postsJSON = $.getJSON(postsAPI, function getPostsJSONFile(data) {
-          getPostsData = JSON.stringify(data)
-          postsData = JSON.parse(getPostsData)
-          postsResponse = postsData.response
+    //Jump Pages
+    $('.pagination').on("click", '.jump_page', function () {
+      $("#allposts").children().remove();
+      //add current page class
+      $('.current_page').addClass('jump_page');
+      $('.current_page').removeClass('current_page');
+      $(this).removeClass('jump_page');
+      $(this).addClass('current_page');
+      //set offset
+      var p = $('.current_page').text();
+      var q = parseInt(p)
+      var o = q - 1
+      var t = 15 * o
+      postsAPI = postsAPI + "&offset=" + t.toString();
 
-          psta = postsResponse.total_posts
-          pstaDiv = psta/15
-        }) 
-        .done(getAllPosts)
-        .fail(failedPostRetrieval)
-        .always(cleanAllPosts)
-        //hide prev or next if needed 
-        .always( function(){
-          let paga = parseInt(pstaDiv) + 1
-          let l1 = paga;
-          let l2a = $('.current_page').text();
-          let l2 = parseInt(l2a);
-          if ( l2 === 1 ){
-            $('a.menu-button.prev').css("display", "none");
-            $('a.menu-button.next').css("display", "inline-flex");
-          }
-          else if ( l2 === l1 ) {
-            $('a.menu-button.next').css("display", "none");
-            $('a.menu-button.prev').css("display", "inline-flex");
-          }
-          else{
-            $('a.menu-button.next').css("display", "inline-flex");
-            $('a.menu-button.prev').css("display", "inline-flex");
-          }
-          });
-      });
-      //Next Page
-      $('a.menu-button.next').on("click", function () {
-        $("#allposts").children().remove();
-        //add current page class
-        let pgg = $('.current_page').text();
-        let pggn = parseInt(pgg)
-        let pgnt = pggn + 1
-        console.log(pggn);
-        console.log(pgnt);
-        $('.current_page').addClass('jump_page');
-        $('.current_page').removeClass('current_page');
-
-        $('a.menu-button.jump_page').each(function () {
-          if ($(this).text() == pgnt) {
-            $(this).removeClass('jump_page');
-            $(this).addClass('current_page');
-          }
-        });
-        //set offset
-        var p = $('.current_page').text();
-        var q = parseInt(p)
-        var o = q - 1
-        var t = 15*o
-        postsAPI = postsAPI + "&offset=" + t.toString();
-        
-        //call new posts
-        let postsJSON = $.getJSON(postsAPI, function getPostsJSONFile(data) {
-          getPostsData = JSON.stringify(data)
-          postsData = JSON.parse(getPostsData)
-          postsResponse = postsData.response
-
-          psta = postsResponse.total_posts
-          pstaDiv = psta/15
-        }) 
-        .done(getAllPosts)
-        .fail(failedPostRetrieval)
-        .always(cleanAllPosts)
-        //hide prev or next if needed 
-        .always( function(){
-          let paga = parseInt(pstaDiv) + 1
-          let l1 = paga;
-          let l2a = $('.current_page').text();
-          let l2 = parseInt(l2a);
-          if ( l2 === 1 ){
-            $('a.menu-button.prev').css("display", "none");
-            $('a.menu-button.next').css("display", "inline-flex");
-          }
-          else if ( l2 === l1 ) {
-            $('a.menu-button.next').css("display", "none");
-            $('a.menu-button.prev').css("display", "inline-flex");
-          }
-          else{
-            $('a.menu-button.next').css("display", "inline-flex");
-            $('a.menu-button.prev').css("display", "inline-flex");
-          }
-          });
-      });
-      //Prev Page
-      $('a.menu-button.prev').on("click", function () {
-        $("#allposts").children().remove();
-        //add current page class
-        let pgg = $('.current_page').text();
-        let pggn = parseInt(pgg)
-        let pgnt = pggn - 1
-        console.log(pggn);
-        console.log(pgnt);
-        $('.current_page').addClass('jump_page');
-        $('.current_page').removeClass('current_page');
-
-        $('a.menu-button.jump_page').each(function () {
-          if ($(this).text() == pgnt) {
-            $(this).removeClass('jump_page');
-            $(this).addClass('current_page');
-          }
-        });
-        //set offset
-        var p = $('.current_page').text();
-        var q = parseInt(p)
-        var o = q - 1
-        var t = 15*o
-        postsAPI = postsAPI + "&offset=" + t.toString();
-        
-        //call new posts
-        let postsJSON = $.getJSON(postsAPI, function getPostsJSONFile(data) {
-          getPostsData = JSON.stringify(data)
-          postsData = JSON.parse(getPostsData)
-          postsResponse = postsData.response
-
-          psta = postsResponse.total_posts
-          pstaDiv = psta/15
-        }) 
-        .done(getAllPosts)
-        .fail(failedPostRetrieval)
-        .always(cleanAllPosts)
-        //hide prev or next if needed 
-        .always( function(){
-          let paga = parseInt(pstaDiv) + 1
-          let l1 = paga;
-          let l2a = $('.current_page').text();
-          let l2 = parseInt(l2a);
-          if ( l2 === 1 ){
-            $('a.menu-button.prev').css("display", "none");
-            $('a.menu-button.next').css("display", "inline-flex");
-          }
-          else if ( l2 === l1 ) {
-            $('a.menu-button.next').css("display", "none");
-            $('a.menu-button.prev').css("display", "inline-flex");
-          }
-          else{
-            $('a.menu-button.next').css("display", "inline-flex");
-            $('a.menu-button.prev').css("display", "inline-flex");
-          }
-          });
-      });
-
-    // REPOPULATE WHEN NAVIGATING TAGS 
-      $('a.menu-button.art.entext').on("click", {
-          tagu: "art"
-      }, callTaggedPosts);
-      $('a.menu-button.design.entext').on("click", {
-          tagu: "design"
-      }, callTaggedPosts);
-      $('a.menu-button.video.entext').on("click", {
-          tagu: "video"
-      }, callTaggedPosts);
-      $('a.menu-button.art.estext').on("click", {
-          tagu: "arte"
-      }, callTaggedPosts);
-      $('a.menu-button.design.estext').on("click", {
-          tagu: "diseno"
-      }, callTaggedPosts);
-      $('a.menu-button.video.estext').on("click", {
-          tagu: "videos"
-      }, callTaggedPosts);
-
-        
-      function callTaggedPosts( event ){
-
-        $("#allposts").children().remove();
-        $(".jump_page").remove();
-        $(".current_page").remove();
-        $('#pinned-section').css("display", "none");
-        $('.pinned-section').css("display", "none");
-
-        //$('.pinned-section').children('h1').text(event.data.tagu);
-        //if ($('.pinned-section').children('h1').text() === 'diseno') {
-        //  $('.pinned-section').children('h1').text('Diseño');
-        //}
-
-        let postsAPItag = 'https://api.tumblr.com/v2/blog/domingocruzart.tumblr.com/posts?api_key=9dQTZQJQZCRMwV9qLVxS15SL6PiXSXP94Fcw3UhZbNQcoyVHkR&npf=true&limit=15&tag=';
-        postsAPItag = postsAPItag + event.data.tagu;
-        console.log(event.data.tagu);
-
-        postsAPI = postsAPItag
-
-        let tagsJSON = $.getJSON(postsAPI, function getPostsJSONFile(data) {
+      //call new posts
+      let postsJSON = $.getJSON(postsAPI, function getPostsJSONFile(data) {
         getPostsData = JSON.stringify(data)
         postsData = JSON.parse(getPostsData)
         postsResponse = postsData.response
 
         psta = postsResponse.total_posts
-        pstaDiv = psta/15
-        })
+        pstaDiv = psta / 15
+      })
+        .done(getAllPosts)
+        .fail(failedPostRetrieval)
+        .always(cleanAllPosts)
+        //hide prev or next if needed 
+        .always(function () {
+          let paga = parseInt(pstaDiv) + 1
+          let l1 = paga;
+          let l2a = $('.current_page').text();
+          let l2 = parseInt(l2a);
+          if (l2 === 1) {
+            $('a.menu-button.prev').css("display", "none");
+            $('a.menu-button.next').css("display", "inline-flex");
+          }
+          else if (l2 === l1) {
+            $('a.menu-button.next').css("display", "none");
+            $('a.menu-button.prev').css("display", "inline-flex");
+          }
+          else {
+            $('a.menu-button.next').css("display", "inline-flex");
+            $('a.menu-button.prev').css("display", "inline-flex");
+          }
+        });
+    });
+    //Next Page
+    $('a.menu-button.next').on("click", function () {
+      $("#allposts").children().remove();
+      //add current page class
+      let pgg = $('.current_page').text();
+      let pggn = parseInt(pgg)
+      let pgnt = pggn + 1
+      console.log(pggn);
+      console.log(pgnt);
+      $('.current_page').addClass('jump_page');
+      $('.current_page').removeClass('current_page');
+
+      $('a.menu-button.jump_page').each(function () {
+        if ($(this).text() == pgnt) {
+          $(this).removeClass('jump_page');
+          $(this).addClass('current_page');
+        }
+      });
+      //set offset
+      var p = $('.current_page').text();
+      var q = parseInt(p)
+      var o = q - 1
+      var t = 15 * o
+      postsAPI = postsAPI + "&offset=" + t.toString();
+
+      //call new posts
+      let postsJSON = $.getJSON(postsAPI, function getPostsJSONFile(data) {
+        getPostsData = JSON.stringify(data)
+        postsData = JSON.parse(getPostsData)
+        postsResponse = postsData.response
+
+        psta = postsResponse.total_posts
+        pstaDiv = psta / 15
+      })
+        .done(getAllPosts)
+        .fail(failedPostRetrieval)
+        .always(cleanAllPosts)
+        //hide prev or next if needed 
+        .always(function () {
+          let paga = parseInt(pstaDiv) + 1
+          let l1 = paga;
+          let l2a = $('.current_page').text();
+          let l2 = parseInt(l2a);
+          if (l2 === 1) {
+            $('a.menu-button.prev').css("display", "none");
+            $('a.menu-button.next').css("display", "inline-flex");
+          }
+          else if (l2 === l1) {
+            $('a.menu-button.next').css("display", "none");
+            $('a.menu-button.prev').css("display", "inline-flex");
+          }
+          else {
+            $('a.menu-button.next').css("display", "inline-flex");
+            $('a.menu-button.prev').css("display", "inline-flex");
+          }
+        });
+    });
+    //Prev Page
+    $('a.menu-button.prev').on("click", function () {
+      $("#allposts").children().remove();
+      //add current page class
+      let pgg = $('.current_page').text();
+      let pggn = parseInt(pgg)
+      let pgnt = pggn - 1
+      console.log(pggn);
+      console.log(pgnt);
+      $('.current_page').addClass('jump_page');
+      $('.current_page').removeClass('current_page');
+
+      $('a.menu-button.jump_page').each(function () {
+        if ($(this).text() == pgnt) {
+          $(this).removeClass('jump_page');
+          $(this).addClass('current_page');
+        }
+      });
+      //set offset
+      var p = $('.current_page').text();
+      var q = parseInt(p)
+      var o = q - 1
+      var t = 15 * o
+      postsAPI = postsAPI + "&offset=" + t.toString();
+
+      //call new posts
+      let postsJSON = $.getJSON(postsAPI, function getPostsJSONFile(data) {
+        getPostsData = JSON.stringify(data)
+        postsData = JSON.parse(getPostsData)
+        postsResponse = postsData.response
+
+        psta = postsResponse.total_posts
+        pstaDiv = psta / 15
+      })
+        .done(getAllPosts)
+        .fail(failedPostRetrieval)
+        .always(cleanAllPosts)
+        //hide prev or next if needed 
+        .always(function () {
+          let paga = parseInt(pstaDiv) + 1
+          let l1 = paga;
+          let l2a = $('.current_page').text();
+          let l2 = parseInt(l2a);
+          if (l2 === 1) {
+            $('a.menu-button.prev').css("display", "none");
+            $('a.menu-button.next').css("display", "inline-flex");
+          }
+          else if (l2 === l1) {
+            $('a.menu-button.next').css("display", "none");
+            $('a.menu-button.prev').css("display", "inline-flex");
+          }
+          else {
+            $('a.menu-button.next').css("display", "inline-flex");
+            $('a.menu-button.prev').css("display", "inline-flex");
+          }
+        });
+    });
+
+    // REPOPULATE WHEN NAVIGATING TAGS 
+    $('a.menu-button.art.entext').on("click", {
+      tagu: "art"
+    }, callTaggedPosts);
+    $('a.menu-button.design.entext').on("click", {
+      tagu: "design"
+    }, callTaggedPosts);
+    $('a.menu-button.video.entext').on("click", {
+      tagu: "video"
+    }, callTaggedPosts);
+    $('a.menu-button.art.estext').on("click", {
+      tagu: "arte"
+    }, callTaggedPosts);
+    $('a.menu-button.design.estext').on("click", {
+      tagu: "diseno"
+    }, callTaggedPosts);
+    $('a.menu-button.video.estext').on("click", {
+      tagu: "videos"
+    }, callTaggedPosts);
+
+
+    function callTaggedPosts(event) {
+
+      $("#allposts").children().remove();
+      $(".jump_page").remove();
+      $(".current_page").remove();
+      $('#pinned-section').css("display", "none");
+      $('.pinned-section').css("display", "none");
+
+      //$('.pinned-section').children('h1').text(event.data.tagu);
+      //if ($('.pinned-section').children('h1').text() === 'diseno') {
+      //  $('.pinned-section').children('h1').text('Diseño');
+      //}
+
+      let postsAPItag = 'https://api.tumblr.com/v2/blog/domingocruzart.tumblr.com/posts?api_key=9dQTZQJQZCRMwV9qLVxS15SL6PiXSXP94Fcw3UhZbNQcoyVHkR&npf=true&limit=15&tag=';
+      postsAPItag = postsAPItag + event.data.tagu;
+      console.log(event.data.tagu);
+
+      postsAPI = postsAPItag
+
+      let tagsJSON = $.getJSON(postsAPI, function getPostsJSONFile(data) {
+        getPostsData = JSON.stringify(data)
+        postsData = JSON.parse(getPostsData)
+        postsResponse = postsData.response
+
+        psta = postsResponse.total_posts
+        pstaDiv = psta / 15
+      })
         .done(getAllPosts)
         .fail(failedPostRetrieval)
         .always(cleanAllPosts)
         .always(setPagination);
-      }
+    }
 
   </script>
 
@@ -2402,11 +2434,11 @@
     const pinnedAPIes = 'https://api.tumblr.com/v2/blog/domingocruzart.tumblr.com/posts?tag=pineado&api_key=9dQTZQJQZCRMwV9qLVxS15SL6PiXSXP94Fcw3UhZbNQcoyVHkR&npf=true'
 
     //change posts to retrieve according to language
-    if (document.documentElement.lang === "es-ES"){
-    pinnedAPI = pinnedAPIes
+    if (document.documentElement.lang === "es-ES") {
+      pinnedAPI = pinnedAPIes
     }
     else {
-    pinnedAPI = pinnedAPIen
+      pinnedAPI = pinnedAPIen
     }
 
     let pinnedJSON = $.getJSON(pinnedAPI, function getJSONFile(data) {
@@ -2414,9 +2446,9 @@
       pinnedData = JSON.parse(getPinnedData)
       pinnedResponse = pinnedData.response
     })
-    .done(getPinnedPosts)
-    .fail(hidePinnedPosts)
-    .always(cleanPinnedPosts);
+      .done(getPinnedPosts)
+      .fail(hidePinnedPosts)
+      .always(cleanPinnedPosts);
 
     // Populate Pinned posts
     function getPinnedPosts() {
@@ -2427,154 +2459,154 @@
 
       // create images
       function createImage(media) {
-      let image = document.createElement('img')
-      image.src = media.url
-      image.setAttribute('srcset', media.url)
-      return image
+        let image = document.createElement('img')
+        image.src = media.url
+        image.setAttribute('srcset', media.url)
+        return image
       }
 
       // create audio posts 
       function createAudio(content) {
-      let audioWrapper = document.createElement('div')
-      audioWrapper.classList.add('audio-wrapper')
-      let audioPost = document.createElement('div')
-      audioPost.classList.add('audio-container')
-      audioWrapper.innerHTML = content.embed_html
-      return audioWrapper
+        let audioWrapper = document.createElement('div')
+        audioWrapper.classList.add('audio-wrapper')
+        let audioPost = document.createElement('div')
+        audioPost.classList.add('audio-container')
+        audioWrapper.innerHTML = content.embed_html
+        return audioWrapper
       }
 
       // create polls
       function createPoll(content, permalink) {
-      let id = permalink.substring(permalink.lastIndexOf("/") + 1);
-      let poll = document.createElement('div')
-      poll.classList.add('poll')
-      poll.append(content.question)
-      content.answers.map((answers) => {
+        let id = permalink.substring(permalink.lastIndexOf("/") + 1);
+        let poll = document.createElement('div')
+        poll.classList.add('poll')
+        poll.append(content.question)
+        content.answers.map((answers) => {
           let answer = document.createElement('a')
           answer.classList.add('poll-option')
           answer.target = "_blank"
           answer.href = `https://tumblr.com/${user}/${id}`
           answer.innerHTML = answers.answer_text
           poll.append(answer)
-      })
-      return poll
+        })
+        return poll
       }
 
       // create links
       function createLink(content) {
-      let link = document.createElement('a')
-      link.classList.add('post-link')
-      link.href = content.url
+        let link = document.createElement('a')
+        link.classList.add('post-link')
+        link.href = content.url
 
-      let posterImage = document.createElement('i')
-      posterImage.classList.add('fa-solid', 'fa-up-right-from-square')
-      link.append(posterImage)
-      if (content.description) {
+        let posterImage = document.createElement('i')
+        posterImage.classList.add('fa-solid', 'fa-up-right-from-square')
+        link.append(posterImage)
+        if (content.description) {
           let description = document.createElement('p')
           description.textContent = content.description
           link.append(description)
-      }
-      return link
+        }
+        return link
       }
 
       // formats text blocks   
       function createText(content) {
-      let str = content.text.replaceAll('<', '&lt;')
-      let texts = str.replaceAll('>', '&gt;')
-      if (content.text === '') return ''
-      let output = ""
-      // if there is formatted content
-      if (content.formatting) {
+        let str = content.text.replaceAll('<', '&lt;')
+        let texts = str.replaceAll('>', '&gt;')
+        if (content.text === '') return ''
+        let output = ""
+        // if there is formatted content
+        if (content.formatting) {
           let characters = Array.from(texts.split(''))
           for (const [i, text] of characters.entries()) {
-          const char = texts[i]
-          // look for end of format
-          const endFormatTypes = content.formatting.filter((f) => f.end === i);
-          // for each type, create a closing tag
-          for (const f of endFormatTypes) {
+            const char = texts[i]
+            // look for end of format
+            const endFormatTypes = content.formatting.filter((f) => f.end === i);
+            // for each type, create a closing tag
+            for (const f of endFormatTypes) {
               if (f.type === "link") {
-              output += "</a>"
+                output += "</a>"
               }
               if (f.type === "color") {
-              output += "</span>"
+                output += "</span>"
               }
               if (f.type === "bold") {
-              output += "</b>"
+                output += "</b>"
               }
               if (f.type === "small") {
-              output += "</span>"
+                output += "</span>"
               }
               if (f.type === "mention") {
-              output += "</a>"
+                output += "</a>"
               }
               if (f.type === "italic") {
-              output += "</i>"
+                output += "</i>"
               }
-          }
-          // look for start of format
-          const startFormatTypes = content.formatting.filter((f) => f.start === i);
-          // for each type, create an opening tag 
-          for (const f of startFormatTypes) {
+            }
+            // look for start of format
+            const startFormatTypes = content.formatting.filter((f) => f.start === i);
+            // for each type, create an opening tag 
+            for (const f of startFormatTypes) {
               if (f.type === "link") {
-              output += `<a href="${f.url}">`
+                output += `<a href="${f.url}">`
               }
               if (f.type === "color") {
-              output += `<span style="color:${f.hex}">`
+                output += `<span style="color:${f.hex}">`
               }
               if (f.type === "bold") {
-              output += `<b>`
+                output += `<b>`
               }
               if (f.type === "small") {
-              output += `<span style="font-size:.8rem">`
+                output += `<span style="font-size:.8rem">`
               }
               if (f.type === "mention") {
-              output += `<a className="mention" href="${f.blog.url}">`;
+                output += `<a className="mention" href="${f.blog.url}">`;
               }
               if (f.type === "italic") {
-              output += `<i>`
+                output += `<i>`
               }
+            }
+            output += char
           }
-          output += char
-          }
-      }
-      // if no formatting, just output the text 
-      else {
+        }
+        // if no formatting, just output the text 
+        else {
           output += texts
-      }
-      // might scrap this part
-      if (content.subtype === "unordered-list-item") {
+        }
+        // might scrap this part
+        if (content.subtype === "unordered-list-item") {
           let li = document.createElement('li')
           li.classList.add(content.subtype)
           li.innerHTML = output
           return li
-      }
-      // create an element to put the formatted text in, and then return it  
-      else {
+        }
+        // create an element to put the formatted text in, and then return it  
+        else {
           let p = document.createElement('p')
           p.classList.add(content.subtype)
           p.innerHTML = output
           return p
-      }
+        }
       }
 
       // create content inside of each row 1 
       function createRow1(content, permalink) {
-      // sort through content types      
-      switch (content.type) {
+        // sort through content types      
+        switch (content.type) {
 
           case 'image':
-          return createImage(content.media[2])
-          break;
+            return createImage(content.media[2])
+            break;
 
           case 'video':
-          if (content.provider === 'tumblr') {
+            if (content.provider === 'tumblr') {
               let video = document.createElement('video')
               video.src = content.url
               video.controls = true
               video.loop = true
               return video
 
-          } else {
+            } else {
               let video = document.createElement('iframe')
               video.classList.add('video-iframe')
               video.src = content.embed_iframe?.url ?? content.media.url
@@ -2582,81 +2614,81 @@
               let videoHeight = content.embed_iframe?.height ?? content.media.height
               video.style.aspectRatio = `${videoWidth} / ${videoHeight}`
               return video
-          }
-          break;
+            }
+            break;
 
           default:
-          return ``
-      }
+            return ``
+        }
       }
 
       // create content inside of each row 2
       function createRow2(content, permalink) {
-      // sort through content types      
-      switch (content.type) {
+        // sort through content types      
+        switch (content.type) {
           case 'text':
-          return createText(content)
-          break;
+            return createText(content)
+            break;
 
           case 'audio':
-          return createAudio(content)
-          break;
+            return createAudio(content)
+            break;
 
           case 'link':
-          return createLink(content)
-          break;
+            return createLink(content)
+            break;
 
           case 'poll':
-          return createPoll(content, permalink)
-          break;
+            return createPoll(content, permalink)
+            break;
 
           // in case there are new post types/types that were missed
           default:
-          return ``
-      }
+            return ``
+        }
       }
 
       // create each row 1
       function createRows1(id, content, layout, permalink, trail = null) {
-      let rows1 = document.createElement('div')
-      rows1.classList.add('col1')
-      content.map((block) => {
+        let rows1 = document.createElement('div')
+        rows1.classList.add('col1')
+        content.map((block) => {
           rows1.append(createRow1(block, permalink))
-      })
-      return rows1
+        })
+        return rows1
       }
       // create each row 2 
       function createRows2(id, content, layout, permalink, trail = null) {
-      let rows2 = document.createElement('div')
-      rows2.classList.add('col2')
-      // if there are indexes with asks 
-      let asks = []
-      content.map((block) => {
+        let rows2 = document.createElement('div')
+        rows2.classList.add('col2')
+        // if there are indexes with asks 
+        let asks = []
+        content.map((block) => {
           rows2.append(createRow2(block, permalink))
-      })
-      return rows2
+        })
+        return rows2
       }
 
       // loop through each post in the array
       for (const pinnedPost of pinnedPosts) {
-      let pnpf = pinnedPost.content
-      let pPermalink = pinnedPost.post_url
-      let pArticleId = pinnedPost.id
-      let pArticleTags = pinnedPost.tags
-      pArticleTags = JSON.stringify(pArticleTags)
-      pArticleTags = pArticleTags.replaceAll(',', ' ')
-      pArticleTags = pArticleTags.replaceAll('"', '')
-      pArticleTags = pArticleTags.replaceAll('[', '')
-      pArticleTags = pArticleTags.replaceAll(']', '')
-      let pArticle = document.createElement('article')
+        let pnpf = pinnedPost.content
+        let pPermalink = pinnedPost.post_url
+        let pArticleId = pinnedPost.id
+        let pArticleTags = pinnedPost.tags
+        pArticleTags = JSON.stringify(pArticleTags)
+        pArticleTags = pArticleTags.replaceAll(',', ' ')
+        pArticleTags = pArticleTags.replaceAll('"', '')
+        pArticleTags = pArticleTags.replaceAll('[', '')
+        pArticleTags = pArticleTags.replaceAll(']', '')
+        let pArticle = document.createElement('article')
 
-      pArticle.id = pArticleId
-      pArticle.className = pArticleTags
-      pArticle.classList.add('sldcrd')
-      pArticle.href = pPermalink
+        pArticle.id = pArticleId
+        pArticle.className = pArticleTags
+        pArticle.classList.add('sldcrd')
+        pArticle.href = pPermalink
 
-      // if it is an original post  
-      if (pnpf.length > 0) {
+        // if it is an original post  
+        if (pnpf.length > 0) {
           let ptitle = document.createElement('h2')
           let ptitleContent = pinnedPost.summary
           ptitle.append(ptitleContent)
@@ -2685,108 +2717,108 @@
           pContent.append(pCol1, pCol2)
           pArticle.append(pContent)
           pArticle.prepend(Ptag)
-      }
-      pinnedContainer.append(pArticle)
+        }
+        pinnedContainer.append(pArticle)
 
-      console.log("Pinned posts retrieved");
+        console.log("Pinned posts retrieved");
       }
     }
 
     // Hide Pinned Section if retrieval failed 
     function hidePinnedPosts() {
-        console.log("error retrieving pinned posts");
-        if ($('.pin-slider-bullets').is(':empty')) {
+      console.log("error retrieving pinned posts");
+      if ($('.pin-slider-bullets').is(':empty')) {
         $('#pinned-section').css("display", "none");
         $('.pinned-section').css("display", "none");
-        }
+      }
     }
 
     // Set up Pinned Section
     function cleanPinnedPosts() {
-        //create pinned posts bullets and place them in container
-        //$('.content-container').removeClass("pinned");
-        //$('.content-container').removeClass('pineado');
-        //$('.pineado').addClass("pinned");
-        $('.sldcrd').before($('<span class="sldbtn"></span>'));
-        $('.sldbtn').each(function () {
+      //create pinned posts bullets and place them in container
+      //$('.content-container').removeClass("pinned");
+      //$('.content-container').removeClass('pineado');
+      //$('.pineado').addClass("pinned");
+      $('.sldcrd').before($('<span class="sldbtn"></span>'));
+      $('.sldbtn').each(function () {
         $(this).attr('class', $('.sldbtn + article').attr('class'));
-        });
-        $('.pinned-content > span').appendTo('.pin-slider-bullets');
-        $('.pin-slider-bullets > span').removeClass("sldcrd");
-        $('.pin-slider-bullets > span').addClass("sldbtn");
-        console.log("Pinned post Bullets set");
-        //Set Pinned Posts Active classes
-        $('.pinned-content').find(".sldcrd").eq(0).addClass('activecard');
-        $('.pin-slider-bullets').children().eq(0).addClass('slct');
+      });
+      $('.pinned-content > span').appendTo('.pin-slider-bullets');
+      $('.pin-slider-bullets > span').removeClass("sldcrd");
+      $('.pin-slider-bullets > span').addClass("sldbtn");
+      console.log("Pinned post Bullets set");
+      //Set Pinned Posts Active classes
+      $('.pinned-content').find(".sldcrd").eq(0).addClass('activecard');
+      $('.pin-slider-bullets').children().eq(0).addClass('slct');
 
-        //reformat media content
-        $('.pinned-img > .col1').each(function () {
+      //reformat media content
+      $('.pinned-img > .col1').each(function () {
         if ($(this).children('video').length >= 1) {
-            $(this).parent().addClass("pinned-vid");
-            $(this).parent().removeClass("pinned-img");
-            $(this).parent().append($(this).children('video'));
-            $(this).remove();
+          $(this).parent().addClass("pinned-vid");
+          $(this).parent().removeClass("pinned-img");
+          $(this).parent().append($(this).children('video'));
+          $(this).remove();
         }
         else if ($(this).children('img').length > 1) {
-            $(this).removeClass("col1");
-            $(this).addClass('img-mult');
-            $(this).children().eq(0).addClass('activeimg');
-            $('.img-mult').each(function () {
+          $(this).removeClass("col1");
+          $(this).addClass('img-mult');
+          $(this).children().eq(0).addClass('activeimg');
+          $('.img-mult').each(function () {
             var j = 0;
             var m = 2000;
             var className = this;
             autoplay2 = setInterval(function () {
-                if (j > $(className).children().length - 1) { j = 0; }
-                $(className).children().removeClass('activeimg');
-                $(className).children().eq(j).addClass('activeimg');
-                j++;
+              if (j > $(className).children().length - 1) { j = 0; }
+              $(className).children().removeClass('activeimg');
+              $(className).children().eq(j).addClass('activeimg');
+              j++;
             }, m);
-            });
+          });
         }
         else {
-            $(this).parent().append($(this).children());
-            $(this).remove();
+          $(this).parent().append($(this).children());
+          $(this).remove();
         }
-        });
+      });
 
-        //Set Pinned Posts Labels
-        $('.pinned-content > article').each(function () {
+      //Set Pinned Posts Labels
+      $('.pinned-content > article').each(function () {
         if ($(this).hasClass('video')) {
-            $(this).children('.tagLabel').children('h3').text("{lang:Video}");
+          $(this).children('.tagLabel').children('h3').text("{lang:Video}");
         }
         else if ($(this).hasClass('art')) {
-            $(this).children('.tagLabel').children('h3').text("Art");
+          $(this).children('.tagLabel').children('h3').text("Art");
         }
         else if ($(this).hasClass('design')) {
-            $(this).children('.tagLabel').children('h3').text("Design");
+          $(this).children('.tagLabel').children('h3').text("Design");
         }
         else if ($(this).hasClass('videos')) {
-            $(this).children('.tagLabel').children('h3').text("Video");
+          $(this).children('.tagLabel').children('h3').text("Video");
         }
         else if ($(this).hasClass('arte')) {
-            $(this).children('.tagLabel').children('h3').text("Arte");
+          $(this).children('.tagLabel').children('h3').text("Arte");
         }
         else if ($(this).hasClass('diseno')) {
-            $(this).children('.tagLabel').children('h3').text("Diseño");
+          $(this).children('.tagLabel').children('h3').text("Diseño");
         }
         else {
-            $(this).children('.tagLabel').children('h3').text("{block:English}Other{/block:English}{block:Spanish}Otro{/block:Spanish}");
+          $(this).children('.tagLabel').children('h3').text("{block:English}Other{/block:English}{block:Spanish}Otro{/block:Spanish}");
         }
-        });
+      });
 
-        console.log("Pinned post retrieval complete");
+      console.log("Pinned post retrieval complete");
     }
 
     // REPOPULATE WHEN CHANGING LANGUAGE 
     $('.enbtn').on("click", function () {
       $("#pinnedposts").children('article').remove();
       $(".pin-slider-bullets").children().remove();
-        pinnedAPI = pinnedAPIen;
-        let pinnedJSON = $.getJSON(pinnedAPI, function getJSONFile(data) {
-          getPinnedData = JSON.stringify(data)
-          pinnedData = JSON.parse(getPinnedData)
-          pinnedResponse = pinnedData.response
-        })
+      pinnedAPI = pinnedAPIen;
+      let pinnedJSON = $.getJSON(pinnedAPI, function getJSONFile(data) {
+        getPinnedData = JSON.stringify(data)
+        pinnedData = JSON.parse(getPinnedData)
+        pinnedResponse = pinnedData.response
+      })
         .done(getPinnedPosts)
         .fail(hidePinnedPosts)
         .always(cleanPinnedPosts);
