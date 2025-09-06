@@ -1,0 +1,2822 @@
+<!DOCTYPE html>
+<html lang="{block:English}en{/block:English}{block:Spanish}es-ES{/block:Spanish}">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>{Title} {block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage} {block:PermalinkPage}{block:PostSummary} - {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+
+  <link rel="shortcut icon" href="{Favicon}">
+
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+  <link rel="stylesheet" 
+  href="https://static.tumblr.com/awxo2bf/6gMswtw8v/domingocstheme.css" type='text/css'>
+
+  {block:Description}
+  <meta name="description" content="{MetaDescription}">
+  {block:Description}
+
+  {block:Hidden}
+  <meta name="image:About portrait" content="">
+  <meta name="image:Blog logo" content="">
+  <meta name="image:Instagram logo" content="">
+  <meta name="image:Youtube logo" content="">
+  <meta name="image:LinkedIn logo" content="">
+  <meta name="image:Link image" content="">
+  <meta name="image:BG img" content="">
+  <meta name="text:Custom Google Fonts NAME title" content="Montserrat">
+  <meta name="text:Custom Google Fonts NAME body" content="Josefin Sans">
+  <meta name="text:Custom Google Fonts NAME other" content="Roboto">
+  <meta name="text:bio description" content="">
+  <meta name="text:Contact info" content="">
+  <meta name="color:Blog background color" content="#191919" />
+  <meta name="color:Accent color 1" content="#dadada">
+  <meta name="color:Accent color 2" content="#00b4ff">
+  <meta name="color:Accent color 3" content="#ff465a">
+  <meta name="color:Accent color 4" content="#00ff5a">
+  <meta name="color:Accent color 5" content="#262626">
+  <meta name="color:Accent color 6" content="#323232">
+  <meta name="color:Linked text color" content="#aae2fa">
+  <meta name="color:Visited link color" content="#daa8d7">
+  {/block:Hidden}
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+  <meta http-equiv="X-UA-Compatible" content="IE=9">
+  <meta http-equiv="Cache-control" content="private">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- MY CUSTOM SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    jQuery(function ($) {
+
+      //****
+      // ADD ACTIVE CLASSES ON LOAD
+      //****
+      $(document).ready(function () {
+        $('.img-mult').each(function () {
+          $(this).children().eq(0).addClass('activeimg');
+          $('.content-container').removeClass("pinned");
+          $('.content-container').removeClass('pineado');
+        });
+      });
+
+      //****
+      // PINNED POSTS SLIDER FUNCTIONALITY
+      //****
+
+      //Variables
+      //change value of n to adjust time of autoplay
+      // 1 sec = 1000
+      var n = 3000;
+      var m = 2000;
+      var autoplay;
+      var autoplay2;
+      var i = 0;
+
+      $(document).ready(function startAutoplay() {
+        autoplay = setInterval(function () {
+          if (i > $(".sldcrd").length - 1) { i = 0; }
+          $(".sldcrd").removeClass('activecard');
+          $(".pin-slider-bullets").children().removeClass('slct');
+          $('.pinned-content').find(".sldcrd").eq(i).addClass('activecard');
+          $('.pin-slider-bullets').children().eq(i).addClass('slct');
+          i++;
+        }, n);
+      });
+
+      //Multi Image Sliders Functionality 
+
+      $(document).ready(function startAutoplay2() {
+        $('.img-mult').each(function () {
+          var j = 0;
+          var className = this;
+          autoplay2 = setInterval(function () {
+            if (j > $(className).children().length - 1) { j = 0; }
+            $(className).children().removeClass('activeimg');
+            $(className).children().eq(j).addClass('activeimg');
+            j++;
+          }, m);
+        });
+      });
+
+      //mouse over pause and resume Card Slider
+      $(".pinned-content").mouseenter(function () { clearInterval(autoplay); });
+      $(".pinned-content").mouseleave(function startAutoplay() {
+        autoplay = setInterval(function () {
+          if (i > $(".sldcrd").length - 1) { i = 0; }
+          $(".sldcrd").removeClass('activecard');
+          $(".pin-slider-bullets").children().removeClass('slct');
+          $('.pinned-content').find(".sldcrd").eq(i).addClass('activecard');
+          $('.pin-slider-bullets').children().eq(i).addClass('slct');
+          i++;
+        }, n);
+      });
+
+      //Arrows passing to prev or next slide
+      $('.pinleft').on("click", function () {
+          i--
+          if (i < 0) { i = $(".sldcrd").length - 1; }
+          $(".sldcrd").removeClass('activecard');
+          $('.sldbtn').removeClass('slct');
+          $('.pinned-content').find(".sldcrd").eq(i).addClass('activecard');
+          $('.sldbtn').eq(i).addClass('slct');
+      });
+
+      $('.pinright').on("click", function () {
+          i++
+          if (i > $(".sldcrd").length - 1) { i = 0; }
+          $(".sldcrd").removeClass('activecard');
+          $('.sldbtn').removeClass('slct');
+          $('.pinned-content').find(".sldcrd").eq(i).addClass('activecard');
+          $('.sldbtn').eq(i).addClass('slct');
+      });
+
+      //buttons calling respective slide
+      $('.pin-slider-bullets').on("click", '.sldbtn', function () {
+        i = $(this).index();
+        $(".sldcrd").removeClass('activecard');
+        $('.sldbtn').removeClass('slct');
+        $('.pinned-content').find(".sldcrd").eq(i).addClass('activecard');
+        $('.sldbtn').eq(i).addClass('slct');
+      });
+
+      //****
+      // ABOUT AND CONTACT CARDS FUNCTIONALITY
+      //****
+      $('.about').on("click", function () {
+        $('#contact-info').removeClass("active");
+        $('.contact').removeClass("active");
+        $('#about-me').toggleClass("active");
+        $('.about').toggleClass("active");
+        $('.mobile-menu').toggleClass("mobile-menu-open");
+        $('.menu-container').toggleClass("mobile-menu-open");
+      });
+      $('.contact').on("click", function () {
+        $('#about-me').removeClass("active");
+        $('.about').removeClass("active");
+        $('#contact-info').toggleClass("active");
+        $('.contact').toggleClass("active");
+        $('.mobile-menu').toggleClass("mobile-menu-open");
+        $('.menu-container').toggleClass("mobile-menu-open");
+      });
+      $('.fa-xmark').on("click", function () {
+          $('#contact-info').removeClass("active");
+          $('.contact').removeClass("active");
+          $('#about-me').removeClass("active");
+          $('.about').removeClass("active");
+      });
+
+      //****
+      // MOBILE MENU FUNCTIONALITY
+      //****
+      $('.mobile-menu').on("click", function () {
+        $('.mobile-menu').toggleClass("mobile-menu-open");
+        $('.menu-container').toggleClass("mobile-menu-open");
+        $('.mobile-menu').children().toggleClass("mobile-menu-open")
+      });
+
+      //****
+      // ERROR SPLASH SCREEN BYPASS
+      //****
+      $('.stahp').on("click", function () {
+        $('#under-construction').css("display", "none");
+      });
+
+      //****
+      // LANGUAGE SWITCHER FUNCTIONALITY
+      //****
+
+      // Set Language on Load
+      var langVl = {langu: document.documentElement.lang};
+      $(document).ready(function() {
+        console.log(langVl.langu);
+        if (langVl.langu == "es-ES"){
+          $('.langtext').css("display", "none");
+          $('.estext').css("display", "flex");
+        }
+        else {
+          $('.langtext').css("display", "none");
+          $('.entext').css("display", "flex");
+        }
+      });
+
+      // Change Language
+      $('.enbtn').on("click", {
+        langu: "en"
+      }, setLanguage);
+
+      $('.esbtn').on("click", {
+        langu: "es-ES"
+      }, setLanguage);
+
+      function setLanguage( event ) {
+        if (event.data.langu == "es-ES"){
+          $('.langtext').css("display", "none");
+          $('.estext').css("display", "flex");
+        }
+        else {
+          $('.langtext').css("display", "none");
+          $('.entext').css("display", "flex");
+        }
+        console.log(event.data.langu);
+      }
+
+    });
+  </script>
+
+  <!-- Google Font Links -->
+  <link href='https://fonts.googleapis.com/css?family={text:Custom Google Fonts NAME title}:400,400italic,700,700italic,600,500' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family={text:Custom Google Fonts NAME body}:400,400italic,700,700italic,600,500' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family={text:Custom Google Fonts NAME other}:400,400italic,700,700italic,600,500' rel='stylesheet' type='text/css'>
+
+  <!-- Customizable CSS Options - quick settings -->
+  <style>
+    body {
+      background-image: url('{image:BG img}');
+    }
+
+    h1 {
+      font-family: '{text:Custom Google Fonts NAME title}', serif;
+    }
+
+    h2 {
+      font-family: '{text:Custom Google Fonts NAME title}', serif;
+    }
+
+    h3 {
+      font-family: '{text:Custom Google Fonts NAME title}', serif;
+    }
+
+    p {
+      font-family: '{text:Custom Google Fonts NAME body}', serif;
+    }
+
+    .menu-button {
+      font-family: '{text:Custom Google Fonts NAME title}', serif;
+    }
+
+    a {
+      color: {color:Linked text color};
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: {color:Visited link color};
+      cursor: pointer;
+    }
+
+    #under-construction {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      background-color: #191919;
+      z-index: 1000;
+    }
+
+    #under-construction h2 {
+      color: #dadada;
+      text-align: left;
+      padding: 1vw;
+    }
+
+    #under-construction img {
+      width: 20vw;
+      padding: 1vw;
+    }
+
+    .stahp {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 5vw;
+      height: 5vw;
+      /*border: 1px solid blue;*/
+    }
+
+    .langtext {
+      display: none;
+    }
+
+    {CustomCSS}
+  </style>
+
+  <!-- Customizable CSS Options -->
+  <style>
+    /*General Rules*/
+    .pinned-column.pinned-text > a {
+      color: {color:Linked text color};
+    }
+    /*Scrollbar*/
+    ::-webkit-scrollbar-track {
+      background: {color:Blog background color};
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #666;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #777;
+    }
+    /*Header*/
+    .header {
+      background: {color:Blog background color};
+      color: {color:Accent color 1};
+    }
+    .header .website-description {
+      color: {color:Accent color 1};
+    }
+    /*Menu*/
+    .menu-container {
+      background-color: {color:Accent color 6};
+    }
+    .menu-button {
+      background-color: {color:Blog background color};
+      color: {color:Accent color 1};
+    }
+    .menu-button:hover, .menu-button.about.active, .menu-button.content.active {
+      background-color: {color:Accent color 1};
+      color: {color:Blog background color};
+    }
+    /*About me Section*/
+    #about-me.active, #contact-info.active {
+      box-shadow: 0vw 0vw 100vw 10vw {color:Blog background color};
+    }
+    #about-me .info-container, #contact-info .info-container {
+      background-color: {color:Blog background color};
+    }
+    #about-me .info-container .info-col .profile-pic img, #contact-info .info-container .info-col .profile-pic img {
+      border-color: {color:Accent color 1};
+    }
+    #about-me .info-container .info-col .social-icons img:hover, #contact-info .info-container .info-col .social-icons img:hover {
+      filter: drop-shadow(0 0 0.5vw {color:Accent color 1});
+    }
+    #about-me .info-container .info-col .info-txt, #contact-info .info-container .info-col .info-txt {
+      color: {color:Accent color 1};
+    }
+    .divider {
+      background-color: {color:Accent color 6};
+      color: {color:Accent color 1};
+    }
+    /*pinned content slider*/
+    #pinned-section {
+      background-color: {color:Blog background color};
+    }
+    .pinned-content .pinned.activecard {
+      background-color: {color:Accent color 6};
+      border-color: {color:Accent color 1};
+    }
+    .pinned-content .pinned.art {
+      border-color: {color:Accent color 2};
+    }
+    .pinned-content .pinned.arte {
+      border-color: {color:Accent color 2};
+    }
+    .pinned-content .pinned.art .tagLabel {
+      background-color: {color:Accent color 2};
+    }
+    .pinned-content .pinned.arte .tagLabel {
+      background-color: {color:Accent color 2};
+    }
+    .pinned-content .pinned.design {
+      border-color: {color:Accent color 4};
+    }
+    .pinned-content .pinned.design .tagLabel {
+      background-color: {color:Accent color 4};
+    }
+    .pinned-content .pinned.diseno {
+      border-color: {color:Accent color 4};
+    }
+    .pinned-content .pinned.diseno .tagLabel {
+      background-color: {color:Accent color 4};
+    }
+    .pinned-content .pinned.link {
+      border-color: {color:Accent color 2};
+    }
+    .pinned-content .pinned.link .tagLabel {
+      background-color: {color:Accent color 2};
+    }
+    .pinned-content .pinned.video {
+      border-color: {color:Accent color 3};
+    }
+    .pinned-content .pinned.video .tagLabel {
+      background-color: {color:Accent color 3};
+    }
+    .pinned-content .pinned.videos {
+      border-color: {color:Accent color 3};
+    }
+    .pinned-content .pinned.videos .tagLabel {
+      background-color: {color:Accent color 3};
+    }
+    .pinned-content .pinned.audio {
+      border-color: {color:Accent color 4};
+    }
+    .pinned-content .pinned.audio .tagLabel {
+      background-color: {color:Accent color 4};
+    }
+    .pinned-content .pinned.other {
+      border-color: {color:Accent color 4};
+    }
+    .pinned-content .pinned.other .tagLabel {
+      background-color: {color:Accent color 4};
+    }
+    .pinned-content .pinned .tagLabel {
+      color: {color:Blog background color};
+    }
+    .pinned-content-container .pinned-column {
+      color: {color:Accent color 1};
+    }
+    .pinned-content-container .pinned-column.pinned-img img {
+      background-color: {color:Blog background color};
+    }
+    .pinned-content-container .pinned-column.pinned-vid video {
+      background-color: {color:Blog background color};
+    }
+    .pinned-content-container .pinned-column.pinned-vid iframe {
+      background-color: {color:Blog background color};
+    }
+    .pinned-content-container .pinned-column.pinned-text {
+      box-shadow: inset 0vw -2vw 1vw 1vw {color:Accent color 6};
+    }
+    .pinned-content-container .pinned-column.pinned-question {
+      box-shadow: inset 0vw -2vw 1vw 1vw {color:Accent color 6};
+    }
+    .pinned-content-container .pinned-column.pinned-link {
+      box-shadow: inset 0vw -2vw 1vw 1vw {color:Accent color 6};
+    }
+    .pinned-content-container .pinned-column.pinned-link .link {
+      background-color: {color:Accent color 2};
+      border-color: {color:Accent color 2};
+    }
+    .pinned-content-container .pinned-column.pinned-chat {
+      box-shadow: inset 0vw -2vw 1vw 1vw {color:Accent color 6};
+    }
+    .pinned-content-container .pinned-column.pinned-chat :nth-child(odd) {
+      background-color: {color:Accent color 6};
+    }
+    .pinned-content-container .pinned-column.pinned-chat :nth-child(even) {
+      background-color: #444;
+    }
+    .pinned-content-container .pinned-column.pinned-quote {
+      box-shadow: inset 0vw -2vw 1vw 1vw {color:Accent color 6};
+    }
+    .pinned-content-container .pinned-column .img-mult img {
+      background-color: {color:Blog background color};
+    }
+    /*pinned content slider bullets*/
+    .pin-slider-bullets span {
+      background-color: {color:Accent color 1};
+    }
+    .pin-slider-bullets span.slct {
+      background-color: #777;
+    }
+    .pin-slider-bullets span.slct.video {
+      background-color: {color:Accent color 3};
+    }
+    .pin-slider-bullets span.slct.videos {
+      background-color: {color:Accent color 3};
+    }
+    .pin-slider-bullets span.slct.art {
+      background-color: {color:Accent color 2};
+    }
+    .pin-slider-bullets span.slct.arte {
+      background-color: {color:Accent color 2};
+    }
+    .pin-slider-bullets span.slct.design {
+      background-color: {color:Accent color 4};
+    }
+    .pin-slider-bullets span.slct.diseno {
+      background-color: {color:Accent color 4};
+    }
+    .pin-slider-bullets span.slct.link {
+      background-color: {color:Accent color 2};
+    }
+    .pin-slider-bullets span.slct.other {
+      background-color: {color:Accent color 4};
+    }
+    .pin-slider-bullets span.slct.audio {
+      background-color: {color:Accent color 4};
+    }
+    .pin-slider-bullets span.video:hover {
+      background-color: {color:Accent color 3};
+    }
+    .pin-slider-bullets span.videos:hover {
+      background-color: {color:Accent color 3};
+    }
+    .pin-slider-bullets span.art:hover {
+      background-color: {color:Accent color 2};
+    }
+    .pin-slider-bullets span.arte:hover {
+      background-color: {color:Accent color 2};
+    }
+    .pin-slider-bullets span.design:hover {
+      background-color: {color:Accent color 4};
+    }
+    .pin-slider-bullets span.diseno:hover {
+      background-color: {color:Accent color 4};
+    }
+    .pin-slider-bullets span.link:hover {
+      background-color: {color:Accent color 2};
+    }
+    .pin-slider-bullets span.other:hover {
+      background-color: {color:Accent color 4};
+    }
+    .pin-slider-bullets span.audio:hover {
+      background-color: {color:Accent color 4};
+    }
+    /*Other Content Grid*/
+    .other-content {
+      background-color: {color:Blog background color};
+    }
+    .other-content > :nth-child(odd) {
+      background-color: {color:Accent color 6};
+      box-shadow: inset 0vw -2vw 1vw 1vw {color:Accent color 6};
+    }
+    .other-content > :nth-child(even) {
+      background-color: {color:Accent color 5};
+      box-shadow: inset 0vw -2vw 1vw 1vw {color:Accent color 5};
+    }
+    .other-content .content-container {
+      border-color: {color:Accent color 1};
+    }
+    .other-content .content-container:hover {
+      border-color: {color:Accent color 1};
+    }
+    .other-content .content-container:visited {
+      border-color: {color:Visited link color};
+    }
+    .other-content .art:hover {
+      border-color: {color:Accent color 2};
+    }
+    .other-content .arte:hover {
+      border-color: {color:Accent color 2};
+    }
+    .other-content .design:hover {
+      border-color: {color:Accent color 4};
+    }
+    .other-content .diseno:hover {
+      border-color: {color:Accent color 4};
+    }
+    .other-content .video:hover {
+      border-color: {color:Accent color 3};
+    }
+    .other-content .videos:hover {
+      border-color: {color:Accent color 3};
+    }
+    .other-content .audio:hover, .other-content .other:hover {
+      border-color: {color:Accent color 4};
+    }
+    /*General Container*/
+    .content-container {
+      color: {color:Accent color 1};
+    }
+    .content-container:hover .post-overlay {
+      background-image: linear-gradient(transparent 65%, {color:Blog background color});
+    }
+    .content-container .post-overlay {
+      background-image: linear-gradient(transparent 65%, {color:Blog background color});
+    }
+    .content-container.audio .post-audio::-webkit-scrollbar-thumb {
+      background: {color:Accent color 4};
+    }
+    .content-container.audio .post-audio audio::-webkit-media-controls-panel {
+      background-color: {color:Accent color 1};
+    }
+    .content-container.text::-webkit-scrollbar-thumb {
+      background: {color:Accent color 1};
+    }
+    .content-container.quote h2::-webkit-scrollbar-thumb {
+      background: {color:Accent color 1};
+    }
+    .content-container.link::-webkit-scrollbar-thumb {
+      background: {color:Accent color 1};
+    }
+    .content-container.chat::-webkit-scrollbar-thumb {
+      background: {color:Accent color 1};
+    }
+    .content-container.chat > :nth-child(even) {
+      background-color: #444;
+    }
+    .content-container.question::-webkit-scrollbar-thumb {
+      background: {color:Accent color 1};
+    }
+    /*Single Post Rules*/
+    .singlepost {
+      background: {color:Blog background color};
+      color: {color:Accent color 1};
+    }
+    .singlepost > .single-content-container {
+      border-color: {color:Accent color 1};
+    }
+    .singlepost > .single-content-container.art {
+      border-color: {color:Accent color 2};
+    }
+    .singlepost > .single-content-container.arte {
+      border-color: {color:Accent color 2};
+    }
+    .singlepost > .single-content-container.video {
+      border-color: {color:Accent color 3};
+    }
+    .singlepost > .single-content-container.videos {
+      border-color: {color:Accent color 3};
+    }
+    .singlepost > .single-content-container.audio {
+      border-color: {color:Accent color 4};
+    }
+    .singlepost > .single-content-container.chat > article :nth-child(even) {
+      background-color: {color:Accent color 6};
+    }
+    /*Pagination*/
+    .transition {
+      background-image: linear-gradient(to bottom, {color:Blog background color}, {color:Accent color 6});
+    }
+    .pagination {
+      background: {color:Accent color 6};
+    }
+    .pagination .menu-button {
+      border-color: {color:Accent color 1};
+    }
+    .pagination .menu-button.current_page {
+      background-color: {color:Accent color 2};
+    }
+    .pagination .menu-button:hover {
+      background-color: {color:Accent color 2};
+      color: #fff;
+    }
+    .pages {
+      color: {color:Accent color 1};
+      background: {color:Accent color 6};
+    }
+    .pages p {
+      color: {color:Accent color 1};
+    }
+    /*Footer Stuff*/
+    .footer {
+      background: {color:Accent color 6};
+    }
+    .footer .copyright {
+      color: {color:Accent color 1};
+    }
+
+    @media only screen and (max-width: 1920px) {
+      /*About me Section*/
+      #about-me.active, #contact-info.active {
+        box-shadow: 0vw 0vw 1920px 192px {color:Blog background color};
+      }
+      #about-me .info-container .info-col .profile-pic img, #contact-info .info-container .info-col .profile-pic img {
+        border-color: {color:Accent color 1};
+      }
+      #about-me .info-container .info-col .social-icons img:hover, #contact-info .info-container .info-col .social-icons img:hover {
+        filter: drop-shadow(0 0 10px {color:Accent color 1});
+      }
+      /*pinned content slider*/
+      .pinned-content .pinned.activecard {
+        border-color: {color:Accent color 1};
+      }
+      .pinned-content .pinned.art {
+        border-color: {color:Accent color 2};
+      }
+      .pinned-content .pinned.arte {
+        border-color: {color:Accent color 2};
+      }
+      .pinned-content .pinned.design {
+        border-color: {color:Accent color 4};
+      }
+      .pinned-content .pinned.diseno {
+        border-color: {color:Accent color 4};
+      }
+      .pinned-content .pinned.link {
+        border-color: {color:Accent color 2};
+      }
+      .pinned-content .pinned.video {
+        border-color: {color:Accent color 3};
+      }
+      .pinned-content .pinned.videos {
+        border-color: {color:Accent color 3};
+      }
+      .pinned-content .pinned.audio {
+        border-color: {color:Accent color 4};
+      }
+      .pinned-content .pinned.other {
+        border-color: {color:Accent color 4};
+      }
+      .pinned-content-container .pinned-column.pinned-text {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      }
+      .pinned-content-container .pinned-column.pinned-question {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      }
+      .pinned-content-container .pinned-column.pinned-link {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      }
+      .pinned-content-container .pinned-column.pinned-chat {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      }
+      .pinned-content-container .pinned-column.pinned-quote {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      }
+      /*Other Content Grid*/
+      .other-content > :nth-child(odd) {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      }
+      .other-content > :nth-child(even) {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 5};
+      }
+      .other-content .content-container {
+        border-color: {color:Accent color 1};
+      }
+      .other-content .art:hover {
+        border-color: {color:Accent color 2};
+      }
+      .other-content .arte:hover {
+        border-color: {color:Accent color 2};
+      }
+      .other-content .design:hover {
+        border-color: {color:Accent color 4};
+      }
+      .other-content .diseno:hover {
+        border-color: {color:Accent color 4};
+      }
+      .other-content .video:hover {
+        border-color: {color:Accent color 3};
+      }
+      .other-content .videos:hover {
+        border-color: {color:Accent color 3};
+      }
+      .other-content .audio:hover, .other-content .other:hover {
+        border-color: {color:Accent color 4};
+      }
+      /*Single Post Rules*/
+      .singlepost > .single-content-container {
+        border-color: {color:Accent color 1};
+      }
+      .singlepost > .single-content-container.art {
+        border-color: {color:Accent color 2};
+      }
+      .singlepost > .single-content-container.arte {
+        border-color: {color:Accent color 2};
+      }
+      .singlepost > .single-content-container.video {
+        border-color: {color:Accent color 3};
+      }
+      .singlepost > .single-content-container.videos {
+        border-color: {color:Accent color 3};
+      }
+      .singlepost > .single-content-container.audio {
+        border-color: {color:Accent color 4};
+      }
+      .singlepost > .single-content-container.chat > article :nth-child(even) {
+        background-color: {color:Accent color 6};
+      }
+      /*Pagination*/
+      .pagination .menu-button {
+        border-color: {color:Accent color 1};
+      }
+    }
+    @media only screen and (max-width: 1280px) {
+      /*About me Section*/
+      #about-me.active, #contact-info.active {
+        box-shadow: 0vw 0vw 1280px 192px {color:Blog background color};
+      }
+      #about-me .info-container .info-col .profile-pic img, #contact-info .info-container .info-col .profile-pic img {
+        border-color: {color:Accent color 1};
+      }
+      #about-me .info-container .info-col .social-icons img:hover, #contact-info .info-container .info-col .social-icons img:hover {
+        filter: drop-shadow(0 0 10px {color:Accent color 1});
+      }
+      /*pinned content slider*/
+      .pinned-content::-webkit-scrollbar-thumb {
+        background: {color:Accent color 2};
+      }
+      .pinned-content .pinned {
+        border-color: {color:Accent color 1};
+        background-color: {color:Accent color 6};
+      }
+      .pinned-content .pinned.activecard {
+        border-color: {color:Accent color 1};
+      }
+      .pinned-content .pinned.art {
+        border-color: {color:Accent color 2};
+      }
+      .pinned-content .pinned.arte {
+        border-color: {color:Accent color 2};
+      }
+      .pinned-content .pinned.design {
+        border-color: {color:Accent color 4};
+      }
+      .pinned-content .pinned.diseno {
+        border-color: {color:Accent color 4};
+      }
+      .pinned-content .pinned.link {
+        border-color: {color:Accent color 2};
+      }
+      .pinned-content .pinned.video {
+        border-color: {color:Accent color 3};
+      }
+      .pinned-content .pinned.videos {
+        border-color: {color:Accent color 3};
+      }
+      .pinned-content .pinned.audio {
+        border-color: {color:Accent color 4};
+      }
+      .pinned-content .pinned.other {
+        border-color: {color:Accent color 4};
+      }
+      .pinned-content-container .pinned-column.pinned-text {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      }
+      .pinned-content-container .pinned-column.pinned-question {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      }
+      .pinned-content-container .pinned-column.pinned-link {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      }
+      .pinned-content-container .pinned-column.pinned-chat {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      }
+      .pinned-content-container .pinned-column.pinned-quote {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      }
+      /*pinned content slider bullets*/
+      .pin-slider-bullets span.video {
+        background-color: {color:Accent color 3};
+      }
+      .pin-slider-bullets span.videos {
+        background-color: {color:Accent color 3};
+      }
+      .pin-slider-bullets span.art {
+        background-color: {color:Accent color 2};
+      }
+      .pin-slider-bullets span.arte {
+        background-color: {color:Accent color 2};
+      }
+      .pin-slider-bullets span.design {
+        background-color: {color:Accent color 4};
+      }
+      .pin-slider-bullets span.diseno {
+        background-color: {color:Accent color 4};
+      }
+      .pin-slider-bullets span.link {
+        background-color: {color:Accent color 2};
+      }
+      .pin-slider-bullets span.other {
+        background-color: {color:Accent color 4};
+      }
+      .pin-slider-bullets span.audio {
+        background-color: {color:Accent color 4};
+      }
+      /*Other Content Grid*/
+      .other-content > :nth-child(odd) {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      }
+      .other-content > :nth-child(even) {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 5};
+      }
+      .other-content .content-container {
+        border-color: {color:Accent color 1};
+      }
+      .other-content .content-container:hover {
+        border-color: {color:Accent color 1};
+      }
+      .other-content .art:hover {
+        border-color: {color:Accent color 2};
+      }
+      .other-content .arte:hover {
+        border-color: {color:Accent color 2};
+      }
+      .other-content .design:hover {
+        border-color: {color:Accent color 4};
+      }
+      .other-content .diseno:hover {
+        border-color: {color:Accent color 4};
+      }
+      .other-content .video:hover {
+        border-color: {color:Accent color 3};
+      }
+      .other-content .videos:hover {
+        border-color: {color:Accent color 3};
+      }
+      .other-content .audio:hover, .other-content .other:hover {
+        border-color: {color:Accent color 4};
+      }
+      /*General Container*/
+      .singlepost > .single-content-container {
+        border-color: {color:Accent color 1};
+      }
+      .singlepost > .single-content-container.art {
+        border-color: {color:Accent color 2};
+      }
+      .singlepost > .single-content-container.arte {
+        border-color: {color:Accent color 2};
+      }
+      .singlepost > .single-content-container.video {
+        border-color: {color:Accent color 3};
+      }
+      .singlepost > .single-content-container.videos {
+        border-color: {color:Accent color 3};
+      }
+      .singlepost > .single-content-container.audio {
+        border-color: {color:Accent color 4};
+      }
+      .singlepost > .single-content-container.chat > article :nth-child(even) {
+        background-color: {color:Accent color 6};
+      }
+      .pagination .menu-button {
+        border-color: {color:Accent color 1};
+      }
+    }
+    @media only screen and (max-width: 769px) {
+      body {
+        box-shadow: 0 0 10px 6px {color:Accent color 1};
+      }
+      /*Menu*/
+      .mobile-menu {
+        background-color: {color:Blog background color};
+        border-color: {color:Accent color 1};
+      }
+      .mobile-menu > i {
+        color: {color:Accent color 1};
+      }
+      .menu-container {
+        background-image: linear-gradient(to left, rgba(25, 25, 25, 0.5) 75%, transparent);
+        background-color: transparent;
+      }
+      .menu-button:hover, .menu-button.about.active, .menu-button.content.active {
+        background-image: linear-gradient(to left, {color:Accent color 1} 80%, transparent);
+        color: {color:Blog background color};
+      }
+      /*About me Section*/
+      #about-me.active, #contact-info.active {
+        box-shadow: 0vw 0vw 1280px 192px {color:Blog background color};
+      }
+      #about-me .info-container .info-col .profile-pic img, #contact-info .info-container .info-col .profile-pic img {
+        border-color: {color:Accent color 1};
+      }
+      #about-me .info-container .info-col .social-icons img:hover, #contact-info .info-container .info-col .social-icons img:hover {
+        filter: drop-shadow(0 0 10px {color:Accent color 1});
+      }
+      .pinned-content::-webkit-scrollbar-thumb {
+        background: {color:Accent color 2};
+      }
+      .pinned-content .pinned {
+        background-color: {color:Accent color 6};
+        border-color: {color:Accent color 1};
+      }
+      .pinned-content .pinned.activecard {
+        border-color: {color:Accent color 1};
+      }
+      .pinned-content .pinned.art {
+        border-color: {color:Accent color 2};
+      }
+      .pinned-content .pinned.arte {
+        border-color: {color:Accent color 2};
+      }
+      .pinned-content .pinned.design {
+        border-color: {color:Accent color 4};
+      }
+      .pinned-content .pinned.diseno {
+        border-color: {color:Accent color 4};
+      }
+      .pinned-content .pinned.link {
+        border-color: {color:Accent color 2};
+      }
+      .pinned-content .pinned.video {
+        border-color: {color:Accent color 3};
+      }
+      .pinned-content .pinned.videos {
+        border-color: {color:Accent color 3};
+      }
+      .pinned-content .pinned.audio {
+        border-color: {color:Accent color 4};
+      }
+      .pinned-content .pinned.other {
+        border-color: {color:Accent color 4};
+      }
+      .pinned-content-container .pinned-column.pinned-text {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      }
+      .pinned-content-container .pinned-column.pinned-question {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      }
+      .pinned-content-container .pinned-column.pinned-link {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      }
+      .pinned-content-container .pinned-column.pinned-chat {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      }
+      .pinned-content-container .pinned-column.pinned-quote {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      }
+      .pin-slider-bullets span.video {
+        background-color: {color:Accent color 3};
+      }
+      .pin-slider-bullets span.videos {
+        background-color: {color:Accent color 3};
+      }
+      .pin-slider-bullets span.art {
+        background-color: {color:Accent color 2};
+      }
+      .pin-slider-bullets span.arte {
+        background-color: {color:Accent color 2};
+      }
+      .pin-slider-bullets span.design {
+        background-color: {color:Accent color 4};
+      }
+      .pin-slider-bullets span.diseno {
+        background-color: {color:Accent color 4};
+      }
+      .pin-slider-bullets span.link {
+        background-color: {color:Accent color 2};
+      }
+      .pin-slider-bullets span.other {
+        background-color: {color:Accent color 4};
+      }
+      .pin-slider-bullets span.audio {
+        background-color: {color:Accent color 4};
+      }
+      /*Other Content Grid*/
+      .other-content > :nth-child(odd) {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 6};
+      }
+      .other-content > :nth-child(even) {
+        box-shadow: inset 0vw -32px 16px 16px {color:Accent color 5};
+      }
+      .other-content .content-container {
+        border-color: {color:Accent color 1};
+      }
+      .other-content .art {
+        border-color: {color:Accent color 2};
+      }
+      .other-content .arte {
+        border-color: {color:Accent color 2};
+      }
+      .other-content .design {
+        border-color: {color:Accent color 4};
+      }
+      .other-content .diseno {
+        border-color: {color:Accent color 4};
+      }
+      .other-content .video {
+        border-color: {color:Accent color 3};
+      }
+      .other-content .videos {
+        border-color: {color:Accent color 3};
+      }
+      .other-content .audio, .other-content .other {
+        border-color: {color:Accent color 4};
+      }
+      /*Single Post Rules*/
+      .singlepost > .single-content-container {
+        border-color: {color:Accent color 1};
+      }
+      .singlepost > .single-content-container.art {
+        border-color: {color:Accent color 2};
+      }
+      .singlepost > .single-content-container.arte {
+        border-color: {color:Accent color 2};
+      }
+      .singlepost > .single-content-container.video {
+        border-color: {color:Accent color 3};
+      }
+      .singlepost > .single-content-container.videos {
+        border-color: {color:Accent color 3};
+      }
+      .singlepost > .single-content-container.audio {
+        border-color: {color:Accent color 4};
+      }
+      .singlepost > .single-content-container.chat > article :nth-child(even) {
+        background-color: {color:Accent color 6};
+      }
+      /*Pagination*/
+      .pagination .menu-button {
+        border-color: {color:Accent color 1};
+      }
+      .pagination .menu-button.prev, .pagination .menu-button.next {
+        background-color: {color:Blog background color} !important;
+      }
+      .pagination .menu-button.prev:hover, .pagination .menu-button.next:hover {
+        background-color: {color:Accent color 2} !important;
+      }
+      .pagination .menu-button .menu-button:hover, .pagination .menu-button .menu-button.about.active, .pagination .menu-button .menu-button.content.active {
+        background-color: {color:Accent color 2} !important;
+        border-color: {color:Accent color 1} !important;
+        color: {color:Blog background color};
+      }
+    }
+  </style>
+
+  {text:Custom HTML code in document head section}
+
+</head>
+
+<body class="{select:Tumblr buttons} {block:IfCountTags}count-tags{/block:IfCountTags}">
+
+  <!-- Language Switcher -->
+  <div id="langsw">
+    <p class="enbtn">EN</p><p class="esbtn">ES</p>
+  </div>
+
+  <!-- Error Splashscreen -->
+  <div id="under-construction">
+    <div class="stahp"></div>
+    <img src="{image:Blog logo}" alt="Website Logo">
+      <h2 class="langtext entext">This website is currently undergoing maintenance.</br>
+        Please check back later</h2>
+      <h2 class="langtext estext">Se le está dando mantenimiento a esta página ahora mismo.</br>
+        Por favor intenta acceder nuevamente más tarde</h2>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header">
+      <div class="logo">
+        <a href="{BlogURL}" target="_self">
+          <img src="{image:Blog logo}" alt="Website Logo">
+        </a>
+      </div>
+      <div class="header-info">
+        <div class="website-header">
+          <h1>{Title}</h1>
+        </div>
+        <div class="website-description">
+          <h2 class="langtext entext">
+              Artist, Animator, Graphic Designer, Web Developer, and more.
+          </h2>
+          <h2 class="langtext estext">
+              Artista, Animador, Diseñador, Desarrollador Web, y mas.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <!-- Menu -->
+  {block:HomePage}
+  <nav>
+    <div class="mobile-menu">
+      <i class="fa-solid fa-bars mobile-menu-open"></i>
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+    <div class="menu-container">
+      <a class="menu-button" href="{BlogURL}" target="_self"><div class="langtext entext">Home</div><div class="langtext estext">Inicio</div></a>
+      <a class="menu-button about"><div class="langtext entext">About me</div><div class="langtext estext">Sobre mí</div></a>
+
+      <!--English -->
+      <a class="menu-button art langtext entext" >Art</a>
+      <a class="menu-button design langtext entext" >Design</a>
+      <a class="menu-button video langtext entext" >Video</a>
+      <!--English -->
+
+      <!--Spanish -->
+      <a class="menu-button art langtext estext" >Arte</a>
+      <a class="menu-button design langtext estext" >Diseño</a>
+      <a class="menu-button video langtext estext" >Videos</a>
+      <!--Spanish -->
+
+      {block:HasPages}
+      {block:Pages}
+      <a class="menu-button" href="{URL}" target="_self">{Label}</a>
+      {/block:Pages}
+      {/block:HasPages}
+      <a class="menu-button contact"><div class="langtext entext">Contact</div><div class="langtext estext">Contacto</div></a>
+    </div>
+  </nav>
+  {/block:HomePage}
+  {block:TagPage}
+  <nav>
+    <div class="mobile-menu">
+      <i class="fa-solid fa-bars mobile-menu-open"></i>
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+    <div class="menu-container">
+      <a class="menu-button" href="{BlogURL}" target="_self"><div class="langtext entext">Home</div><div class="langtext estext">Inicio</div></a>
+      <a class="menu-button about"><div class="langtext entext">About me</div><div class="langtext estext">Sobre mí</div></a>
+
+      <!--English -->
+      <a class="menu-button art langtext entext" >Art</a>
+      <a class="menu-button design langtext entext" >Design</a>
+      <a class="menu-button video langtext entext" >Video</a>
+      <!--English -->
+
+      <!--Spanish -->
+      <a class="menu-button art langtext estext" >Arte</a>
+      <a class="menu-button design langtext estext" >Diseño</a>
+      <a class="menu-button video langtext estext" >Videos</a>
+      <!--Spanish -->
+
+      {block:HasPages}
+      {block:Pages}
+      <a class="menu-button" href="{URL}" target="_self">{Label}</a>
+      {/block:Pages}
+      {/block:HasPages}
+      <a class="menu-button contact"><div class="langtext entext">Contact</div><div class="langtext estext">Contacto</div></a>
+    </div>
+  </nav>
+  {/block:TagPage}
+  {block:PermalinkPage}
+  <nav>
+    <div class="mobile-menu">
+      <i class="fa-solid fa-bars mobile-menu-open"></i>
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+    <div class="menu-container">
+      <a class="menu-button" href="{BlogURL}" target="_self">{lang:Home}</a>
+      <a class="menu-button about">{lang:About me}</a>
+
+
+      {block:HasPages}
+      {block:Pages}
+      <a class="menu-button" href="{URL}" target="_self">{Label}</a>
+      {/block:Pages}
+      {/block:HasPages}
+      <a class="menu-button contact">
+        {block:English}Contact{/block:English}
+        {block:Spanish}Contacto{/block:Spanish}
+        {block:German}Kontakt{/block:German}
+      </a>
+    </div>
+  </nav>
+  {/block:PermalinkPage}
+
+  <!-- About me -->
+  <section id="about-me" class="toggles">
+    <i class="fa-solid fa-xmark"></i>
+    <div class="divider about-me">
+      <h3 class="langtext entext">About me</h3>
+      <h3 class="langtext estext">Sobre mí</h3>
+    </div>
+    <div class="info-container">
+      <div class="info-col">
+        <div class="profile-pic">
+          <img src="{image:About portrait}">
+        </div>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/domingo-cruz-76908919a/" target="_blank">
+            <img src="{image:LinkedIn logo}" alt="LinkedIn Icon">
+          </a>
+          <a href="https://www.instagram.com/domingocsart/" target="_blank">
+            <img src="{image:Instagram logo}" alt="Instagram Icon">
+          </a>
+          <a href="https://www.youtube.com/channel/UCkju010_NKh3rJeCyDPaGAQ" target="_blank">
+            <img src="{image:Youtube logo}" alt="Youtube Icon">
+          </a>
+        </div>
+      </div>
+
+      <div class="info-col">
+        <div class="info-txt langtext entext">
+          <p>Panamanian professional with a passion for art, design, animation, web development, media literacy, philosophy, among many other things.</p>
+          <p>I aim to bring my own voice and innovative style to the work I do, while offering a new and efficient solution to each project; adapting to their individual needs and looking to improve and evolve as a professional within the company I work in.</p>
+          <p>I studied mechanical engineering in Germany, where I lived for 7 years, before moving back to Panama where I went back to college to study Graphic Design</p>
+          <p>This is a page to showcase my work.</p>           
+        </div>
+        <div class="info-txt langtext estext">
+          <p>Soy un profesional panameño con pasión por el arte digital, diseño gráfico, el diseño de páginas web, la animación, producción de audio y video, entre otros.</p>
+          <p>Busco llevar mi voz y mi estilo innovador a cada proyecto del que formo parte, y a su vez ofrecer una solución nueva y eficiente, adaptándome a las necesidades individuales de cada situación y buscando mejorar y evolucionar de manera profesional dentro de mi industria.</p>
+          <p>Mi trayectoria me permite ofrecer una perspectiva única, ya que antes de iniciar mis estudios en la rama del diseño completé una carrera en Ingeniería Mecánica en Alemania y estoy finamente atento a las tendencias y cambios del arte y mercadeo por medio de las redes sociales, buscando información que compila y analiza estas tendencias y desarrollando mis propias interpretaciones y voz crítica.</p>
+          <p>En esta página deseo demostrar mi trabajo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact-info" class="toggles">
+    <i class="fa-solid fa-xmark"></i>
+    <div class="divider about-me">
+      <h3 class="langtext entext">Contact</h3>
+      <h3 class="langtext estext">Contacto</h3>
+    </div>
+    <div class="info-container">
+      <div class="info-col">
+        <div class="profile-pic">
+          <img src="{image:About portrait}">
+        </div>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/domingo-cruz-76908919a/" target="_blank">
+            <img src="{image:LinkedIn logo}" alt="LinkedIn Icon">
+          </a>
+          <a href="https://www.instagram.com/domingocsart/" target="_blank">
+            <img src="{image:Instagram logo}" alt="Instagram Icon">
+          </a>
+          <a href="https://www.youtube.com/channel/UCkju010_NKh3rJeCyDPaGAQ" target="_blank">
+            <img src="{image:Youtube logo}" alt="Youtube Icon">
+          </a>
+        </div>
+      </div>
+
+      <div class="info-col">
+        <div class="info-txt langtext entext">
+          <p>Feel free to get in touch with me through email, or any of my social media accounts.</p>
+          <p>Email: domingocruz05@gmail.com</p>
+          <p>I speak English, Spanish and German, so feel free to use whichever you are most comfortable with!</p>
+        </div>
+        <div class="info-txt langtext estext">
+          <p>Puedes comunicarte conmigo ya sea a mi correo electrónico o por cualquiera de mis cuentas de redes sociales.</p>
+          <p>Email: domingocruz05@gmail.com</p>
+          <p>Hablo español, inglés, y aleman, asique puedes usar el idioma con el que te sientas más comodo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {block:HomePage}
+  <!-- HOMEPAGE CODE -->
+
+  <!-- Pinned Section -->
+  <section>
+    <div class="divider pinned-section">
+      <h1 class="langtext entext">Featured Content</h1>
+      <h1 class="langtext estext">Contenido Resaltado</h1>
+    </div>
+  </section>
+
+  <main id="pinned-section">
+    <div id="pinnedposts" class="pinned-content">
+      <i class="fa-solid fa-chevron-left pinleft"></i>
+      <i class="fa-solid fa-chevron-right pinright"></i>
+    </div>
+    <div class="pin-slider-bullets"></div>
+  </main>
+
+  <!-- Main Section -->
+  <section>
+    <div class="divider pinned-section">
+      <h1 class="langtext entext">All Content</h1>
+      <h1 class="langtext estext">Contenido General</h1>
+    </div>
+  </section>
+
+  <section id="all-section">
+    <div id="allposts" class="other-content">
+      {block:Posts}
+
+      {block:Photo}
+      <a href="{RelativePermalink}" target="_self" class="content-container {TagsAsClasses}">
+        <div class="post-overlay"></div>
+        {block:Title}<h3>{Title}</h3>{/block:Title}
+        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+      </a>
+      {/block:Photo}
+
+      {block:Panorama}
+      <a href="{RelativePermalink}" target="_self" class="content-container {TagsAsClasses}">
+        <div class="post-overlay"></div>
+        {block:Title}<h3>{Title}</h3>{/block:Title}
+        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+      </a>
+      {/block:Panorama}
+
+      {block:Photoset}
+      <a href="{RelativePermalink}" target="_self" class="content-container design">
+        <div class="post-overlay"></div>
+        {block:Title}<h3>{Title}</h3>{/block:Title}
+        <div class="img-mult">
+          {block:Photos}
+          <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+          {/block:Photos}
+        </div>
+      </a>
+      {/block:Photoset}
+
+      {block:Video}
+      <a href="{RelativePermalink}" target="_self" class="content-container video {TagsAsClasses}">
+        <div class="post-overlay"></div>
+        {block:Title}<h3>{Title}</h3>{/block:Title}
+        {VideoEmbed-700}
+      </a>
+      {/block:Video}
+
+      {block:Audio}
+      <a class="content-container audio {TagsAsClasses}">
+        <div class="post-audio">
+          {block:Title}<h3 href="{RelativePermalink}" target="_self">{Title}</h3>{/block:Title}
+          <audio controls>
+            <source src="{RawAudioURL} {block:ExternalAudio}{ExternalAudioURL}{/block:ExternalAudio}">
+          </audio>
+          {block:Caption}
+          <p>{Caption}</p>
+          {/block:Caption}
+        </div>
+      </a>
+      {/block:Audio}
+
+      {block:Quote}
+      <a class="content-container quote {TagsAsClasses}">
+        <div class="post-overlay"></div>
+        {block:Source}<h3 href="{RelativePermalink}" target="_self">{Source}</h3>{/block:Source}
+        <h2>{Quote}</h2>
+      </a>
+      {/block:Quote}
+
+      {block:Link}
+      <a href="{RelativePermalink}" target="_blank" class="content-container link {TagsAsClasses}">
+        <h3>{Name}</h3>
+        <i class="fa-solid fa-up-right-from-square"></i>
+        {block:Description}
+        <p>{Description}</p>
+        {/block:Description}
+      </a>
+      {/block:Link}
+
+      {block:Chat}
+      <a href="{RelativePermalink}" target="_blank" class="content-container chat {TagsAsClasses}">
+        {block:Title}<h3>{Title}</h3> {/block:Title}
+        {block:Lines}
+        <p>{Name}: {Line}</p>
+        {/block:Lines}
+      </a>
+      {/block:Chat}
+
+      {block:Answer}
+      <a href="{RelativePermalink}" target="_self" class="content-container question {TagsAsClasses}">
+        <h3>{Question}</h3>
+        <div class="question-asker">
+          <img src="{AskerPortraitURL-128}" alt="Icon of {Asker}">
+          <p>{Asker} asks</p>
+        </div>
+        <p>{Answer}</p>
+      </a>
+      {/block:Answer}
+
+      {/block:Posts}
+    </div>
+  </section>
+  <!-- HOMEPAGE CODE END -->
+  {/block:HomePage}
+
+  {block:PermalinkPage}
+  <!-- SINGLE POST PAGE CODE -->
+
+  {block:PostTitle}
+  <section class="pagename">
+    <div class="divider">
+      <h2>
+        {PostTitle}<br>
+        {PostSummary}
+      </h2>
+    </div>
+  </section>
+  {/block:PostTitle}
+
+  {block:Posts}
+  <section id="PermalinkPage">
+    <div class="singlepost">
+
+      {block:Text}
+      <main class="single-content-container npf-post {TagsAsClasses}">
+        <article>
+          <p>{Body}</p>
+        </article>
+      </main>
+      {/block:Text}
+
+      {block:Photo}
+      <main class="single-content-container {TagsAsClasses}">
+        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+        <article>
+          {block:Caption}
+          <p>{Caption}</p>
+          {/block:Caption}
+        </article>
+      </main>
+      {/block:Photo}
+
+      {block:Panorama}
+      <main class="single-content-container {TagsAsClasses}">
+        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+        <article>
+          {block:Caption}
+          <p>{Caption}</p>
+          {/block:Caption}
+        </article>
+      </main>
+      {/block:Panorama}
+
+      {block:Photoset}
+      <main class="single-content-container {TagsAsClasses}">
+        <div class="pinned-content">
+          {block:Photos}
+          <img class="pinned" src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+          {/block:Photos}
+        </div>
+        <div class="pin-slider-bullets"></div>
+        <article>
+          {block:Caption}
+          <p>{Caption}</p>
+          {/block:Caption}
+        </article>
+      </main>
+      {/block:Photoset}
+
+      {block:Video}
+      <main class="single-content-container {TagsAsClasses} video">
+        {VideoEmbed-700}
+        <article>
+          {block:Caption}
+          <p>{Caption}</p>
+          {/block:Caption}
+        </article>
+      </main>
+      {/block:Video}
+
+      {block:Audio}
+      <main class="single-content-container {TagsAsClasses} audio">
+        <audio controls>
+          <source src="{RawAudioURL} {block:ExternalAudio}{ExternalAudioURL}{/block:ExternalAudio}">
+        </audio>
+        {block:Caption}
+        <p>{Caption}</p>
+        {/block:Caption}
+      </main>
+      {/block:Audio}
+
+      {block:Answer}
+      <main class="single-content-container {TagsAsClasses} question">
+        <h2>{Question}</h2>
+        <div class="question-asker">
+          <img src="{AskerPortraitURL-128}" alt="Icon of {Asker}">
+          <h3>{Asker} asks</h3>
+        </div>
+        <article>
+          <p>{Answer}</p>
+        </article>
+      </main>
+      {/block:Answer}
+
+      {block:Quote}
+      <main class="single-content-container {TagsAsClasses} quote">
+        <article>
+          <h2>{Quote}</h2>
+          {block:Source}
+          <h3>{Source}</h3>
+          {/block:Source}
+        </article>
+      </main>
+      {/block:Quote}
+
+      {block:Link}
+      <main class="single-content-container {TagsAsClasses} link">
+        <div class="link-info">
+          <a href="{URL}" target="_blank" class="{TagsAsClasses}">
+            <img src="{Thumbnail-HighRes}" alt="Link to {Name}">
+          </a>
+          <a href="{URL}" target="_blank" class="{TagsAsClasses}">
+            <h2>{Host}: {Name}</h2>
+            {block:Author}<h3>{Author}</h3>{/block:Author}
+            {block:Excerpt}<p>{Excerpt}</p>{/block:Excerpt}
+          </a>
+        </div>
+        <article>
+          {block:Description}
+          <p>{Description}</p>
+          {/block:Description}
+        </article>
+      </main>
+      {/block:Link}
+
+      {block:Chat}
+      <main class="single-content-container {TagsAsClasses} chat">
+        <article>
+          {block:Lines}
+          <p>{UserNumber} - {Name}: {Line}</p>
+          {/block:Lines}
+        </article>
+      </main>
+      {/block:Chat}
+
+    </div>
+  </section>
+
+  {block:Date}
+  <section id="PostDate">
+    <div class="divider">
+      <h3>
+        {lang:Posted on DayOfWeek DayOfMonth Month Year}
+      </h3>
+    </div>
+  </section>
+  {/block:Date}
+
+  {/block:Posts}
+
+  <!-- SINGLE POST PAGE CODE END -->
+  {/block:PermalinkPage}
+
+  {block:TagPage}
+  <!-- TAG PAGE CODE -->
+
+  <section class="pagename">
+    <div class="divider">
+      <h3>{Tag}</h3>
+    </div>
+  </section>
+
+  <section id="TagPage">
+    <div id="allposts" class="other-content">
+      {block:Posts}
+
+      {block:Photo}
+      <a href="{RelativePermalink}" target="_self" class="content-container {TagsAsClasses}">
+        <div class="post-overlay"></div>
+        {block:Title}<h3>{Title}</h3>{/block:Title}
+        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+      </a>
+      {/block:Photo}
+
+      {block:Panorama}
+      <a href="{RelativePermalink}" target="_self" class="content-container {TagsAsClasses}">
+        <div class="post-overlay"></div>
+        {block:Title}<h3>{Title}</h3>{/block:Title}
+        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+      </a>
+      {/block:Panorama}
+
+      {block:Photoset}
+      <a href="{RelativePermalink}" target="_self" class="content-container design">
+        <div class="post-overlay"></div>
+        {block:Title}<h3>{Title}</h3>{/block:Title}
+        <div class="img-mult">
+          {block:Photos}
+          <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+          {/block:Photos}
+        </div>
+      </a>
+      {/block:Photoset}
+
+      {block:Video}
+      <a href="{RelativePermalink}" target="_self" class="content-container video {TagsAsClasses}">
+        <div class="post-overlay"></div>
+        {block:Title}<h3>{Title}</h3>{/block:Title}
+        {VideoEmbed-700}
+        <!-- <video src="" autoplay muted controls></video> -->
+      </a>
+      {/block:Video}
+
+      {block:Audio}
+      <a class="content-container audio {TagsAsClasses}">
+        <div class="post-audio">
+          {block:Title}<h3 href="{RelativePermalink}" target="_self">{Title}</h3>{/block:Title}
+          <audio controls>
+            <source src="{RawAudioURL} {block:ExternalAudio}{ExternalAudioURL}{/block:ExternalAudio}">
+          </audio>
+          {block:Caption}
+          <p>{Caption}</p>
+          {/block:Caption}
+        </div>
+      </a>
+      {/block:Audio}
+
+      {block:Quote}
+      <a class="content-container quote {TagsAsClasses}">
+        <div class="post-overlay"></div>
+        {block:Source}<h3 href="{RelativePermalink}" target="_self">{Source}</h3>{/block:Source}
+        <h2>{Quote}</h2>
+      </a>
+      {/block:Quote}
+
+      {block:Link}
+      <a href="{RelativePermalink}" target="_blank" class="content-container link {TagsAsClasses}">
+        <h3>{Name}</h3>
+        <i class="fa-solid fa-up-right-from-square"></i>
+        {block:Description}
+        <p>{Description}</p>
+        {/block:Description}
+      </a>
+      {/block:Link}
+
+      {block:Chat}
+      <a href="{RelativePermalink}" target="_blank" class="content-container chat {TagsAsClasses}">
+        {block:Title}<h3>{Title}</h3> {/block:Title}
+        {block:Lines}
+        <p>{Name}: {Line}</p>
+        {/block:Lines}
+      </a>
+      {/block:Chat}
+
+      {block:Answer}
+      <a href="{RelativePermalink}" target="_self" class="content-container question {TagsAsClasses}">
+        <h3>{Question}</h3>
+        <div class="question-asker">
+          <img src="{AskerPortraitURL-128}" alt="Icon of {Asker}">
+          <p>{Asker} asks</p>
+        </div>
+        <p>{Answer}</p>
+      </a>
+      {/block:Answer}
+
+      {/block:Posts}
+    </div>
+  </section>
+
+  <!-- TAG PAGE CODE END -->
+  {/block:TagPage}
+
+  <!-- Pagination -->
+  <section id="pages">
+    <div class="transition">
+    </div>
+
+    {block:Pagination}
+    <div class="pagination">
+      <a class="menu-button prev">{lang:Prev}</a>
+      <a class="menu-button next">{lang:Next}</a>
+    </div>
+
+    {/block:Pagination}
+
+    {block:PermalinkPagination}
+
+    {/block:PermalinkPagination}
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-icons">
+      <div class="logo">
+        <a href="{BlogURL}" target="_self">
+          <img src="{image:Blog logo}" alt="Website Logo">
+        </a>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/domingo-cruz-76908919a/" target="_blank">
+            <img src="{image:LinkedIn logo}" alt="LinkedIn Icon">
+          </a>
+        <a href="https://www.instagram.com/domingocsart/" target="_blank">
+          <img src="{image:Instagram logo}" alt="Instagram Icon">
+        </a>
+        <a href="https://www.youtube.com/channel/UCkju010_NKh3rJeCyDPaGAQ" target="_blank">
+          <img src="{image:Youtube logo}" alt="Youtube Icon">
+        </a>
+      </div>
+    </div>
+    <p class="copyright"> Copyright {CopyrightYears}</p>
+    </div>
+  </footer>
+
+
+  <!-- SCRIPTS PER PAGE -->
+
+  {block:HomePage}
+  <!-- HOME PAGE SCRIPTS -->
+  <!-- NPF Post Retrieval v1.5 by domingocs (based on code by cornetespoir) -->
+  <script>
+    let postsAPI
+
+    const postsAPIen = 'https://api.tumblr.com/v2/blog/domingocruzart.tumblr.com/posts?tag=en&api_key=9dQTZQJQZCRMwV9qLVxS15SL6PiXSXP94Fcw3UhZbNQcoyVHkR&npf=true&limit=15'
+
+    const postsAPIes = 'https://api.tumblr.com/v2/blog/domingocruzart.tumblr.com/posts?tag=es&api_key=9dQTZQJQZCRMwV9qLVxS15SL6PiXSXP94Fcw3UhZbNQcoyVHkR&npf=true&limit=15'
+
+    if (document.documentElement.lang === "es-ES"){
+    postsAPI = postsAPIes
+    }
+    else {
+    postsAPI = postsAPIen
+    }
+
+    if ( window.location.href !== "https://www.domingocs.art/" ){
+      var p = window.location.href
+      var q = p.substr(p.length - 1)
+      var o = q - 1
+      var t = 15*o
+      postsAPI = postsAPI + "&offset=" + t.toString();
+    }
+
+    let postsJSON = $.getJSON(postsAPI, function getPostsJSONFile(data) {
+    getPostsData = JSON.stringify(data)
+    postsData = JSON.parse(getPostsData)
+    postsResponse = postsData.response
+
+    psta = postsResponse.total_posts
+    pstaDiv = psta/15
+    }) 
+    .done(getAllPosts)
+    .fail(failedPostRetrieval)
+    .always(cleanAllPosts)
+    .always(setPagination);
+
+    // Populate posts
+    function getAllPosts() {
+
+      let regPosts = postsResponse.posts
+
+      let container = document.getElementById('allposts')
+
+      // create images
+      function createImage(media) {
+      let image = document.createElement('img')
+      image.src = media.url
+      image.setAttribute('srcset', media.url)
+      return image
+      }
+
+      // create audio posts 
+      function createAudio(content) {
+      let audioWrapper = document.createElement('div')
+      audioWrapper.classList.add('audio-wrapper')
+      let audioPost = document.createElement('div')
+      audioPost.classList.add('audio-container')
+      audioWrapper.innerHTML = content.embed_html
+      return audioWrapper
+      }
+
+      // create polls
+      function createPoll(content, permalink) {
+      let id = permalink.substring(permalink.lastIndexOf("/") + 1);
+      let poll = document.createElement('div')
+      poll.classList.add('poll')
+      poll.append(content.question)
+      content.answers.map((answers) => {
+          let answer = document.createElement('a')
+          answer.classList.add('poll-option')
+          answer.target = "_blank"
+          answer.href = `https://tumblr.com/${user}/${id}`
+          answer.innerHTML = answers.answer_text
+          poll.append(answer)
+      })
+      return poll
+      }
+
+      // create links
+      function createLink(content) {
+      let link = document.createElement('a')
+      link.classList.add('post-link')
+      link.href = content.url
+
+      let posterImage = document.createElement('i')
+      posterImage.classList.add('fa-solid', 'fa-up-right-from-square')
+      link.append(posterImage)
+      if (content.description) {
+          let description = document.createElement('p')
+          description.textContent = content.description
+          link.append(description)
+      }
+      return link
+      }
+
+      // formats text blocks   
+      function createText(content) {
+      let str = content.text.replaceAll('<', '&lt;')
+      let texts = str.replaceAll('>', '&gt;')
+      if (content.text === '') return ''
+      let output = ""
+      // if there is formatted content
+      if (content.formatting) {
+          let characters = Array.from(texts.split(''))
+          for (const [i, text] of characters.entries()) {
+          const char = texts[i]
+          // look for end of format
+          const endFormatTypes = content.formatting.filter((f) => f.end === i);
+          // for each type, create a closing tag
+          for (const f of endFormatTypes) {
+              if (f.type === "link") {
+              output += "</a>"
+              }
+              if (f.type === "color") {
+              output += "</span>"
+              }
+              if (f.type === "bold") {
+              output += "</b>"
+              }
+              if (f.type === "small") {
+              output += "</span>"
+              }
+              if (f.type === "mention") {
+              output += "</a>"
+              }
+              if (f.type === "italic") {
+              output += "</i>"
+              }
+          }
+          // look for start of format
+          const startFormatTypes = content.formatting.filter((f) => f.start === i);
+          // for each type, create an opening tag 
+          for (const f of startFormatTypes) {
+              if (f.type === "link") {
+              output += `<a href="${f.url}">`
+              }
+              if (f.type === "color") {
+              output += `<span style="color:${f.hex}">`
+              }
+              if (f.type === "bold") {
+              output += `<b>`
+              }
+              if (f.type === "small") {
+              output += `<span style="font-size:.8rem">`
+              }
+              if (f.type === "mention") {
+              output += `<a className="mention" href="${f.blog.url}">`;
+              }
+              if (f.type === "italic") {
+              output += `<i>`
+              }
+          }
+          output += char
+          }
+      }
+      // if no formatting, just output the text 
+      else {
+          output += texts
+      }
+      // might scrap this part
+      if (content.subtype === "unordered-list-item") {
+          let li = document.createElement('li')
+          li.classList.add(content.subtype)
+          li.innerHTML = output
+          return li
+      }
+      // create an element to put the formatted text in, and then return it  
+      else {
+          let p = document.createElement('p')
+          p.innerHTML = output
+          return p
+      }
+      }
+
+      // create content inside of each row  
+      function createRow(content, permalink) {
+      // sort through content types      
+      switch (content.type) {
+          case 'text':
+          return createText(content)
+          break;
+
+          case 'image':
+          return createImage(content.media[3])
+          break;
+
+          case 'audio':
+          return createAudio(content)
+          break;
+
+          case 'link':
+          return createLink(content)
+          break;
+
+          case 'video':
+          if (content.provider === 'tumblr') {
+              let video = document.createElement('video');
+              video.src = content.url;
+              video.muted = true;
+              video.defaultMuted = true;
+              video.controls = true;
+              video.loop = true;
+              video.autoplay = true;
+              return video
+
+          } else {
+              let video = document.createElement('iframe')
+              video.classList.add('video-iframe')
+              video.src = content.embed_iframe?.url ?? content.media.url
+              let videoWidth = content.embed_iframe?.width ?? content.media.width
+              let videoHeight = content.embed_iframe?.height ?? content.media.height
+              video.style.aspectRatio = `${videoWidth} / ${videoHeight}`
+              return video
+          }
+          break;
+
+          case 'poll':
+          return createPoll(content, permalink)
+          break;
+
+          // in case there are new post types/types that were missed
+          default:
+          return `this ${content.type} npf block is not supported yet`
+      }
+      }
+
+      // create each row  
+      function createRows(id, content, layout, permalink, trail = null) {
+      let rows = document.createElement('div')
+      rows.classList.add('content')
+      // if there are indexes with asks 
+      let asks = []
+      content.map((block) => {
+          rows.append(createRow(block, permalink))
+      })
+      return rows.innerHTML
+      }
+
+      // loop through each post in the array
+      for (const regPost of regPosts) {
+      let npf = regPost.content
+      let permalink = regPost.post_url
+      let articleId = regPost.id
+      let articleTags = regPost.tags
+      articleTags = JSON.stringify(articleTags)
+      articleTags = articleTags.replaceAll(',', ' ')
+      articleTags = articleTags.replaceAll('"', '')
+      articleTags = articleTags.replaceAll('[', '')
+      articleTags = articleTags.replaceAll(']', '')
+      let article = document.createElement('a')
+
+      article.id = articleId
+      article.className = articleTags
+      article.classList.add('content-container')
+      article.href = permalink
+
+      // if it is an original post  
+      if (npf.length > 0) {
+          let title = document.createElement('h3')
+          let titleContent = regPost.summary
+          title.append(titleContent)
+
+          let overlay = document.createElement('div')
+          overlay.classList.add('post-overlay')
+
+          let content = createRows(regPost.id, regPost.content, regPost.layout, permalink)
+
+          article.innerHTML = content
+          article.prepend(title)
+          article.prepend(overlay)
+
+      }
+      container.append(article)
+
+      console.log("Posts retrieved")
+      }
+
+    }
+    
+    // Error Screen if retrieval failed 
+    function failedPostRetrieval() {
+        console.log("error retrieving posts");
+        $('#under-construction').css("display", "flex");
+    }
+    
+    // Setup posts 
+    function cleanAllPosts() {
+      //reformat media content for multi images
+      $('a.content-container.multimg').each(function () {
+          if ($(this).children('img').length > 1) {
+          $(this).append('<div class="img-mult"></div>');
+          $(this).children('.img-mult').append($(this).children('img'));
+          $(this).children('.img-mult').children().eq(0).addClass('activeimg');
+          $('.img-mult').each(function () {
+          var j = 0;
+          var m = 2000;
+          var className = this;
+          autoplay2 = setInterval(function () {
+              if (j > $(className).children().length - 1) { j = 0; }
+              $(className).children().removeClass('activeimg');
+              $(className).children().eq(j).addClass('activeimg');
+              j++;
+          }, m);
+          });
+          }
+          if ($(this).children('.content-rows').length > 1) {
+          $(this).append('<div class="img-mult"></div>');
+          $(this).children('.img-mult').append($(this).children('.content-rows').find('img'));
+          $(this).children('.img-mult').children().eq(0).addClass('activeimg');
+          $('.img-mult').each(function () {
+          var j = 0;
+          var m = 2000;
+          var className = this;
+          autoplay2 = setInterval(function () {
+              if (j > $(className).children().length - 1) { j = 0; }
+              $(className).children().removeClass('activeimg');
+              $(className).children().eq(j).addClass('activeimg');
+              j++;
+          }, m);
+          });
+          }
+      });
+      console.log("Post retrieval complete");
+    }
+
+    //create pagination
+    function setPagination(){
+      let paga = parseInt(pstaDiv) + 1
+      for (let g = 0 ; g < paga; g++){
+        $('a.menu-button.next').before($('<a class="menu-button jump_page"></a>'));
+        let gg = g+1
+        $('a.menu-button.jump_page').eq(g).text(gg)
+      }
+
+      $('a.menu-button.jump_page').each(function () {
+        if ($(this).text() == 1) {
+          $(this).removeClass('jump_page');
+          $(this).addClass('current_page');
+          $('a.menu-button.prev').css("display", "none");
+          $('a.menu-button.next').css("display", "inline-flex");
+        }
+      });
+
+      console.log("Pagination set");
+    }
+
+    // REPOPULATE WHEN CHANGING LANGUAGE 
+    $('.enbtn').on("click", function () {
+      $("#allposts").children().remove();
+      $('.current_page').remove();
+      $('.jump_page').remove();
+      $('#pinned-section').css("display", "block");
+      $('.pinned-section').css("display", "flex");
+        postsAPI = postsAPIen;
+        if ( window.location.href !== "https://www.domingocs.art/" ){
+          var p = window.location.href
+          var q = p.substr(p.length - 1)
+          var o = q - 1
+          var t = 15*o
+          postsAPI = postsAPI + "&offset=" + t.toString();
+        }
+        let postsJSON = $.getJSON(postsAPI, function getPostsJSONFile(data) {
+          getPostsData = JSON.stringify(data)
+          postsData = JSON.parse(getPostsData)
+          postsResponse = postsData.response
+
+          psta = postsResponse.total_posts
+          pstaDiv = psta/15
+        }) 
+        .done(getAllPosts)
+        .fail(failedPostRetrieval)
+        .always(cleanAllPosts)
+        .always(setPagination);
+    });
+    $('.esbtn').on("click", function () {
+      $("#allposts").children().remove();
+      $('.current_page').remove();
+      $('.jump_page').remove();
+      $('#pinned-section').css("display", "block");
+      $('.pinned-section').css("display", "flex");
+        postsAPI = postsAPIes;
+        if ( window.location.href !== "https://www.domingocs.art/" ){
+          var p = window.location.href
+          var q = p.substr(p.length - 1)
+          var o = q - 1
+          var t = 15*o
+          postsAPI = postsAPI + "&offset=" + t.toString();
+        }
+        let postsJSON = $.getJSON(postsAPI, function getPostsJSONFile(data) {
+          getPostsData = JSON.stringify(data)
+          postsData = JSON.parse(getPostsData)
+          postsResponse = postsData.response
+
+          psta = postsResponse.total_posts
+          pstaDiv = psta/15
+        }) 
+        .done(getAllPosts)
+        .fail(failedPostRetrieval)
+        .always(cleanAllPosts)
+        .always(setPagination);
+    });
+
+
+    // REPOPULATE WHEN USING PAGINATION
+      //Jump Pages
+      $('.pagination').on("click", '.jump_page' , function () {
+        $("#allposts").children().remove();
+        //add current page class
+        $('.current_page').addClass('jump_page');
+        $('.current_page').removeClass('current_page');
+        $(this).removeClass('jump_page');
+        $(this).addClass('current_page');
+        //set offset
+        var p = $('.current_page').text();
+        var q = parseInt(p)
+        var o = q - 1
+        var t = 15*o
+        postsAPI = postsAPI + "&offset=" + t.toString();
+        
+        //call new posts
+        let postsJSON = $.getJSON(postsAPI, function getPostsJSONFile(data) {
+          getPostsData = JSON.stringify(data)
+          postsData = JSON.parse(getPostsData)
+          postsResponse = postsData.response
+
+          psta = postsResponse.total_posts
+          pstaDiv = psta/15
+        }) 
+        .done(getAllPosts)
+        .fail(failedPostRetrieval)
+        .always(cleanAllPosts)
+        //hide prev or next if needed 
+        .always( function(){
+          let paga = parseInt(pstaDiv) + 1
+          let l1 = paga;
+          let l2a = $('.current_page').text();
+          let l2 = parseInt(l2a);
+          if ( l2 === 1 ){
+            $('a.menu-button.prev').css("display", "none");
+            $('a.menu-button.next').css("display", "inline-flex");
+          }
+          else if ( l2 === l1 ) {
+            $('a.menu-button.next').css("display", "none");
+            $('a.menu-button.prev').css("display", "inline-flex");
+          }
+          else{
+            $('a.menu-button.next').css("display", "inline-flex");
+            $('a.menu-button.prev').css("display", "inline-flex");
+          }
+          });
+      });
+      //Next Page
+      $('a.menu-button.next').on("click", function () {
+        $("#allposts").children().remove();
+        //add current page class
+        let pgg = $('.current_page').text();
+        let pggn = parseInt(pgg)
+        let pgnt = pggn + 1
+        console.log(pggn);
+        console.log(pgnt);
+        $('.current_page').addClass('jump_page');
+        $('.current_page').removeClass('current_page');
+
+        $('a.menu-button.jump_page').each(function () {
+          if ($(this).text() == pgnt) {
+            $(this).removeClass('jump_page');
+            $(this).addClass('current_page');
+          }
+        });
+        //set offset
+        var p = $('.current_page').text();
+        var q = parseInt(p)
+        var o = q - 1
+        var t = 15*o
+        postsAPI = postsAPI + "&offset=" + t.toString();
+        
+        //call new posts
+        let postsJSON = $.getJSON(postsAPI, function getPostsJSONFile(data) {
+          getPostsData = JSON.stringify(data)
+          postsData = JSON.parse(getPostsData)
+          postsResponse = postsData.response
+
+          psta = postsResponse.total_posts
+          pstaDiv = psta/15
+        }) 
+        .done(getAllPosts)
+        .fail(failedPostRetrieval)
+        .always(cleanAllPosts)
+        //hide prev or next if needed 
+        .always( function(){
+          let paga = parseInt(pstaDiv) + 1
+          let l1 = paga;
+          let l2a = $('.current_page').text();
+          let l2 = parseInt(l2a);
+          if ( l2 === 1 ){
+            $('a.menu-button.prev').css("display", "none");
+            $('a.menu-button.next').css("display", "inline-flex");
+          }
+          else if ( l2 === l1 ) {
+            $('a.menu-button.next').css("display", "none");
+            $('a.menu-button.prev').css("display", "inline-flex");
+          }
+          else{
+            $('a.menu-button.next').css("display", "inline-flex");
+            $('a.menu-button.prev').css("display", "inline-flex");
+          }
+          });
+      });
+      //Prev Page
+      $('a.menu-button.prev').on("click", function () {
+        $("#allposts").children().remove();
+        //add current page class
+        let pgg = $('.current_page').text();
+        let pggn = parseInt(pgg)
+        let pgnt = pggn - 1
+        console.log(pggn);
+        console.log(pgnt);
+        $('.current_page').addClass('jump_page');
+        $('.current_page').removeClass('current_page');
+
+        $('a.menu-button.jump_page').each(function () {
+          if ($(this).text() == pgnt) {
+            $(this).removeClass('jump_page');
+            $(this).addClass('current_page');
+          }
+        });
+        //set offset
+        var p = $('.current_page').text();
+        var q = parseInt(p)
+        var o = q - 1
+        var t = 15*o
+        postsAPI = postsAPI + "&offset=" + t.toString();
+        
+        //call new posts
+        let postsJSON = $.getJSON(postsAPI, function getPostsJSONFile(data) {
+          getPostsData = JSON.stringify(data)
+          postsData = JSON.parse(getPostsData)
+          postsResponse = postsData.response
+
+          psta = postsResponse.total_posts
+          pstaDiv = psta/15
+        }) 
+        .done(getAllPosts)
+        .fail(failedPostRetrieval)
+        .always(cleanAllPosts)
+        //hide prev or next if needed 
+        .always( function(){
+          let paga = parseInt(pstaDiv) + 1
+          let l1 = paga;
+          let l2a = $('.current_page').text();
+          let l2 = parseInt(l2a);
+          if ( l2 === 1 ){
+            $('a.menu-button.prev').css("display", "none");
+            $('a.menu-button.next').css("display", "inline-flex");
+          }
+          else if ( l2 === l1 ) {
+            $('a.menu-button.next').css("display", "none");
+            $('a.menu-button.prev').css("display", "inline-flex");
+          }
+          else{
+            $('a.menu-button.next').css("display", "inline-flex");
+            $('a.menu-button.prev').css("display", "inline-flex");
+          }
+          });
+      });
+
+    // REPOPULATE WHEN NAVIGATING TAGS 
+      $('a.menu-button.art.entext').on("click", {
+          tagu: "art"
+      }, callTaggedPosts);
+      $('a.menu-button.design.entext').on("click", {
+          tagu: "design"
+      }, callTaggedPosts);
+      $('a.menu-button.video.entext').on("click", {
+          tagu: "video"
+      }, callTaggedPosts);
+      $('a.menu-button.art.estext').on("click", {
+          tagu: "arte"
+      }, callTaggedPosts);
+      $('a.menu-button.design.estext').on("click", {
+          tagu: "diseno"
+      }, callTaggedPosts);
+      $('a.menu-button.video.estext').on("click", {
+          tagu: "videos"
+      }, callTaggedPosts);
+
+        
+      function callTaggedPosts( event ){
+
+        $("#allposts").children().remove();
+        $(".jump_page").remove();
+        $(".current_page").remove();
+        $('#pinned-section').css("display", "none");
+        $('.pinned-section').css("display", "none");
+
+        //$('.pinned-section').children('h1').text(event.data.tagu);
+        //if ($('.pinned-section').children('h1').text() === 'diseno') {
+        //  $('.pinned-section').children('h1').text('Diseño');
+        //}
+
+        let postsAPItag = 'https://api.tumblr.com/v2/blog/domingocruzart.tumblr.com/posts?api_key=9dQTZQJQZCRMwV9qLVxS15SL6PiXSXP94Fcw3UhZbNQcoyVHkR&npf=true&limit=15&tag=';
+        postsAPItag = postsAPItag + event.data.tagu;
+        console.log(event.data.tagu);
+
+        postsAPI = postsAPItag
+
+        let tagsJSON = $.getJSON(postsAPI, function getPostsJSONFile(data) {
+        getPostsData = JSON.stringify(data)
+        postsData = JSON.parse(getPostsData)
+        postsResponse = postsData.response
+
+        psta = postsResponse.total_posts
+        pstaDiv = psta/15
+        })
+        .done(getAllPosts)
+        .fail(failedPostRetrieval)
+        .always(cleanAllPosts)
+        .always(setPagination);
+      }
+
+  </script>
+
+  <!-- get Pinned Posts v1.3 by domingocs-->
+  <script>
+    let pinnedAPI
+
+    const pinnedAPIen = 'https://api.tumblr.com/v2/blog/domingocruzart.tumblr.com/posts?tag=pinned&api_key=9dQTZQJQZCRMwV9qLVxS15SL6PiXSXP94Fcw3UhZbNQcoyVHkR&npf=true'
+
+    const pinnedAPIes = 'https://api.tumblr.com/v2/blog/domingocruzart.tumblr.com/posts?tag=pineado&api_key=9dQTZQJQZCRMwV9qLVxS15SL6PiXSXP94Fcw3UhZbNQcoyVHkR&npf=true'
+
+    //change posts to retrieve according to language
+    if (document.documentElement.lang === "es-ES"){
+    pinnedAPI = pinnedAPIes
+    }
+    else {
+    pinnedAPI = pinnedAPIen
+    }
+
+    let pinnedJSON = $.getJSON(pinnedAPI, function getJSONFile(data) {
+      getPinnedData = JSON.stringify(data)
+      pinnedData = JSON.parse(getPinnedData)
+      pinnedResponse = pinnedData.response
+    })
+    .done(getPinnedPosts)
+    .fail(hidePinnedPosts)
+    .always(cleanPinnedPosts);
+
+    // Populate Pinned posts
+    function getPinnedPosts() {
+      let pinnedPosts = pinnedResponse.posts
+      //console.log(pinnedPosts.length)
+
+      let pinnedContainer = document.getElementById('pinnedposts')
+
+      // create images
+      function createImage(media) {
+      let image = document.createElement('img')
+      image.src = media.url
+      image.setAttribute('srcset', media.url)
+      return image
+      }
+
+      // create audio posts 
+      function createAudio(content) {
+      let audioWrapper = document.createElement('div')
+      audioWrapper.classList.add('audio-wrapper')
+      let audioPost = document.createElement('div')
+      audioPost.classList.add('audio-container')
+      audioWrapper.innerHTML = content.embed_html
+      return audioWrapper
+      }
+
+      // create polls
+      function createPoll(content, permalink) {
+      let id = permalink.substring(permalink.lastIndexOf("/") + 1);
+      let poll = document.createElement('div')
+      poll.classList.add('poll')
+      poll.append(content.question)
+      content.answers.map((answers) => {
+          let answer = document.createElement('a')
+          answer.classList.add('poll-option')
+          answer.target = "_blank"
+          answer.href = `https://tumblr.com/${user}/${id}`
+          answer.innerHTML = answers.answer_text
+          poll.append(answer)
+      })
+      return poll
+      }
+
+      // create links
+      function createLink(content) {
+      let link = document.createElement('a')
+      link.classList.add('post-link')
+      link.href = content.url
+
+      let posterImage = document.createElement('i')
+      posterImage.classList.add('fa-solid', 'fa-up-right-from-square')
+      link.append(posterImage)
+      if (content.description) {
+          let description = document.createElement('p')
+          description.textContent = content.description
+          link.append(description)
+      }
+      return link
+      }
+
+      // formats text blocks   
+      function createText(content) {
+      let str = content.text.replaceAll('<', '&lt;')
+      let texts = str.replaceAll('>', '&gt;')
+      if (content.text === '') return ''
+      let output = ""
+      // if there is formatted content
+      if (content.formatting) {
+          let characters = Array.from(texts.split(''))
+          for (const [i, text] of characters.entries()) {
+          const char = texts[i]
+          // look for end of format
+          const endFormatTypes = content.formatting.filter((f) => f.end === i);
+          // for each type, create a closing tag
+          for (const f of endFormatTypes) {
+              if (f.type === "link") {
+              output += "</a>"
+              }
+              if (f.type === "color") {
+              output += "</span>"
+              }
+              if (f.type === "bold") {
+              output += "</b>"
+              }
+              if (f.type === "small") {
+              output += "</span>"
+              }
+              if (f.type === "mention") {
+              output += "</a>"
+              }
+              if (f.type === "italic") {
+              output += "</i>"
+              }
+          }
+          // look for start of format
+          const startFormatTypes = content.formatting.filter((f) => f.start === i);
+          // for each type, create an opening tag 
+          for (const f of startFormatTypes) {
+              if (f.type === "link") {
+              output += `<a href="${f.url}">`
+              }
+              if (f.type === "color") {
+              output += `<span style="color:${f.hex}">`
+              }
+              if (f.type === "bold") {
+              output += `<b>`
+              }
+              if (f.type === "small") {
+              output += `<span style="font-size:.8rem">`
+              }
+              if (f.type === "mention") {
+              output += `<a className="mention" href="${f.blog.url}">`;
+              }
+              if (f.type === "italic") {
+              output += `<i>`
+              }
+          }
+          output += char
+          }
+      }
+      // if no formatting, just output the text 
+      else {
+          output += texts
+      }
+      // might scrap this part
+      if (content.subtype === "unordered-list-item") {
+          let li = document.createElement('li')
+          li.classList.add(content.subtype)
+          li.innerHTML = output
+          return li
+      }
+      // create an element to put the formatted text in, and then return it  
+      else {
+          let p = document.createElement('p')
+          p.classList.add(content.subtype)
+          p.innerHTML = output
+          return p
+      }
+      }
+
+      // create content inside of each row 1 
+      function createRow1(content, permalink) {
+      // sort through content types      
+      switch (content.type) {
+
+          case 'image':
+          return createImage(content.media[2])
+          break;
+
+          case 'video':
+          if (content.provider === 'tumblr') {
+              let video = document.createElement('video')
+              video.src = content.url
+              video.controls = true
+              video.loop = true
+              return video
+
+          } else {
+              let video = document.createElement('iframe')
+              video.classList.add('video-iframe')
+              video.src = content.embed_iframe?.url ?? content.media.url
+              let videoWidth = content.embed_iframe?.width ?? content.media.width
+              let videoHeight = content.embed_iframe?.height ?? content.media.height
+              video.style.aspectRatio = `${videoWidth} / ${videoHeight}`
+              return video
+          }
+          break;
+
+          default:
+          return ``
+      }
+      }
+
+      // create content inside of each row 2
+      function createRow2(content, permalink) {
+      // sort through content types      
+      switch (content.type) {
+          case 'text':
+          return createText(content)
+          break;
+
+          case 'audio':
+          return createAudio(content)
+          break;
+
+          case 'link':
+          return createLink(content)
+          break;
+
+          case 'poll':
+          return createPoll(content, permalink)
+          break;
+
+          // in case there are new post types/types that were missed
+          default:
+          return ``
+      }
+      }
+
+      // create each row 1
+      function createRows1(id, content, layout, permalink, trail = null) {
+      let rows1 = document.createElement('div')
+      rows1.classList.add('col1')
+      content.map((block) => {
+          rows1.append(createRow1(block, permalink))
+      })
+      return rows1
+      }
+      // create each row 2 
+      function createRows2(id, content, layout, permalink, trail = null) {
+      let rows2 = document.createElement('div')
+      rows2.classList.add('col2')
+      // if there are indexes with asks 
+      let asks = []
+      content.map((block) => {
+          rows2.append(createRow2(block, permalink))
+      })
+      return rows2
+      }
+
+      // loop through each post in the array
+      for (const pinnedPost of pinnedPosts) {
+      let pnpf = pinnedPost.content
+      let pPermalink = pinnedPost.post_url
+      let pArticleId = pinnedPost.id
+      let pArticleTags = pinnedPost.tags
+      pArticleTags = JSON.stringify(pArticleTags)
+      pArticleTags = pArticleTags.replaceAll(',', ' ')
+      pArticleTags = pArticleTags.replaceAll('"', '')
+      pArticleTags = pArticleTags.replaceAll('[', '')
+      pArticleTags = pArticleTags.replaceAll(']', '')
+      let pArticle = document.createElement('article')
+
+      pArticle.id = pArticleId
+      pArticle.className = pArticleTags
+      pArticle.classList.add('sldcrd')
+      pArticle.href = pPermalink
+
+      // if it is an original post  
+      if (pnpf.length > 0) {
+          let ptitle = document.createElement('h2')
+          let ptitleContent = pinnedPost.summary
+          ptitle.append(ptitleContent)
+          let ptitleLink = document.createElement('a')
+          ptitleLink.href = pPermalink
+          ptitleLink.append(ptitle)
+
+          let Ptag = document.createElement('div')
+          Ptag.classList.add('tagLabel')
+          let PtagLabel = document.createElement('h3')
+          Ptag.append(PtagLabel)
+
+          let pContent = document.createElement('div')
+          pContent.classList.add('pinned-content-container')
+
+          let pCol1 = document.createElement('div')
+          pCol1.classList.add('pinned-column', 'pinned-img')
+          let pCol2 = document.createElement('div')
+          pCol2.classList.add('pinned-column', 'pinned-text')
+
+          pCol1.append(createRows1(pinnedPost.id, pinnedPost.content, pinnedPost.layout, pPermalink))
+
+          pCol2.append(createRows2(pinnedPost.id, pinnedPost.content, pinnedPost.layout, pPermalink))
+          pCol2.prepend(ptitleLink)
+
+          pContent.append(pCol1, pCol2)
+          pArticle.append(pContent)
+          pArticle.prepend(Ptag)
+      }
+      pinnedContainer.append(pArticle)
+
+      console.log("Pinned posts retrieved");
+      }
+    }
+
+    // Hide Pinned Section if retrieval failed 
+    function hidePinnedPosts() {
+        console.log("error retrieving pinned posts");
+        if ($('.pin-slider-bullets').is(':empty')) {
+        $('#pinned-section').css("display", "none");
+        $('.pinned-section').css("display", "none");
+        }
+    }
+
+    // Set up Pinned Section
+    function cleanPinnedPosts() {
+        //create pinned posts bullets and place them in container
+        //$('.content-container').removeClass("pinned");
+        //$('.content-container').removeClass('pineado');
+        //$('.pineado').addClass("pinned");
+        $('.sldcrd').before($('<span class="sldbtn"></span>'));
+        $('.sldbtn').each(function () {
+        $(this).attr('class', $('.sldbtn + article').attr('class'));
+        });
+        $('.pinned-content > span').appendTo('.pin-slider-bullets');
+        $('.pin-slider-bullets > span').removeClass("sldcrd");
+        $('.pin-slider-bullets > span').addClass("sldbtn");
+        console.log("Pinned post Bullets set");
+        //Set Pinned Posts Active classes
+        $('.pinned-content').find(".sldcrd").eq(0).addClass('activecard');
+        $('.pin-slider-bullets').children().eq(0).addClass('slct');
+
+        //reformat media content
+        $('.pinned-img > .col1').each(function () {
+        if ($(this).children('video').length >= 1) {
+            $(this).parent().addClass("pinned-vid");
+            $(this).parent().removeClass("pinned-img");
+            $(this).parent().append($(this).children('video'));
+            $(this).remove();
+        }
+        else if ($(this).children('img').length > 1) {
+            $(this).removeClass("col1");
+            $(this).addClass('img-mult');
+            $(this).children().eq(0).addClass('activeimg');
+            $('.img-mult').each(function () {
+            var j = 0;
+            var m = 2000;
+            var className = this;
+            autoplay2 = setInterval(function () {
+                if (j > $(className).children().length - 1) { j = 0; }
+                $(className).children().removeClass('activeimg');
+                $(className).children().eq(j).addClass('activeimg');
+                j++;
+            }, m);
+            });
+        }
+        else {
+            $(this).parent().append($(this).children());
+            $(this).remove();
+        }
+        });
+
+        //Set Pinned Posts Labels
+        $('.pinned-content > article').each(function () {
+        if ($(this).hasClass('video')) {
+            $(this).children('.tagLabel').children('h3').text("{lang:Video}");
+        }
+        else if ($(this).hasClass('art')) {
+            $(this).children('.tagLabel').children('h3').text("Art");
+        }
+        else if ($(this).hasClass('design')) {
+            $(this).children('.tagLabel').children('h3').text("Design");
+        }
+        else if ($(this).hasClass('videos')) {
+            $(this).children('.tagLabel').children('h3').text("Video");
+        }
+        else if ($(this).hasClass('arte')) {
+            $(this).children('.tagLabel').children('h3').text("Arte");
+        }
+        else if ($(this).hasClass('diseno')) {
+            $(this).children('.tagLabel').children('h3').text("Diseño");
+        }
+        else {
+            $(this).children('.tagLabel').children('h3').text("{block:English}Other{/block:English}{block:Spanish}Otro{/block:Spanish}");
+        }
+        });
+
+        console.log("Pinned post retrieval complete");
+    }
+
+    // REPOPULATE WHEN CHANGING LANGUAGE 
+    $('.enbtn').on("click", function () {
+      $("#pinnedposts").children('article').remove();
+      $(".pin-slider-bullets").children().remove();
+        pinnedAPI = pinnedAPIen;
+        let pinnedJSON = $.getJSON(pinnedAPI, function getJSONFile(data) {
+          getPinnedData = JSON.stringify(data)
+          pinnedData = JSON.parse(getPinnedData)
+          pinnedResponse = pinnedData.response
+        })
+        .done(getPinnedPosts)
+        .fail(hidePinnedPosts)
+        .always(cleanPinnedPosts);
+    });
+    $('.esbtn').on("click", function () {
+      $("#pinnedposts").children('article').remove();
+      $(".pin-slider-bullets").children().remove();
+      pinnedAPI = pinnedAPIes;
+      let pinnedJSON = $.getJSON(pinnedAPI, function getJSONFile(data) {
+        getPinnedData = JSON.stringify(data)
+        pinnedData = JSON.parse(getPinnedData)
+        pinnedResponse = pinnedData.response
+      })
+        .done(getPinnedPosts)
+        .fail(hidePinnedPosts)
+        .always(cleanPinnedPosts);
+    });
+
+  </script>
+  {/block:HomePage}
+
+  <!-- Script for other libraries-->
+  <script src="https://static.tumblr.com/8wlin78/C5Wno0utj/imagesloaded.pkgd.min.js"></script>
+  <script src="https://static.tumblr.com/8wlin78/Ll4ncaot0/nivo-lightbox.min.js"></script>
+  <script src="https://static.tumblr.com/8wlin78/ysgncaoqo/moment.min.js"></script>
+  <script src="https://static.tumblr.com/8wlin78/Q0rncaorg/livestamp.min.js"></script>
+
+  <!-- CUSTOM HTML CODE - BODY START -->
+  {text:Custom HTML code in document body section}
+  <!-- CUSTOM HTML CODE - BODY END -->
+</body>
+
+</html>
