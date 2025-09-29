@@ -78,4 +78,4 @@ If the data file cannot be loaded, the **Under Construction** splash screen (`#u
 
 ## License
 
-This repository is for personal/portfolio use. Code and assets are not licensed for reuse without permission.
+This repository is for personal/portfolio use. Assets are not licensed for reuse without permission.
