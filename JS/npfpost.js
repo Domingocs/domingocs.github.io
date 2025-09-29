@@ -1,4 +1,4 @@
-// NPF Post Retrieval v1.5 by domingocs (based on code by cornetespoir
+// NPF Post Retrieval v2.0 by domingocs (GitHub Pages Implementation)
 let postsAPI
 
 const postsAPIen = 'https://api.tumblr.com/v2/blog/domingocruzart.tumblr.com/posts?tag=en&api_key=9dQTZQJQZCRMwV9qLVxS15SL6PiXSXP94Fcw3UhZbNQcoyVHkR&npf=true&limit=15'

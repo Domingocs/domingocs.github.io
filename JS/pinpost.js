@@ -356,7 +356,7 @@
       //Set Pinned Posts Labels
       $('.pinned-content > article').each(function () {
         if ($(this).hasClass('video')) {
-          $(this).children('.tagLabel').children('h3').text("{lang:Video}");
+          $(this).children('.tagLabel').children('h3').text("{Video}");
         }
         else if ($(this).hasClass('art')) {
           $(this).children('.tagLabel').children('h3').text("Art");

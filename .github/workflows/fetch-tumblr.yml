@@ -1,0 +1,106 @@
+name: Fetch Tumblr Posts
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "0 14 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch Tumblr JSON (paged; ~200 cap)
+        env:
+          API_KEY: ${{ secrets.TUMBLR_CONSUMER_KEY }}
+          BLOG: domingocruzart.tumblr.com
+          USE_LIMIT: "false"   # set "true" to send &limit= if I ever need to
+          LIMIT: "20"          # only used if USE_LIMIT=true (Tumblr max/page is 20)
+          MAX_POSTS: "200"     # stop after this many posts (safety cap)
+          NPF: "true"
+        run: |
+          set -euo pipefail
+          mkdir -p data
+          echo '{"response":{"posts":[],"total_posts":0}}' > data/tumblr.json
+
+          total=0
+          fetched=0
+          page=0
+
+          while : ; do
+            offset=$(( page * (${LIMIT} ) ))
+            if [ "${USE_LIMIT}" != "true" ]; then
+              # When not sending &limit, still increment offset by 20 (Tumblr default page size)
+              offset=$(( page * 20 ))
+            fi
+
+            base="https://api.tumblr.com/v2/blog/${BLOG}/posts?api_key=${API_KEY}&npf=${NPF}&offset=${offset}"
+            url="$base"
+            if [ "${USE_LIMIT}" = "true" ]; then
+              url="${url}&limit=${LIMIT}"
+            fi
+
+            echo "Fetching page $((page+1)) offset=${offset} (limit: ${USE_LIMIT:+$LIMIT})"
+            curl -sS "$url" -H "User-Agent: DomCruzSite/1.0" -o data/page.json
+            jq -e . data/page.json > /dev/null
+
+            count=$(jq '.response.posts | length' data/page.json)
+            if [ "$count" -eq 0 ]; then
+              echo "No more posts."
+              break
+            fi
+
+            # Merge
+            jq -s '
+              {
+                response: {
+                  posts: (.[0].response.posts + .[1].response.posts),
+                  total_posts: (.[1].response.total_posts // .[0].response.total_posts // 0)
+                }
+              }' data/tumblr.json data/page.json > data/tmp.json && mv data/tmp.json data/tumblr.json
+
+            fetched=$(( fetched + count ))
+            total=$(jq '.response.total_posts // 0' data/page.json)
+
+            page=$(( page + 1 ))
+
+            # Stop conditions
+            if [ "$fetched" -ge "$MAX_POSTS" ]; then
+              echo "Reached MAX_POSTS (${MAX_POSTS})."
+              break
+            fi
+            # If limit is in use and last page was partial, stop
+            if [ "${USE_LIMIT}" = "true" ] && [ "$count" -lt "$LIMIT" ]; then
+              echo "Last page partial (${count})."
+              break
+            fi
+            # If not using limit, assume default=20; stop if partial
+            if [ "${USE_LIMIT}" != "true" ] && [ "$count" -lt 20 ]; then
+              echo "Last page partial (${count})."
+              break
+            fi
+          done
+
+          # Fallback total_posts
+          jq --argjson total "${total:-0}" --argjson fetched "$fetched" '
+            .response.total_posts = (if $total > 0 then $total else $fetched end)
+          ' data/tumblr.json > data/tmp.json && mv data/tmp.json data/tumblr.json
+
+          # Compact
+          jq -c . data/tumblr.json > data/tmp.json && mv data/tmp.json data/tumblr.json
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/tumblr.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(data): daily Tumblr feed refresh (<=${MAX_POSTS} posts)"
+            git push
+          else
+            echo "No changes."
+          fi
