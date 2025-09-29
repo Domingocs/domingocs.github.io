@@ -1,6 +1,6 @@
 # Domingo Cruz – Portfolio Website
 
-Source code for [domingocs.art](https://www.domingocs.art), hosted on **GitHub Pages**.
+Source code for [domingocs.com](https://www.domingocs.com), hosted on **GitHub Pages**.
 This is a personal portfolio and blog that displays artwork and posts fetched from Tumblr’s API.
 
 ---
