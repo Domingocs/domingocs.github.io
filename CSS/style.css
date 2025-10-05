@@ -1722,6 +1722,7 @@ a.menu-button {
 }
 .pagination .menu-button.current_page {
   background-color: #00b4ff;
+  color: #191919;
 }
 .pagination .menu-button.prev, .pagination .menu-button.next {
   width: -moz-fit-content;
